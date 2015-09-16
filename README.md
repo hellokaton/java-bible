@@ -16,3 +16,10 @@
 2. Java8 Lambda
 3. Java8 Foreach
 4. Java8 Stream
+
+## Shell脚本
+1. [一键安装JDK8、Tomcat8](shell/install_jdk_tomcat.md)
+
+
+## Contact
+Mail：i@biezhi.me
