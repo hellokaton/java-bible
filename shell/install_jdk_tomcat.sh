@@ -51,9 +51,15 @@ install_jdk(){
     mv $JDK_DIR  $JAVA_DIR
     #配置环境变量
     cp ~/.bashrc ~/.bashrc.backup.java
-    echo "export JAVA_HOME=$JDK_PATH" >> ~/.bashrc
-    echo "export JRE_HOME=\$JAVA_HOME/jre" >> ~/.bashrc
-    echo "export CLASSPATH=.:\$JDK_PATH/lib/dt.jar:\$JDK_PATH/lib/tools.jar" >> ~/.bashrc
+    if [ ! -n "$JAVA_HOME" ]; then
+        echo "export JAVA_HOME=\"$JDK_PATH\"" >> ~/.bashrc
+    fi
+    if [ ! -n "$JRE_HOME" ]; then
+        echo "export JRE_HOME=\"\$JAVA_HOME/jre\"" >> ~/.bashrc
+    fi   
+    if [ ! -n "$CLASSPATH" ]; then
+        echo "export CLASSPATH=.:\$JDK_PATH/lib/dt.jar:\$JDK_PATH/lib/tools.jar" >> ~/.bashrc
+    fi
     echo "export PATH=\$JAVA_HOME/bin:\$JRE_HOME/bin:\$PATH" >> ~/.bashrc
     source ~/.bashrc
     echo "JDK install success!"
@@ -69,8 +75,12 @@ install_tomcat(){
     mv tomcat8 /usr/local/
 
     cp ~/.bashrc ~/.bashrc.backup.tomcat8
-    echo "export TOMCAT_HOME=$TOMCAT_DIR" >> ~/.bashrc
-    echo "export CATALINA_HOME=$TOMCAT_DIR" >> ~/.bashrc
+    if [ ! -n "$TOMCAT_HOME" ]; then
+        echo "export TOMCAT_HOME=$TOMCAT_DIR" >> ~/.bashrc
+    fi
+    if [ ! -n "$CATALINA_HOME" ]; then
+        echo "export CATALINA_HOME=$TOMCAT_DIR" >> ~/.bashrc
+    fi
     source ~/.bashrc
     echo "Tomact install success!"
 }
