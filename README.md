@@ -18,7 +18,7 @@
 4. Java8 Stream
 
 ## Shell脚本
-1. [一键安装JDK8、Tomcat8](shell/install_jdk_tomcat.md)
+1. [一键安装JDK8、Tomcat8](shell/install_jdk_tomcat.sh)
 
 
 ## Contact
