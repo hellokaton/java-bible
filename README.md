@@ -4,7 +4,7 @@
 
 
 ## 开源组件实现系列文章
-1. [mvc框架实现](open_source_impl/1.mvc)
+1. [mvc框架实现](open_source_impl/1.mvc/mvc.md)
 2. ioc容器实现
 3. orm框架实现
 4. aop实现
