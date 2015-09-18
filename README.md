@@ -20,6 +20,7 @@
 ## Hexo搭建博客
 1. [分分钟部署一个Hexo环境](hexo/hello.md)
 2. [各种配置详解](hexo/config.md)
+3. [开始写作吧](hexo/writing.md)
 
 
 ## Shell脚本
