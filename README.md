@@ -17,9 +17,12 @@
 3. Java8 Foreach
 4. Java8 Stream
 
+## 更极客的方式搭建你的博客(Hexo系列)
+1. [分分钟部署一个Hexo环境](hexo/hello.md)
+
+
 ## Shell脚本
 1. [一键安装JDK8、Tomcat8](shell/install_jdk_tomcat.sh)
-
 
 ## Contact
 Mail：i@biezhi.me
