@@ -12,6 +12,8 @@
 * [路由设计](2.route.md)
 * [控制器设计](3.controller.md)
 * [配置设计](4.config.md)
-* [增删改查](5.crud.md)
+* [视图设计](5.view.md)
+* [数据库操作规划](6.dbutil.md)
+* [增删改查](7.crud.md)
 
 接下来开始我们的 [框架之旅](#plan.md) 吧~
