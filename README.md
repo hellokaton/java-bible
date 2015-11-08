@@ -2,7 +2,7 @@
 
 jb is `java book`，这里记录了一些我的技术摘要，如果你喜欢，`star` 便是，持续更新ing
 
-## 开源组件实现系列文章
+## 开源组件实现系列
 
 - [MVC框架实现篇](mvc/SUMMARY.md)
 - IOC容器实现篇
@@ -41,3 +41,4 @@ jb is `java book`，这里记录了一些我的技术摘要，如果你喜欢，
 ## Contact
 
 Mail：i@biezhi.me
+
