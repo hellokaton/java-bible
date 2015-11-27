@@ -4,7 +4,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 
 如果你喜欢，`star` 便是，持续更新ing
 
-## 开源组件实现系列
+## 开源组件实现
 
 - [MVC框架实现篇](mvc/SUMMARY.md)
 - IOC容器实现篇
@@ -14,7 +14,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 - http服务器实现篇
 - 连接池实现篇
 
-## 设计模式该怎么用系列
+## 设计模式该怎么用
 
 - 单例
 - 代理
@@ -23,7 +23,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 - 工厂
 - 享元
 
-## Java8系列文章
+## Java8系列
 
 1. [Java8简明教程](java8/java8-guide.md)
 2. Java8 Lambda
@@ -42,6 +42,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 
 ## Contact
 
-Mail：biezhi.me@gmail.com
+- Blog：https://biezhi.me
+- Mail：biezhi.me@gmail.com
 
 有兴趣可以参加进来 发邮件给我！
