@@ -6,7 +6,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 
 ## 开源组件实现
 
-- [MVC框架实现篇](mvc/SUMMARY.md)
+- [MVC框架实现篇](mvc/index.md)
 - IOC容器实现篇
 - ORM框架实现篇
 - AOP面向切面实现篇
