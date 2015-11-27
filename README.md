@@ -1,6 +1,8 @@
 # JB
 
-jb is `java book`，这里记录了一些我的技术摘要，如果你喜欢，`star` 便是，持续更新ing
+jb is `java book`，这里记录了一些我的技术摘要，本项目的目的力求分享精品Java技术干货。
+
+如果你喜欢，`star` 便是，持续更新ing
 
 ## 开源组件实现系列
 
@@ -23,7 +25,7 @@ jb is `java book`，这里记录了一些我的技术摘要，如果你喜欢，
 
 ## Java8系列文章
 
-1. Java8简明教程
+1. [Java8简明教程](java8/java8-guide.md)
 2. Java8 Lambda
 3. Java8 Foreach
 4. Java8 Stream
@@ -40,5 +42,6 @@ jb is `java book`，这里记录了一些我的技术摘要，如果你喜欢，
 
 ## Contact
 
-Mail：i@biezhi.me
+Mail：biezhi.me@gmail.com
 
+有兴趣可以参加进来 发邮件给我！
