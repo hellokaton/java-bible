@@ -6,6 +6,9 @@
 
 ![](http://i.imgur.com/QH8SRfB.png)
 
+- 项目源码：[https://github.com/junicorn/mario](https://github.com/junicorn/mario)
+- 示例代码：[https://github.com/junicorn/mario-sample](https://github.com/junicorn/mario-sample)
+
 # 目录
 
 * [项目规划](1.plan.md)
