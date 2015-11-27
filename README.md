@@ -46,4 +46,4 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 - Blog：https://biezhi.me
 - Mail：biezhi.me@gmail.com
 
-有兴趣可以参加进来 发邮件给我！
+有兴趣参与分享技术的 可以发邮件给我！
