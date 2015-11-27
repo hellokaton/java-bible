@@ -16,7 +16,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 
 ## 设计模式该怎么用
 
-- 单例
+- [如何正确地写出单例模式](designpatterns/singleton.md)
 - 代理
 - 装饰者
 - 观察者
