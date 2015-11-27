@@ -7,6 +7,6 @@ IOC是spring的核心，贯穿始终。所谓IoC，对于spring框架来说，�
 
 ## 目录
 
-* [IOC的概念](1.plan.md)
-* [Spring中怎么用](2.route.md)
-* [设计一个IOC](3.controller.md)
+* [IOC的概念](1.concept.md)
+* [Spring中怎么用](2.spring.md)
+* [设计一个IOC](3.myioc.md)
