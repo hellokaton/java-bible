@@ -27,7 +27,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 
 1. [Java8简明教程](java8/java8-guide.md)
 2. Java8 Lambda
-3. Java8 Foreach
+3. [Java8 Foreach](java8/foreach.md)
 4. Java8 Stream
 
 ## Hexo搭建博客
