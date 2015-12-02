@@ -37,6 +37,8 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 	* [MyBatis中文指南](http://mybatis.github.io/mybatis-3/zh/index.html)
 	* [Apache Shiro 用户指南](https://github.com/waylau/apache-shiro-1.2.x-reference)
 	* [Spring Boot参考指南](https://github.com/qibaoguang/Spring-Boot-Reference-Guide/blob/master/SUMMARY.md)
+	* [Netty4 用户指南](https://github.com/waylau/netty-4-user-guide/blob/master/SUMMARY.md)
+	* [Google Java编程风格指南](user_guide/google-java8-guide.md)
 * [其它](#其它)
 	* [git - 简明指南](git/guide.md) 
 	* [linux安装jdk、tomcat脚本](shell/install_jdk_tomcat.sh)
