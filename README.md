@@ -40,6 +40,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 
 - [git - 简明指南](git/guide.md) 
 - [linux安装jdk、tomcat脚本](shell/install_jdk_tomcat.sh)
+- [Jersey-2.x用户指南](https://waylau.gitbooks.io/jersey-2-user-guide/content/index.html)
 
 ## Contact
 
