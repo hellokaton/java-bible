@@ -26,6 +26,8 @@ jb is `java book`，这里记录了一些我的技术摘要，部分文章来自
 	* [Java8 Foreach](java8/foreach.md)
 	* Java8 Lambda
 	* Java8 Stream
+* **Http相关**
+	* [HTTP请求报文解剖](http/request_message.md)
 * **Hexo搭建博客**
 	* [分分钟部署一个Hexo环境](hexo/hello.md)
 	* [各种配置详解](hexo/config.md)
