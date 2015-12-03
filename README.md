@@ -31,6 +31,7 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 	* [各种配置详解](hexo/config.md)
 	* [开始写作吧](hexo/writing.md)
 * **用户指南**
+	* [git - 简明指南](git/guide.md) 
 	* [Jersey-2.x用户指南](https://waylau.gitbooks.io/jersey-2-user-guide/content/index.html)
 	* [REST 实战](https://waylau.gitbooks.io/rest-in-action/content/)
 	* [Java Servlet 3.1 规范](https://github.com/waylau/servlet-3.1-specification)
@@ -39,9 +40,9 @@ jb is `java book`，这里记录了一些我的技术摘要，本项目的目的
 	* [Spring Boot参考指南](https://github.com/qibaoguang/Spring-Boot-Reference-Guide/blob/master/SUMMARY.md)
 	* [Netty4 用户指南](https://github.com/waylau/netty-4-user-guide/blob/master/SUMMARY.md)
 	* [Google Java编程风格指南](user_guide/google-java8-guide.md)
-* **其它**
-	* [git - 简明指南](git/guide.md) 
+* **运维相关**
 	* [linux安装jdk、tomcat脚本](shell/install_jdk_tomcat.sh)
+	* [Web性能测试工具](web/test_tool.md)
 
 ## 联系
 
