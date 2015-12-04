@@ -9,11 +9,11 @@ jb is `java book`，这里记录了一些我的技术摘要，部分文章来自
 * **开源组件实现**
 	* [MVC框架实现篇](mvc/index.md)
 	* [IOC容器实现篇](ioc/index.md)
+	* AOP原理和实现
+	* 缓存的理解和实现
+	* 使用NIO实现一个HTTP服务器
+	* 实现一个数据库连接池
 	* ORM框架实现篇
-	* AOP面向切面实现篇
-	* 缓存实现篇
-	* http服务器实现篇
-	* 连接池实现篇
 * **设计模式该怎么用**
 	* [如何正确地写出单例模式](designpatterns/singleton.md)
 	* 代理
