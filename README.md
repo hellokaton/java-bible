@@ -16,7 +16,7 @@
 	* ORM框架实现篇
 * **设计模式该怎么用**
 	* [如何正确地写出单例模式](designpatterns/singleton.md)
-	* 代理
+	* [代理模式剖析](designpatterns/proxy.md)
 	* 装饰者
 	* 观察者
 	* 工厂
