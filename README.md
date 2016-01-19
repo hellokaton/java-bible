@@ -17,6 +17,7 @@
 * **设计模式该怎么用**
 	* [如何正确地写出单例模式](designpatterns/singleton.md)
 	* [代理模式剖析](designpatterns/proxy.md)
+	* [什么是策略模式](designpatterns/stratege.md)
 	* 装饰者
 	* 观察者
 	* 工厂

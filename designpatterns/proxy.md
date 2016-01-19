@@ -1,5 +1,5 @@
 
-# 代理模式
+# 代理模式剖析
 
 * [代理模式定义](#代理模式定义)
 * [静态代理](#静态代理)
@@ -63,6 +63,7 @@ public class RealSubject implements Subject {
     public void sayHello() {
         System.out.println("Hello World");
     }
+
     public void sayGoodBye() {
         System.out.println("GoodBye World");
     }
@@ -73,8 +74,11 @@ public class RealSubject implements Subject {
 
 ```java
 public class StaticProxy implements Subject {
+
     Private RealSubject realSubject = null;
+
     public StaticProxy() {}
+
     public void sayHello() {
         //用到时候才加载，懒加载
         if(realSubject == null) {
@@ -82,6 +86,7 @@ public class StaticProxy implements Subject {
         }
         realSubject.sayHello();
     }
+
     //sayGoodbye方法同理
     ...
 }
@@ -114,7 +119,9 @@ public class Client {
 
 ```java
 public class dynamicProxy implements InvocationHandler {
+
     private RealSubject = null;
+
     public Object invoke(Object proxy, Method method, Object[] args){
         if(RealSubject == null) {
             RealSubject = new RealSubject();
@@ -122,6 +129,7 @@ public class dynamicProxy implements InvocationHandler {
         method.invoke(RealSubject, args);
         return RealSubject;
     }
+
 }
 ```
 
@@ -149,12 +157,15 @@ public class Client {
 
 ```java
 public class DynamicProxy implements InvokeHandler {
+
     //你想代理的类
     private TargetClass targetClass = null;
+
     //初始化该类
     public DynamicProxy(TargetClass targetClass) {
         this.targetClass = targetClass;
     }
+
     public Object invoke(Object proxy, Method method, Object[] args) {
         //利用反射获取你想代理的类的方法
         Method myMethod = targetClass.getClass().getDeclaredMethod(method.getName(), method.getParameterTypes());
@@ -181,6 +192,7 @@ public static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces,
     if (sm != null) {
         checkProxyAccess(Reflection.getCallerClass(), loader, intfs);
     }
+
     //生成代理类
     Class<?> cl = getProxyClass0(loader, intfs);
     // ...OK我们先看前半截
@@ -191,10 +203,12 @@ public static Object newProxyInstance(ClassLoader loader, Class<?>[] interfaces,
 
 ```java
 private static Class<?> getProxyClass0(ClassLoader loader, Class<?>... interfaces) {
+
     //接口列表数目不能超过0xFFFF
     if (interfaces.length > 65535) {
         throw new IllegalArgumentException("interface limit exceeded");
     }
+
     //注意这里, 下面详细解释  
     return proxyClassCache.get(loader, interfaces);
 }
@@ -222,34 +236,40 @@ final class WeakCache<K, P, V> {
 
 ```java
 public V get(K key, P parameter) {
-    //java7 NullObject判断方法，如果parameter为空则抛出带有指定消息的异常。 如果不为空则返回。
+
+    // java7 NullObject判断方法，如果parameter为空则抛出带有指定消息的异常。 如果不为空则返回。
     Objects.requireNonNull(parameter);
-    //清理持有弱引用的WeakHashMap这种数据结构，一般用于缓存
+
+    // 清理持有弱引用的WeakHashMap这种数据结构，一般用于缓存
     expungeStaleEntries();
-    //从队列中获取cacheKey
+
+    // 从队列中获取cacheKey
     Object cacheKey = CacheKey.valueOf(key, refQueue);
+
     //利用懒加载的方式填充Supplier，Concurrent是一种线程安全的map
     ConcurrentMap<Object, Supplier<V>> valuesMap = map.get(cacheKey);
     if (valuesMap == null) {
         ConcurrentMap<Object, Supplier<V>> oldValuesMap = map.putIfAbsent(cacheKey, valuesMap = new ConcurrentHashMap<>());
-            if (oldValuesMap != null) {
-                valuesMap = oldValuesMap;
-            }
+        if (oldValuesMap != null) {
+        	valuesMap = oldValuesMap;
         }
-        // create subKey and retrieve the possible Supplier<V> stored by that
-        // subKey from valuesMap
+    }
+    
+	// create subKey and retrieve the possible Supplier<V> stored by that
+    // subKey from valuesMap
     Object subKey = Objects.requireNonNull(subKeyFactory.apply(key, parameter));
     Supplier<V> supplier = valuesMap.get(subKey);
     Factory factory = null;
     while (true) {
         if (supplier != null) {
-        // 从supplier中获取Value，这个Value可能是一个工厂或者Cache的实
-        //下面这三句代码是核心代码，返回实现InvokeHandler的类并包含了所需要的信息。
-        V value = supplier.get();
+	        // 从supplier中获取Value，这个Value可能是一个工厂或者Cache的实
+	        //下面这三句代码是核心代码，返回实现InvokeHandler的类并包含了所需要的信息。
+	        V value = supplier.get();
             if (value != null) {
                 return value;
             }
         }
+
         // else no supplier in cache
         // or a supplier that returned null (could be a cleared CacheValue
         // or a Factory that wasn't successful in installing the CacheValue)
@@ -274,27 +294,31 @@ public Class<?> apply(ClassLoader loader, Class<?>[] interfaces) {
     Map<Class<?>, Boolean> interfaceSet = new IdentityHashMap<>(interfaces.length);
     for (Class<?> intf : interfaces) {
         /*  Verify that the class loader resolves the name of this interface to the same Class object.*/
-    Class<?> interfaceClass = null;
+    	Class<?> interfaceClass = null;
         try {
             //加载每一个接口运行时的信息
             interfaceClass = Class.forName(intf.getName(), false, loader);
         } catch (ClassNotFoundException e) {
         }
-    //如果使用你自己的classload加载的class与你传入的class不相等，抛出异常
-    if (interfaceClass != intf) {
-        throw new IllegalArgumentException(
-        intf + " is not visible from class loader");
-    }
-    //如果传入不是一个接口类型
+
+	    //如果使用你自己的classload加载的class与你传入的class不相等，抛出异常
+	    if (interfaceClass != intf) {
+	        throw new IllegalArgumentException(
+	        intf + " is not visible from class loader");
+	    }
+
+    	//如果传入不是一个接口类型
         if (!interfaceClass.isInterface()) {
             throw new IllegalArgumentException(
                 interfaceClass.getName() + " is not an interface");
         }
-     //验证接口是否重复
+
+     	//验证接口是否重复
         if (interfaceSet.put(interfaceClass, Boolean.TRUE) != null) {
             throw new IllegalArgumentException("repeated interface: " + interfaceClass.getName());
         }
     }
+	
     String proxyPkg = null;     // package to define proxy class in
     /*  Record the package of a non-public proxy interface so that the proxy class will be defined in the same package.  
     * Verify that all non-public proxy interfaces are in the same package.
@@ -344,109 +368,111 @@ public Class<?> apply(ClassLoader loader, Class<?>[] interfaces) {
 
 ```java
 private byte[] generateClassFile() {
-        /*
-         * Step 1: Assemble ProxyMethod objects for all methods to
-         * generate proxy dispatching code for.
-         */
-         //addProxyMethod方法，就是将方法都加入到一个列表中，并与对应的class对应起来  
-        //这里给Object对应了三个方法hashCode，toString和equals  
-        addProxyMethod(hashCodeMethod, Object.class);
-        addProxyMethod(equalsMethod, Object.class);
-        addProxyMethod(toStringMethod, Object.class);
-        //将接口列表中的接口与接口下的方法对应起来
-        for (int i = 0; i < interfaces.length; i++) {
-            Method[] methods = interfaces[i].getMethods();
-            for (int j = 0; j < methods.length; j++) {
-                addProxyMethod(methods[j], interfaces[i]);
-            }
-        }
-        /*
-         * For each set of proxy methods with the same signature,
-         * verify that the methods' return types are compatible.
-         */
-        for (List<ProxyMethod> sigmethods : proxyMethods.values()) {
-            checkReturnTypes(sigmethods);
-        }
-        /*
-         * Step 2: Assemble FieldInfo and MethodInfo structs for all of
-         * fields and methods in the class we are generating.
-         */
-         //方法中加入构造方法，这个构造方法只有一个，就是一个带有InvocationHandler接口的构造方法 
-         //这个才是真正给class文件，也就是代理类加入方法了，不过还没真正处理，只是先加进来等待循环，构造方法在class文件中的名称描述是<init>  
-    try {
-        methods.add(generateConstructor());
-        for (List<ProxyMethod> sigmethods : proxyMethods.values()) {
-            for (ProxyMethod pm : sigmethods) {
- //给每一个代理方法加一个Method类型的属性，数字10是class文件的标识符，代表这些属性都是private static的  
-                fields.add(new FieldInfo(pm.methodFieldName,
-                    "Ljava/lang/reflect/Method;",
-                     ACC_PRIVATE | ACC_STATIC));
-                //将每一个代理方法都加到代理类的方法中 
-                methods.add(pm.generateMethod());
-            }
-        }
-    //加入一个静态初始化块，将每一个属性都初始化，这里静态代码块也叫类构造方法，其实就是名称为<clinit>的方法，所以加到方法列表  
-            methods.add(generateStaticInitializer());
-        } catch (IOException e) {
-            throw new InternalError("unexpected I/O Exception");
-        }
-    //方法和属性个数都不能超过65535，包括之前的接口个数也是这样，
-    //这是因为在class文件中，这些个数都是用4位16进制表示的，所以最大值是2的16次方-1  
-        if (methods.size() > 65535) {
-            throw new IllegalArgumentException("method limit exceeded");
-        }
-        if (fields.size() > 65535) {
-            throw new IllegalArgumentException("field limit exceeded");
-        }
-    //接下来就是写class文件的过程，包括魔数，类名，常量池等一系列字节码的组成，就不一一细说了。需要的可以参考JVM虚拟机字节码的相关知识。
-        cp.getClass(dotToSlash(className));
-        cp.getClass(superclassName);
-        for (int i = 0; i < interfaces.length; i++) {
-            cp.getClass(dotToSlash(interfaces[i].getName()));
-        }
-        cp.setReadOnly();
-        ByteArrayOutputStream bout = new ByteArrayOutputStream();
-        DataOutputStream dout = new DataOutputStream(bout);
-        try {
-                                        // u4 magic;
-            dout.writeInt(0xCAFEBABE);
-                                        // u2 minor_version;
-            dout.writeShort(CLASSFILE_MINOR_VERSION);
-                                        // u2 major_version;
-            dout.writeShort(CLASSFILE_MAJOR_VERSION);
-            cp.write(dout);             // (write constant pool)
-                                        // u2 access_flags;
-            dout.writeShort(ACC_PUBLIC | ACC_FINAL | ACC_SUPER);
-                                        // u2 this_class;
-            dout.writeShort(cp.getClass(dotToSlash(className)));
-                                        // u2 super_class;
-            dout.writeShort(cp.getClass(superclassName));
-                                        // u2 interfaces_count;
-            dout.writeShort(interfaces.length);
-                                        // u2 interfaces[interfaces_count];
-            for (int i = 0; i < interfaces.length; i++) {
-                dout.writeShort(cp.getClass(
-                    dotToSlash(interfaces[i].getName())));
-            }
-                                        // u2 fields_count;
-            dout.writeShort(fields.size());
-                                        // field_info fields[fields_count];
-            for (FieldInfo f : fields) {
-                f.write(dout);
-            }
-                                        // u2 methods_count;
-            dout.writeShort(methods.size());
-                                        // method_info methods[methods_count];
-            for (MethodInfo m : methods) {
-                m.write(dout);
-            }
-                                         // u2 attributes_count;
-            dout.writeShort(0); // (no ClassFile attributes for proxy classes)
-        } catch (IOException e) {
-            throw new InternalError("unexpected I/O Exception");
-        }
-        return bout.toByteArray();
-    }
+	/*
+	* Step 1: Assemble ProxyMethod objects for all methods to
+	* generate proxy dispatching code for.
+	*/
+	//addProxyMethod方法，就是将方法都加入到一个列表中，并与对应的class对应起来  
+	//这里给Object对应了三个方法hashCode，toString和equals  
+	addProxyMethod(hashCodeMethod, Object.class);
+	addProxyMethod(equalsMethod, Object.class);
+	addProxyMethod(toStringMethod, Object.class);
+	//将接口列表中的接口与接口下的方法对应起来
+	for (int i = 0; i < interfaces.length; i++) {
+		Method[] methods = interfaces[i].getMethods();
+		for (int j = 0; j < methods.length; j++) {
+		    addProxyMethod(methods[j], interfaces[i]);
+		}
+	}
+	/*
+	 * For each set of proxy methods with the same signature,
+	 * verify that the methods' return types are compatible.
+	 */
+	for (List<ProxyMethod> sigmethods : proxyMethods.values()) {
+	    checkReturnTypes(sigmethods);
+	}
+	/*
+	 * Step 2: Assemble FieldInfo and MethodInfo structs for all of
+	 * fields and methods in the class we are generating.
+	 */
+	 //方法中加入构造方法，这个构造方法只有一个，就是一个带有InvocationHandler接口的构造方法 
+	 //这个才是真正给class文件，也就是代理类加入方法了，不过还没真正处理，只是先加进来等待循环，构造方法在class文件中的名称描述是<init>  
+	try {
+		methods.add(generateConstructor());
+		for (List<ProxyMethod> sigmethods : proxyMethods.values()) {
+			for (ProxyMethod pm : sigmethods) {
+				//给每一个代理方法加一个Method类型的属性，数字10是class文件的标识符，代表这些属性都是private static的  
+				fields.add(new FieldInfo(pm.methodFieldName,
+				"Ljava/lang/reflect/Method;",
+				ACC_PRIVATE | ACC_STATIC));
+				//将每一个代理方法都加到代理类的方法中 
+				methods.add(pm.generateMethod());
+			}
+		}
+		//加入一个静态初始化块，将每一个属性都初始化，这里静态代码块也叫类构造方法，其实就是名称为<clinit>的方法，所以加到方法列表  
+		methods.add(generateStaticInitializer());
+	} catch (IOException e) {
+		throw new InternalError("unexpected I/O Exception");
+	}
+	//方法和属性个数都不能超过65535，包括之前的接口个数也是这样，
+	//这是因为在class文件中，这些个数都是用4位16进制表示的，所以最大值是2的16次方-1  
+	if (methods.size() > 65535) {
+		throw new IllegalArgumentException("method limit exceeded");
+	}
+	if (fields.size() > 65535) {
+		throw new IllegalArgumentException("field limit exceeded");
+	}
+	//接下来就是写class文件的过程，包括魔数，类名，常量池等一系列字节码的组成，就不一一细说了。需要的可以参考JVM虚拟机字节码的相关知识。
+	cp.getClass(dotToSlash(className));
+	cp.getClass(superclassName);
+	for (int i = 0; i < interfaces.length; i++) {
+		cp.getClass(dotToSlash(interfaces[i].getName()));
+	}
+	cp.setReadOnly();
+	ByteArrayOutputStream bout = new ByteArrayOutputStream();
+	DataOutputStream dout = new DataOutputStream(bout);
+	try {
+		// u4 magic;
+		dout.writeInt(0xCAFEBABE);
+		// u2 minor_version;
+		dout.writeShort(CLASSFILE_MINOR_VERSION);
+		// u2 major_version;
+		dout.writeShort(CLASSFILE_MAJOR_VERSION);
+		cp.write(dout);             // (write constant pool)
+		// u2 access_flags;
+		dout.writeShort(ACC_PUBLIC | ACC_FINAL | ACC_SUPER);
+		// u2 this_class;
+		dout.writeShort(cp.getClass(dotToSlash(className)));
+		// u2 super_class;
+		dout.writeShort(cp.getClass(superclassName));
+		// u2 interfaces_count;
+		dout.writeShort(interfaces.length);
+		
+		// u2 interfaces[interfaces_count];
+		for (int i = 0; i < interfaces.length; i++) {
+			dout.writeShort(cp.getClass(
+			dotToSlash(interfaces[i].getName())));
+		}
+
+		// u2 fields_count;
+		dout.writeShort(fields.size());
+		// field_info fields[fields_count];
+		for (FieldInfo f : fields) {
+			f.write(dout);
+		}
+
+		// u2 methods_count;
+		dout.writeShort(methods.size());
+		// method_info methods[methods_count];
+		for (MethodInfo m : methods) {
+			m.write(dout);
+		}
+		// u2 attributes_count;
+		dout.writeShort(0); // (no ClassFile attributes for proxy classes)
+	} catch (IOException e) {
+		throw new InternalError("unexpected I/O Exception");
+	}
+	return bout.toByteArray();
 }
 ```
 
@@ -477,90 +503,85 @@ import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Method;
 import java.lang.reflect.Proxy;
 import java.lang.reflect.UndeclaredThrowableException;
-public final class TestProxyGen extends Proxy
-  implements ISubject {
 
-  private static Method m3;
-  private static Method m1;
-  private static Method m0;
-  private static Method m4;
-  private static Method m2;
-  public TestProxyGen(InvocationHandler paramInvocationHandler)
-    throws {
-    super(paramInvocationHandler);
-  }
+public final class TestProxyGen extends Proxy implements ISubject {
 
-  public final void sayHello()
-    throws {
-    try {
-      this.h.invoke(this, m3, null);
-      return;
-    } catch (Error|RuntimeException localError) {
-      throw localError;
-    } catch (Throwable localThrowable) {
-      throw new UndeclaredThrowableException(localThrowable);
-    }
-  }
+	private static Method m3;
+	private static Method m1;
+	private static Method m0;
+	private static Method m4;
+	private static Method m2;
 
-  public final boolean equals(Object paramObject)
-    throws {
-    try {
-      return ((Boolean)this.h.invoke(this, m1, new Object[] { paramObject })).booleanValue();
-    } catch (Error|RuntimeException localError) {
-      throw localError;
-    } catch (Throwable localThrowable) {
-      throw new UndeclaredThrowableException(localThrowable);
-    }
-  }
+	public TestProxyGen(InvocationHandler paramInvocationHandler) throws {
+		super(paramInvocationHandler);
+	}
 
-  public final int hashCode()
-    throws {
-    try {
-      return ((Integer)this.h.invoke(this, m0, null)).intValue();
-    } catch (Error|RuntimeException localError) {
-      throw localError;
-    } catch (Throwable localThrowable) {
-      throw new UndeclaredThrowableException(localThrowable);
-    }
-  }
+	public final void sayHello() throws {
+		try {
+			this.h.invoke(this, m3, null);
+			return;
+		} catch (Error|RuntimeException localError) {
+			throw localError;
+		} catch (Throwable localThrowable) {
+			throw new UndeclaredThrowableException(localThrowable);
+		}
+	}
 
-  public final void sayGoodBye()
-    throws {
-    try {
-      this.h.invoke(this, m4, null);
-      return;
-    } catch (Error|RuntimeException localError) {
-      throw localError;
-    } catch (Throwable localThrowable) {
-      throw new UndeclaredThrowableException(localThrowable);
-    }
-  }
+	public final boolean equals(Object paramObject) throws {
+		try {
+			return ((Boolean)this.h.invoke(this, m1, new Object[] { paramObject })).booleanValue();
+		} catch (Error|RuntimeException localError) {
+			throw localError;
+		} catch (Throwable localThrowable) {
+			throw new UndeclaredThrowableException(localThrowable);
+		}
+	}
+	
+	public final int hashCode() throws {
+		try {
+			return ((Integer)this.h.invoke(this, m0, null)).intValue();
+		} catch (Error|RuntimeException localError) {
+			throw localError;
+		} catch (Throwable localThrowable) {
+			throw new UndeclaredThrowableException(localThrowable);
+		}
+	}
 
-  public final String toString()
-    throws {
-    try {
-      return (String)this.h.invoke(this, m2, null);
-    } catch (Error|RuntimeException localError) {
-      throw localError;
-    } catch (Throwable localThrowable) {
-      throw new UndeclaredThrowableException(localThrowable);
-    }
-  }
+	public final void sayGoodBye() throws {
+		try {
+			this.h.invoke(this, m4, null);
+			return;
+		} catch (Error|RuntimeException localError) {
+			throw localError;
+		} catch (Throwable localThrowable) {
+			throw new UndeclaredThrowableException(localThrowable);
+		}
+	}
 
-  static {
-    try {
-      m3 = Class.forName("com.su.dynamicProxy.ISubject").getMethod("sayHello", new Class[0]);
-      m1 = Class.forName("java.lang.Object").getMethod("equals", new Class[] { Class.forName("java.lang.Object") });
-      m0 = Class.forName("java.lang.Object").getMethod("hashCode", new Class[0]);
-      m4 = Class.forName("com.su.dynamicProxy.ISubject").getMethod("sayGoodBye", new Class[0]);
-      m2 = Class.forName("java.lang.Object").getMethod("toString", new Class[0]);
-      return;
-    } catch (NoSuchMethodException localNoSuchMethodException) {
-      throw new NoSuchMethodError(localNoSuchMethodException.getMessage());
-    } catch (ClassNotFoundException localClassNotFoundException) {
-      throw new NoClassDefFoundError(localClassNotFoundException.getMessage());
-    }
-  }
+	public final String toString() throws {
+		try {
+			return (String)this.h.invoke(this, m2, null);
+		} catch (Error|RuntimeException localError) {
+			throw localError;
+		} catch (Throwable localThrowable) {
+			throw new UndeclaredThrowableException(localThrowable);
+		}
+	}
+
+	static {
+		try {
+			m3 = Class.forName("com.su.dynamicProxy.ISubject").getMethod("sayHello", new Class[0]);
+			m1 = Class.forName("java.lang.Object").getMethod("equals", new Class[] { Class.forName("java.lang.Object") });
+			m0 = Class.forName("java.lang.Object").getMethod("hashCode", new Class[0]);
+			m4 = Class.forName("com.su.dynamicProxy.ISubject").getMethod("sayGoodBye", new Class[0]);
+			m2 = Class.forName("java.lang.Object").getMethod("toString", new Class[0]);
+			return;
+		} catch (NoSuchMethodException localNoSuchMethodException) {
+			throw new NoSuchMethodError(localNoSuchMethodException.getMessage());
+		} catch (ClassNotFoundException localClassNotFoundException) {
+			throw new NoClassDefFoundError(localClassNotFoundException.getMessage());
+		}
+	}
 }
 ```
 
