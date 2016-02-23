@@ -49,6 +49,7 @@
 
 * [HTTP请求报文解剖](articles/request_message.md)
 * [软件架构模式](articles/software_architecture_patterns.md)
+* [电商网站架构案例](articles/electrical-business-architecture.md)
 
 
 ## 联系
