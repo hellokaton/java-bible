@@ -44,6 +44,7 @@
 * **运维相关**
 	* [linux安装jdk、tomcat脚本](shell/install_jdk_tomcat.sh)
 	* [Web性能测试工具](web/test_tool.md)
+	* [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
 
 ## 精品文章
 
