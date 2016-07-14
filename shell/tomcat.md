@@ -9,6 +9,9 @@
 # Source function library.  
 . /etc/rc.d/init.d/functions  
 
+export JAVA_HOME=
+export JRE_HOME=
+
 # tomcat名字
 tcName=tomcat-$1
 basedir=/data/program/tomcat/$tcName
@@ -55,7 +58,7 @@ status(){
                 echo -n ") 正在运行"  
                 echo  
         else
-                echo "-- Tomcat 停止运行"  
+                echo "###### Tomcat未运行 ######"  
         fi
         #echo "---------------------------------------------"  
 }
@@ -70,7 +73,7 @@ log(){
 kill(){
         checkrun
         if [ $RETVAL -eq 1 ]; then
-            read -p "-- 确定要杀死 ${tcName} 的进程吗?[no])" answer
+            read -p "###### 确定要杀死 ${tcName} 的进程吗?[no])" answer
             case $answer in
                 Y|y|YES|yes|Yes)
                     ps ax --width=1000 |grep ${tcName}|grep "org.apache.catalina.startup.Bootstrap start" | awk '{printf $1 " "}'|xargs kill -9  
@@ -79,7 +82,7 @@ kill(){
                 *);;
             esac
         else
-            echo "-- exit with $tcName still running..."
+            echo "###### 退出 [$tcName] ######"
         fi
 }
 
@@ -100,7 +103,7 @@ checkrun(){
 checklog(){
         answer=$1
         if [ "$answer" != "yes" ]; then
-            read -p "-- 查看 catalina.out 日志吗 $2 status?[yes])" answer
+            read -p "###### 查看 <catalina.out> 日志吗 $2?[yes])" answer
         fi
         case $answer in
             Y|y|YES|yes|Yes|"")
@@ -114,7 +117,7 @@ checklog(){
 }
 checkexist(){
         if [ ! -d $basedir ]; then
-            echo "-- tomcat $basedir does not exist."
+            echo "###### tomcat $basedir 不存在 ######"
             exit 0
         fi
 }
@@ -155,8 +158,8 @@ kill)
         exit 0
         ;;
 *)  
-        echo "使用方法: service $0 [start|stop|restart|status|log|kill]"  
-        echo "举个栗子-> service tomcat xintr start"
+        echo "###### 使用方法: service $0 [start|stop|restart|status|log|kill]"  
+        echo "###### 举个栗子-> service tomcat xintr start"
         esac  
   
 exit 0
