@@ -14,8 +14,9 @@
 
 ## 中级篇
 
-1. [配置tomcat+nginx反向代理](config-nginx-proxy.md)
-2. [优化tomcat配置](optimization-tomcat.md)
-3. [配置多个tomcat](config-more-tomcat.md)
-4. [优化nginx配置](optimization-nginx.md)
-5. [优化mysql配置](optimization-mysql.md)
+1. [配置tomcat开机启动脚本](tomcat-boot-script.md)
+2. [配置tomcat+nginx反向代理](config-nginx-proxy.md)
+3. [优化tomcat配置](optimization-tomcat.md)
+4. [配置多个tomcat](config-more-tomcat.md)
+5. [优化nginx配置](optimization-nginx.md)
+6. [优化mysql配置](optimization-mysql.md)
