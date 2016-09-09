@@ -90,3 +90,8 @@ iptables: Applying firewall rules:                         [  OK  ]
 ```
 
 可以达到同样的效果。
+
+## links
+   * [目录](<README.md>)
+   * 上一节: [安装jdk环境](<install-jdk.md>)
+   * 下一节: [安装mysql及配置](<install-mysql.md>)
