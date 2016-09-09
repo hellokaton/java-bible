@@ -45,6 +45,7 @@
 	* [linux安装jdk、tomcat脚本](shell/install_jdk_tomcat.sh)
 	* [Web性能测试工具](web/test_tool.md)
 	* [Java 程序员眼中的 Linux](https://github.com/judasn/Linux-Tutorial)
+	* [写给java开发的运维笔记](learn_server/README.md)
 
 ## 精品文章
 
