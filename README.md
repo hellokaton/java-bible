@@ -6,44 +6,6 @@
 
 ## 目录
 
-* **Java学习很简单**
-	* [字符串和数组](simple-java/string-and-array)
-	* [常用的方法](simple-java/common-methods)
-	* [类和接口](simple-java/classes-and-interfaces)
-	* [集合](simple-java/collections)
-	* [范型](simple-java/generics)
-	* [异常](simple-java/exceptions)
-	* [并发](simple-java/concurrency)
-	* [流 / 数据库](simple-java/io-and-database)
-	* [编译器和JVM](simple-java/compiler-and-jvm)
-	* [反射教程](simple-java/reflection-tutorial.md)
-
-* **热门话题**
-	* [Java开发的10个错误]()
-	* [使用数组的10个技巧]()
-	* [字符串的10个问题]()
-	* [正则表达式的10个问题]()
-	* [异常的10个问题]()
-	* [集合的10个问题]()
-	* [Map的9个问题]()
-	* [最广泛使用的Java库]()
-	* [为高级开发者推荐的10本书]()
-	* [10个高质量Java博客]()
-	* [Java面试的算法Top10]()
-	* [8张图理解Java]()
-	* [最长使用的前100个Java类]()
-
-* **流行库／框架／工具**
-	* [什么是框架?]()
-	* [Sevlet容器和Tomcat是什么?]()
-	* [什么是面向切面编程？]()
-	* [库和框架]()
-	* [Spring]()
-	* [使用Spring开源框架]()
-	* [如何操作CVS?]()
-	* [为什么我们要进行测试?]()
-	* [jar文件转换为exe]()
-
 * **开源组件实现**
 	* [MVC框架实现篇](mvc/index.md)
 	* [IOC容器实现篇](ioc/index.md)
