@@ -12,6 +12,7 @@
 5. [安装mysql及配置](install-mysql.md)
 6. [安装nginx](install-nginx.md)
 7. [安装redis3](install-redis.md)
+8. [安装svn服务](install-svn.md)
 
 ## 中级篇
 
