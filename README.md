@@ -78,6 +78,26 @@
 * [软件架构模式](articles/software_architecture_patterns.md)
 * [电商网站架构案例](articles/electrical-business-architecture.md)
 
+## 服务器/域名/SSL证书
+
+* [可用域名](https://domainr.com) | [秋玉米](http://www.qiuyumi.com/)
+* [优惠域名](http://hk.hostsir.com/Affiliates/i/d/976) | [非主流域名]()
+* [vultr VPS](http://www.vultr.com/?ref=6886447) | [DO VPS](https://m.do.co/c/e2ceeb8b08fe)
+* [免费VPN/SSH服务](https://sshdropbear.net/)
+* [1小时免费VPN]()
+* [SSL.DO](https://saki.ssl.do/aff.php?aff=11) | [Let's Encrypt](http://frontenddev.org/article/using-certbot-deployment-let-s-encrypt-free-ssl-certificate-implementation-https.html)
+* [免费虚拟主机](http://api.hostinger.com.hk/redir/22018310)
+
+## 实用工具/API
+
+* [PNG图片无损压缩](https://tinypng.com/)
+* [在线给图片加水印](http://tool.c7sky.com/image-watermark/)
+* [随机密码生成](http://tool.c7sky.com/password/)
+* [随机头像生成](https://randomuser.me/)
+* [微博一键清理工具](http://tool.c7sky.com/tcleaner/)
+* [CSS压缩](http://csscompressor.com/)
+* [在线工具](http://www.atool.org/)
+
 ## 联系
 
 - Blog：https://biezhi.me
