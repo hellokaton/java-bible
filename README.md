@@ -85,7 +85,6 @@
 * [vultr VPS](http://www.vultr.com/?ref=6886447) | [DO VPS](https://m.do.co/c/e2ceeb8b08fe)
 * [免费VPN/SSH服务](https://sshdropbear.net/)
 * [免费SS](http://get.ishadow.website/)
-* [免费VPN/SSH服务](https://sshdropbear.net/)
 * [1小时免费VPN]()
 * [SSL.DO](https://saki.ssl.do/aff.php?aff=11) | [Let's Encrypt](http://frontenddev.org/article/using-certbot-deployment-let-s-encrypt-free-ssl-certificate-implementation-https.html)
 * [免费虚拟主机](http://api.hostinger.com.hk/redir/22018310)
