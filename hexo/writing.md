@@ -312,9 +312,10 @@ deploy:
   message: [message]
 ```
 
+```
 | 选项         | 描述|
 | ----------- |---------------------------------------------|
 | repo       | github仓库地址 |
 | branch    | 分支名称 |
 | message |定制提交消息(默认为 `Site updated: {{ now("YYYY-MM-DD HH:mm:ss") }}` )|
-
+```
