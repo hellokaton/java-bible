@@ -1,0 +1,1630 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>代理模式剖析 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="strategy.html" />
+    
+    
+    <link rel="prev" href="singleton.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../开源组件实现.html">
+            
+                <a href="../开源组件实现.html">
+            
+                    
+                    开源组件实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../mvc/MVC框架实现篇.html">
+            
+                <a href="../mvc/MVC框架实现篇.html">
+            
+                    
+                    MVC框架实现篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../mvc/">
+            
+                <a href="../mvc/">
+            
+                    
+                    MVC框架实现篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../mvc/1.plan.html">
+            
+                <a href="../mvc/1.plan.html">
+            
+                    
+                    项目规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../mvc/2.route.html">
+            
+                <a href="../mvc/2.route.html">
+            
+                    
+                    路由设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../mvc/3.controller.html">
+            
+                <a href="../mvc/3.controller.html">
+            
+                    
+                    控制器设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../mvc/4.config.html">
+            
+                <a href="../mvc/4.config.html">
+            
+                    
+                    配置设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../mvc/5.view.html">
+            
+                <a href="../mvc/5.view.html">
+            
+                    
+                    视图设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../mvc/6.dbutil.html">
+            
+                <a href="../mvc/6.dbutil.html">
+            
+                    
+                    数据库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../mvc/7.crud.html">
+            
+                <a href="../mvc/7.crud.html">
+            
+                    
+                    增删改查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ioc/IOC容器实现篇.html">
+            
+                <a href="../ioc/IOC容器实现篇.html">
+            
+                    
+                    IOC容器实现篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../ioc/1.concept.html">
+            
+                <a href="../ioc/1.concept.html">
+            
+                    
+                    IOC的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../ioc/2.spring.html">
+            
+                <a href="../ioc/2.spring.html">
+            
+                    
+                    Spring中怎么用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../ioc/3.myioc.html">
+            
+                <a href="../ioc/3.myioc.html">
+            
+                    
+                    设计一个IOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../ioc/4.principle.html">
+            
+                <a href="../ioc/4.principle.html">
+            
+                    
+                    原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../设计模式系列.html">
+            
+                <a href="../设计模式系列.html">
+            
+                    
+                    设计模式系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="singleton.html">
+            
+                <a href="singleton.html">
+            
+                    
+                    如何正确地写出单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.3.2" data-path="proxy.html">
+            
+                <a href="proxy.html">
+            
+                    
+                    代理模式剖析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="strategy.html">
+            
+                <a href="strategy.html">
+            
+                    
+                    什么是策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Java8系列.html">
+            
+                <a href="../Java8系列.html">
+            
+                    
+                    Java8系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../java8/java8-guide.html">
+            
+                <a href="../java8/java8-guide.html">
+            
+                    
+                    Java8简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../java8/foreach.html">
+            
+                <a href="../java8/foreach.html">
+            
+                    
+                    Java8 Foreach
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Hexo搭建博客.html">
+            
+                <a href="../Hexo搭建博客.html">
+            
+                    
+                    Hexo搭建博客
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../hexo/hello.html">
+            
+                <a href="../hexo/hello.html">
+            
+                    
+                    分分钟部署一个Hexo环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../hexo/config.html">
+            
+                <a href="../hexo/config.html">
+            
+                    
+                    各种配置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../hexo/writing.html">
+            
+                <a href="../hexo/writing.html">
+            
+                    
+                    开始写作吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../开发者指南.html">
+            
+                <a href="../开发者指南.html">
+            
+                    
+                    开发者指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../git/guide.html">
+            
+                <a href="../git/guide.html">
+            
+                    
+                    git - 简明指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <a target="_blank" href="https://waylau.gitbooks.io/jersey-2-user-guide/content/index.html">
+            
+                    
+                    Jersey-2.x用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <a target="_blank" href="https://waylau.gitbooks.io/rest-in-action/content/">
+            
+                    
+                    REST 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <a target="_blank" href="https://github.com/waylau/servlet-3.1-specification">
+            
+                    
+                    Java Servlet 3.1 规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <a target="_blank" href="http://mybatis.github.io/mybatis-3/zh/index.html">
+            
+                    
+                    MyBatis中文指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <a target="_blank" href="https://github.com/waylau/apache-shiro-1.2.x-reference">
+            
+                    
+                    Apache Shiro 用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <a target="_blank" href="https://github.com/qibaoguang/Spring-Boot-Reference-Guide/blob/master/SUMMARY.md">
+            
+                    
+                    Spring Boot参考指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <a target="_blank" href="https://github.com/waylau/netty-4-user-guide/blob/master/SUMMARY.md">
+            
+                    
+                    Netty4 用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../user_guide/google-java8-guide.html">
+            
+                <a href="../user_guide/google-java8-guide.html">
+            
+                    
+                    Google Java编程风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../运维相关.html">
+            
+                <a href="../运维相关.html">
+            
+                    
+                    运维相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../web/test_tool.html">
+            
+                <a href="../web/test_tool.html">
+            
+                    
+                    Web性能测试工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <a target="_blank" href="https://github.com/judasn/Linux-Tutorial">
+            
+                    
+                    Java 程序员眼中的 Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../learn_server/">
+            
+                <a href="../learn_server/">
+            
+                    
+                    写给java开发的运维笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../经典文章.html">
+            
+                <a href="../经典文章.html">
+            
+                    
+                    经典文章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../articles/request_message.html">
+            
+                <a href="../articles/request_message.html">
+            
+                    
+                    HTTP请求报文解剖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../articles/software_architecture_patterns.html">
+            
+                <a href="../articles/software_architecture_patterns.html">
+            
+                    
+                    软件架构模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../articles/electrical-business-architecture.html">
+            
+                <a href="../articles/electrical-business-architecture.html">
+            
+                    
+                    电商网站架构案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../服务器相关.html">
+            
+                <a href="../服务器相关.html">
+            
+                    
+                    服务器/域名/SSL证书
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <a target="_blank" href="https://domainr.com">
+            
+                    
+                    可用域名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <a target="_blank" href="http://hk.hostsir.com/Affiliates/i/d/976">
+            
+                    
+                    优惠域名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" >
+            
+                <a target="_blank" href="http://www.vultr.com/?ref=6886447">
+            
+                    
+                    vultr VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" >
+            
+                <a target="_blank" href="https://sshdropbear.net/">
+            
+                    
+                    免费VPN/SSH服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" >
+            
+                <a target="_blank" href="http://get.ishadow.website/">
+            
+                    
+                    免费SS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" >
+            
+                <span>
+            
+                    
+                    1小时免费VPN
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" >
+            
+                <a target="_blank" href="https://saki.ssl.do/aff.php?aff=11">
+            
+                    
+                    SSL.DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" >
+            
+                <a target="_blank" href="http://api.hostinger.com.hk/redir/22018310">
+            
+                    
+                    免费虚拟主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../实用工具.html">
+            
+                <a href="../实用工具.html">
+            
+                    
+                    实用工具/API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" >
+            
+                <a target="_blank" href="https://tinypng.com/">
+            
+                    
+                    PNG图片无损压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/image-watermark/">
+            
+                    
+                    在线给图片加水印
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/password/">
+            
+                    
+                    随机密码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" >
+            
+                <a target="_blank" href="https://randomuser.me/">
+            
+                    
+                    随机头像生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/tcleaner/">
+            
+                    
+                    微博一键清理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" >
+            
+                <a target="_blank" href="http://csscompressor.com/">
+            
+                    
+                    CSS压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" >
+            
+                <a target="_blank" href="http://www.atool.org/">
+            
+                    
+                    在线工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >代理模式剖析</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5256;&#x6790;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5256;&#x6790;</h1>
+<ul>
+<li><a href="#&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;</a></li>
+<li><a href="#&#x9759;&#x6001;&#x4EE3;&#x7406;">&#x9759;&#x6001;&#x4EE3;&#x7406;</a><ul>
+<li><a href="#&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x53C2;&#x4E0E;&#x8005;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x53C2;&#x4E0E;&#x8005;</a></li>
+<li><a href="#&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;</a></li>
+<li><a href="#&#x9759;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x5B9E;&#x4F8B;">&#x9759;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x5B9E;&#x4F8B;</a></li>
+</ul>
+</li>
+<li><a href="#&#x52A8;&#x6001;&#x4EE3;&#x7406;">&#x52A8;&#x6001;&#x4EE3;&#x7406;</a></li>
+<li><a href="#JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;JDK7&#xFF09;">JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;JDK7&#xFF09;</a><ul>
+<li><a href="#&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#xFF1F;">&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#xFF1F;</a></li>
+<li><a href="#&#x662F;&#x8C01;&#x8C03;&#x7528;&#x4E86;Invoke?">&#x662F;&#x8C01;&#x8C03;&#x7528;&#x4E86;Invoke?</a></li>
+</ul>
+</li>
+<li><a href="#&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</a></li>
+</ul>
+<h2 id="&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5B9A;&#x4E49;</h2>
+<p><a href="https://zh.wikipedia.org/wiki/%E4%BB%A3%E7%90%86%E6%A8%A1%E5%BC%8F" target="_blank">&#x7EF4;&#x57FA;&#x767E;&#x79D1;</a>&#x4E0A;&#x662F;&#x8FD9;&#x6837;&#x63CF;&#x8FF0;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#xFF1A;<strong>&#x6240;&#x8C13;&#x4EE3;&#x7406;&#x8005;&#x662F;&#x6307;&#x4E00;&#x4E2A;&#x7C7B;&#x53EF;&#x4EE5;&#x4F5C;&#x4E3A;&#x5176;&#x4ED6;&#x4E1C;&#x897F;&#x7684;&#x63A5;&#x53E3;</strong>&#x3002;&#x4EE3;&#x7406;&#x8005;&#x53EF;&#x4EE5;&#x4F5C;&#x4EFB;&#x4F55;&#x4E1C;&#x897F;&#x7684;&#x63A5;&#x53E3;, &#x4F8B;&#x5982;&#x7F51;&#x7EDC;&#x8FDE;&#x63A5;&#xFF0C;&#x5B58;&#x50A8;&#x5668;&#x4E2D;&#x7684;&#x5927;&#x5BF9;&#x8C61;&#xFF0C;&#x6587;&#x4EF6;&#x6216;&#x8005;&#x5176;&#x4ED6;&#x65E0;&#x6CD5;&#x590D;&#x5236;&#x7684;&#x8D44;&#x6E90;&#x3002;</p>
+<p>&#x8457;&#x540D;&#x7684;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x4F8B;&#x5B50;&#x5C31;&#x662F;<strong>&#x5F15;&#x7528;&#x8BA1;&#x6570;(reference counting)</strong>: &#x5F53;&#x9700;&#x8981;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x5BF9;&#x8C61;&#x7684;&#x591A;&#x4EFD;&#x526F;&#x672C;&#x65F6;&#xFF0C;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;<strong>&#x4EAB;&#x5143;&#x6A21;&#x5F0F;</strong>&#x4EE5;&#x51CF;&#x5C11;&#x5B58;&#x50A8;&#x5668;&#x7684;&#x7528;&#x91CF;&#x3002;&#x5178;&#x578B;&#x505A;&#x6CD5;&#x662F;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x590D;&#x6742;&#x5BF9;&#x8C61;&#x4EE5;&#x53CA;&#x591A;&#x4E2A;&#x4EE3;&#x7406;&#x8005;&#xFF0C;&#x6BCF;&#x4E2A;&#x4EE3;&#x7406;&#x8005;&#x4F1A;&#x5F15;&#x7528;&#x5230;&#x539F;&#x672C;&#x7684;&#x5BF9;&#x8C61;&#x3002;&#x800C;&#x4F5C;&#x7528;&#x5728;&#x4EE3;&#x7406;&#x8005;&#x7684;&#x8FD0;&#x7B97;&#x4F1A;&#x8F6C;&#x9001;&#x5230;&#x539F;&#x672C;&#x5BF9;&#x8C61;&#x3002;&#x4E00;&#x65E6;&#x6240;&#x6709;&#x7684;&#x4EE3;&#x7406;&#x8005;&#x90FD;&#x4E0D;&#x5B58;&#x5728;&#x65F6;&#xFF0C;&#x590D;&#x6742;&#x5BF9;&#x8C61;&#x4F1A;&#x88AB;&#x79FB;&#x9664;&#x3002;</p>
+<h2 id="&#x9759;&#x6001;&#x4EE3;&#x7406;">&#x9759;&#x6001;&#x4EE3;&#x7406;</h2>
+<p>&#x6240;&#x8C13;&#x9759;&#x6001;&#x4EE3;&#x7406;&#xFF0C;&#x5C31;&#x662F;&#x5728;&#x7F16;&#x8BD1;&#x9636;&#x6BB5;&#x5C31;&#x751F;&#x6210;<strong>&#x4EE3;&#x7406;&#x7C7B;</strong>&#x6765;&#x5B8C;&#x6210;&#x5BF9;&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x7684;&#x4E00;&#x7CFB;&#x5217;&#x64CD;&#x4F5C;&#x3002;&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x7ED3;&#x6784;&#x7C7B;&#x56FE;&#xFF1A;</p>
+<h3 id="&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x53C2;&#x4E0E;&#x8005;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x53C2;&#x4E0E;&#x8005;</h3>
+<p>&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x89D2;&#x8272;&#x5206;&#x56DB;&#x79CD;&#xFF1A;</p>
+<ul>
+<li>&#x4E3B;&#x9898;&#x63A5;&#x53E3;&#xFF1A; &#x5373;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x6240;&#x5B9E;&#x73B0;&#x7684;&#x884C;&#x4E3A;&#x63A5;&#x53E3;&#x3002;</li>
+<li>&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#xFF1A; &#x4E5F;&#x5C31;&#x662F;&#x88AB;&#x4EE3;&#x7406;&#x7684;&#x5BF9;&#x8C61;&#x3002;</li>
+<li>&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#xFF1A; &#x7528;&#x6765;&#x5C01;&#x88C5;&#x771F;&#x662F;&#x4E3B;&#x9898;&#x7C7B;&#x7684;&#x4EE3;&#x7406;&#x7C7B;</li>
+<li>&#x5BA2;&#x6237;&#x7AEF; </li>
+</ul>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x7C7B;&#x56FE;&#x7ED3;&#x6784;&#xFF1A; </p>
+<p><img src="http://i.imgur.com/JS8N5CX.gif" alt=""></p>
+<h3 id="&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x7684;&#x5B9E;&#x73B0;&#x601D;&#x8DEF;</h3>
+<ul>
+<li><strong>&#x4EE3;&#x7406;&#x5BF9;&#x8C61;</strong>&#x548C;<strong>&#x76EE;&#x6807;&#x5BF9;&#x8C61;</strong>&#x5747;&#x5B9E;&#x73B0;<strong>&#x540C;&#x4E00;&#x4E2A;&#x884C;&#x4E3A;&#x63A5;&#x53E3;</strong>&#x3002;</li>
+<li><strong>&#x4EE3;&#x7406;&#x7C7B;</strong>&#x548C;<strong>&#x76EE;&#x6807;&#x7C7B;</strong>&#x5206;&#x522B;&#x5177;&#x4F53;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x903B;&#x8F91;&#x3002;</li>
+<li>&#x5728;<strong>&#x4EE3;&#x7406;&#x7C7B;</strong>&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x4E2D;&#x5B9E;&#x4F8B;&#x5316;&#x4E00;&#x4E2A;<strong>&#x76EE;&#x6807;&#x5BF9;&#x8C61;</strong>&#x3002;</li>
+<li>&#x5728;<strong>&#x4EE3;&#x7406;&#x7C7B;</strong>&#x4E2D;&#x8C03;&#x7528;<strong>&#x76EE;&#x6807;&#x5BF9;&#x8C61;</strong>&#x7684;&#x884C;&#x4E3A;&#x63A5;&#x53E3;&#x3002;</li>
+<li><strong>&#x5BA2;&#x6237;&#x7AEF;</strong>&#x60F3;&#x8981;&#x8C03;&#x7528;<strong>&#x76EE;&#x6807;&#x5BF9;&#x8C61;</strong>&#x7684;&#x884C;&#x4E3A;&#x63A5;&#x53E3;&#xFF0C;&#x53EA;&#x80FD;&#x901A;&#x8FC7;<strong>&#x4EE3;&#x7406;&#x7C7B;</strong>&#x6765;&#x64CD;&#x4F5C;&#x3002;</li>
+</ul>
+<h3 id="&#x9759;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x5B9E;&#x4F8B;">&#x9759;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x5B9E;&#x4F8B;</h3>
+<p>&#x4E0B;&#x9762;&#x4EE5;&#x4E00;&#x4E2A;<strong>&#x5EF6;&#x8FDF;&#x52A0;&#x8F7D;</strong>&#x7684;&#x4F8B;&#x5B50;&#x6765;&#x8BF4;&#x660E;&#x4E00;&#x4E0B;&#x9759;&#x6001;&#x4EE3;&#x7406;&#x3002;&#x6211;&#x4EEC;&#x5728;&#x542F;&#x52A8;&#x67D0;&#x4E2A;&#x670D;&#x52A1;&#x7CFB;&#x7EDF;&#x65F6;&#xFF0C;&#x52A0;&#x8F7D;&#x67D0;&#x4E00;&#x4E2A;&#x7C7B;&#x65F6;&#x53EF;&#x80FD;&#x4F1A;&#x8017;&#x8D39;&#x5F88;&#x957F;&#x65F6;&#x95F4;&#x3002;&#x4E3A;&#x4E86;&#x83B7;&#x53D6;&#x66F4;&#x597D;&#x7684;&#x6027;&#x80FD;&#xFF0C;&#x5728;&#x542F;&#x52A8;&#x7CFB;&#x7EDF;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x6211;&#x4EEC;&#x5F80;&#x5F80;&#x4E0D;&#x53BB;&#x521D;&#x59CB;&#x5316;&#x8FD9;&#x4E2A;&#x590D;&#x6742;&#x7684;&#x7C7B;&#xFF0C;&#x53D6;&#x800C;&#x4EE3;&#x4E4B;&#x7684;&#x662F;&#x53BB;&#x521D;&#x59CB;&#x5316;&#x5176;<strong>&#x4EE3;&#x7406;&#x7C7B;</strong>&#x3002;&#x8FD9;&#x6837;&#x5C06;&#x8017;&#x8D39;&#x8D44;&#x6E90;&#x591A;&#x7684;&#x65B9;&#x6CD5;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x8FDB;&#x884C;&#x5206;&#x79BB;&#xFF0C;&#x53EF;&#x4EE5;&#x52A0;&#x5FEB;&#x7CFB;&#x7EDF;&#x7684;&#x542F;&#x52A8;&#x901F;&#x5EA6;&#xFF0C;&#x51CF;&#x5C11;&#x7528;&#x6237;&#x7B49;&#x5F85;&#x7684;&#x65F6;&#x95F4;&#x3002;</p>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4E3B;&#x9898;&#x63A5;&#x53E3;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Subject</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span></span>;
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayGoodBye</span><span class="hljs-params">()</span></span>;
+}
+</code></pre>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x76EE;&#x6807;&#x7C7B;, &#x5E76;&#x5B9E;&#x73B0;&#x4E3B;&#x9898;&#x63A5;&#x53E3;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">RealSubject</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Subject</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;Hello World&quot;</span>);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayGoodBye</span><span class="hljs-params">()</span> </span>{
+        System.out.println(<span class="hljs-string">&quot;GoodBye World&quot;</span>);
+    }
+}
+</code></pre>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#xFF0C;&#x6765;&#x4EE3;&#x7406;&#x76EE;&#x6807;&#x5BF9;&#x8C61;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">StaticProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Subject</span> </span>{
+
+    Private RealSubject realSubject = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">StaticProxy</span><span class="hljs-params">()</span> </span>{}
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-comment">//&#x7528;&#x5230;&#x65F6;&#x5019;&#x624D;&#x52A0;&#x8F7D;&#xFF0C;&#x61D2;&#x52A0;&#x8F7D;</span>
+        <span class="hljs-keyword">if</span>(realSubject == <span class="hljs-keyword">null</span>) {
+            realSubject = <span class="hljs-keyword">new</span> RealSubject();
+        }
+        realSubject.sayHello();
+    }
+
+    <span class="hljs-comment">//sayGoodbye&#x65B9;&#x6CD5;&#x540C;&#x7406;</span>
+    ...
+}
+</code></pre>
+<ul>
+<li>&#x5B9A;&#x4E49;&#x4E00;&#x4E2A;&#x5BA2;&#x6237;&#x7AEF;</li>
+</ul>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String [] args)</span> </span>{
+        StaticProxy sp = <span class="hljs-keyword">new</span> StaticProxy();
+        sp.sayHello();
+        sp.sayGoodBye();
+    }
+}
+</code></pre>
+<p>&#x4EE5;&#x4E0A;&#x5C31;&#x662F;&#x9759;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x6D4B;&#x8BD5;&#x4F8B;&#x5B50;&#x3002;&#x611F;&#x89C9;&#x53EF;&#x80FD;&#x6CA1;&#x6709;&#x5B9E;&#x9645;&#x7528;&#x9014;&#x3002;&#x7136;&#x800C;&#x5E76;&#x975E;&#x5982;&#x6B64;&#x3002;&#x4F7F;&#x7528;&#x4EE3;&#x7406;&#x6211;&#x4EEC;&#x8FD8;&#x53EF;&#x4EE5;&#x5C06;&#x76EE;&#x6807;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x6539;&#x9020;&#xFF0C;&#x6BD4;&#x5982;<strong>&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;</strong>&#x4E2D;&#x521B;&#x5EFA;&#x4E86;&#x4E00;&#x7CFB;&#x5217;&#x8FDE;&#x63A5;&#xFF0C;&#x4E3A;&#x4E86;&#x4FDD;&#x8BC1;&#x4E0D;&#x9891;&#x7E41;&#x7684;&#x6253;&#x5F00;&#x8FDE;&#x63A5;&#xFF0C;&#x8FD9;&#x4E9B;&#x8FDE;&#x63A5;&#x662F;&#x51E0;&#x4E4E;&#x4E0D;&#x4F1A;&#x5173;&#x95ED;&#x7684;&#x3002;&#x7136;&#x800C;&#x6211;&#x4EEC;&#x7F16;&#x7A0B;&#x603B;&#x6709;&#x4E60;&#x60EF;&#x53BB;&#x5C06;&#x6253;&#x5F00;&#x7684; <code>Connection</code> &#x53BB; <code>close</code> &#x3002; &#x8FD9;&#x6837;&#x6211;&#x4EEC;&#x5C31;&#x53EF;&#x4EE5;&#x5229;&#x7528;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x6765;&#x91CD;&#x65B0;&#x4EE3;&#x7406; <code>Connection</code> &#x63A5;&#x53E3;&#x4E2D;&#x7684; <code>close</code> &#x65B9;&#x6CD5;&#xFF0C;&#x6539;&#x53D8;&#x4E3A;<strong>&#x56DE;&#x6536;&#x5230;&#x6570;&#x636E;&#x5E93;&#x8FDE;&#x63A5;&#x6C60;</strong>&#x4E2D;&#x800C;&#x4E0D;&#x662F;&#x771F;&#x6B63;&#x7684;&#x6267;&#x884C; <code>Connection.close</code> &#x65B9;&#x6CD5;&#x3002;&#x5176;&#x4ED6;&#x7684;&#x4F8B;&#x5B50;&#x8FD8;&#x6709;&#x5F88;&#x591A;&#xFF0C;&#x5177;&#x4F53;&#x9700;&#x8981;&#x81EA;&#x5DF1;&#x4F53;&#x4F1A;&#x3002;</p>
+<h2 id="&#x52A8;&#x6001;&#x4EE3;&#x7406;">&#x52A8;&#x6001;&#x4EE3;&#x7406;</h2>
+<p><strong>&#x52A8;&#x6001;&#x4EE3;&#x7406;</strong>&#x662F;&#x6307;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x52A8;&#x6001;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x3002;&#x5373;&#xFF0C;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x5B57;&#x8282;&#x7801;&#x5C06;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x751F;&#x6210;&#x5E76;&#x8F7D;&#x5165;&#x5F53;&#x524D;&#x4EE3;&#x7406;&#x7684; <code>ClassLoader</code>&#x3002;&#x4E0E;&#x9759;&#x6001;&#x5904;&#x7406;&#x7C7B;&#x76F8;&#x6BD4;&#xFF0C;&#x52A8;&#x6001;&#x7C7B;&#x6709;&#x8BF8;&#x591A;&#x597D;&#x5904;&#x3002;</p>
+<ul>
+<li>&#x4E0D;&#x9700;&#x8981;&#x4E3A;&#x771F;&#x5B9E;&#x4E3B;&#x9898;&#x5199;&#x4E00;&#x4E2A;&#x5F62;&#x5F0F;&#x4E0A;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x7684;&#x5C01;&#x88C5;&#x7C7B;&#xFF0C;&#x5047;&#x5982;&#x4E3B;&#x9898;&#x63A5;&#x53E3;&#x4E2D;&#x7684;&#x65B9;&#x6CD5;&#x5F88;&#x591A;&#xFF0C;&#x4E3A;&#x6BCF;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x5199;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#x4E5F;&#x5F88;&#x9EBB;&#x70E6;&#x3002;&#x5982;&#x679C;&#x63A5;&#x53E3;&#x6709;&#x53D8;&#x52A8;&#xFF0C;&#x5219;&#x771F;&#x5B9E;&#x4E3B;&#x9898;&#x548C;&#x4EE3;&#x7406;&#x7C7B;&#x90FD;&#x8981;&#x4FEE;&#x6539;&#xFF0C;&#x4E0D;&#x5229;&#x4E8E;&#x7CFB;&#x7EDF;&#x7EF4;&#x62A4;&#xFF1B;</li>
+<li>&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x751F;&#x6210;&#x65B9;&#x6CD5;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x5728;&#x8FD0;&#x884C;&#x65F6;&#x5236;&#x5B9A;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x6267;&#x884C;&#x903B;&#x8F91;&#xFF0C;&#x4ECE;&#x800C;&#x5927;&#x5927;&#x63D0;&#x5347;&#x7CFB;&#x7EDF;&#x7684;&#x7075;&#x6D3B;&#x6027;&#x3002;</li>
+</ul>
+<p>&#x751F;&#x6210;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x65B9;&#x6CD5;&#x6709;&#x5F88;&#x591A;&#xFF1A; <strong>JDK&#x4E2D;&#x81EA;&#x5E26;&#x52A8;&#x6001;&#x4EE3;&#x7406;</strong>&#xFF0C;<strong>CGlib</strong>, <strong>javassist</strong>&#x7B49;&#x3002;&#x8FD9;&#x4E9B;&#x65B9;&#x6CD5;&#x5404;&#x6709;&#x4F18;&#x7F3A;&#x70B9;&#x3002;&#x672C;&#x6587;&#x4E3B;&#x8981;&#x63A2;&#x7A76;JDK&#x4E2D;&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x4F7F;&#x7528;&#x548C;&#x6E90;&#x7801;&#x5206;&#x6790;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7528;&#x4E00;&#x4E2A;&#x5B9E;&#x4F8B;&#x8BB2;&#x89E3;&#x4E00;&#x4E0B;JDK&#x4E2D;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7684;&#x7528;&#x6CD5;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">dynamicProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InvocationHandler</span> </span>{
+
+    <span class="hljs-keyword">private</span> RealSubject = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">invoke</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span></span>{
+        <span class="hljs-keyword">if</span>(RealSubject == <span class="hljs-keyword">null</span>) {
+            RealSubject = <span class="hljs-keyword">new</span> RealSubject();
+        }
+        method.invoke(RealSubject, args);
+        <span class="hljs-keyword">return</span> RealSubject;
+    }
+
+}
+</code></pre>
+<p>&#x5BA2;&#x6237;&#x7AEF;&#x4EE3;&#x7801;&#x5B9E;&#x4F8B;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Client</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(Strings[] args)</span> </span>{
+        Subject subject = (Subject)Proxy.newInstance(ClassLoader.getSystemLoader(), RealSubject.class.getInterfaces(), <span class="hljs-keyword">new</span> DynamicProxy());
+        Subject.sayHello();
+        Subject.sayGoodBye();
+    }
+}
+</code></pre>
+<p>&#x4ECE;&#x4E0A;&#x9762;&#x7684;&#x4EE3;&#x7801;&#x53EF;&#x4EE5;&#x770B;&#x51FA;&#xFF0C;&#x8981;&#x5229;&#x7528;JDK&#x4E2D;&#x7684;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x3002;&#x5229;&#x7528;&#x9759;&#x6001;&#x65B9;&#x6CD5;<code>Proxy.newInstance(ClassLoader, Interfaces[], InvokeHandler)</code>&#x53EF;&#x4EE5;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x7C7B;&#x3002; <code>newInstance</code>&#x65B9;&#x6CD5;&#x6709;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5206;&#x522B;&#x8868;&#x793A;<strong>&#x7C7B;&#x52A0;&#x8F7D;&#x5668;</strong>&#xFF0C;<strong>&#x4E00;&#x4E2A;&#x5E0C;&#x671B;&#x8BE5;&#x4EE3;&#x7406;&#x7C7B;&#x5B9E;&#x73B0;&#x7684;&#x63A5;&#x53E3;&#x5217;&#x8868;</strong>&#xFF0C;&#x4EE5;&#x53CA;<strong>&#x5B9E;&#x73B0;<code>InvokeHandler</code>&#x63A5;&#x53E3;&#x7684;&#x5B9E;&#x4F8B;</strong>&#x3002; &#x52A8;&#x6001;&#x4EE3;&#x7406;&#x5C06;&#x6BCF;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x6267;&#x884C;&#x8FC7;&#x7A0B;&#x5219;&#x4EA4;&#x7ED9;&#x4E86;Invoke&#x65B9;&#x6CD5;&#x5904;&#x7406;&#x3002;</p>
+<p><strong>JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x8981;&#x6C42;&#xFF0C;&#x88AB;&#x4EE3;&#x7406;&#x7684;&#x5FC5;&#x987B;&#x662F;&#x4E2A;&#x63A5;&#x53E3;&#xFF0C;&#x5355;&#x7EAF;&#x7684;&#x7C7B;&#x5219;&#x4E0D;&#x884C;</strong>&#x3002;JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x6240;&#x751F;&#x6210;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#x90FD;&#x4F1A;&#x7EE7;&#x627F; <code>Proxy</code> &#x7C7B;&#xFF0C;&#x540C;&#x65F6;&#x4EE3;&#x7406;&#x7C7B;&#x4F1A;&#x5B9E;&#x73B0;&#x6240;&#x6709;&#x4F60;&#x4F20;&#x5165;&#x7684;&#x63A5;&#x53E3;&#x5217;&#x8868;&#x3002;&#x56E0;&#x6B64;&#x53EF;&#x4EE5;&#x5F3A;&#x5236;&#x7C7B;&#x578B;&#x8F6C;&#x6362;&#x6210;&#x63A5;&#x53E3;&#x7C7B;&#x578B;&#x3002; &#x4E0B;&#x9762;&#x662F; <code>Proxy</code> &#x7684;&#x7ED3;&#x6784;&#x56FE;&#x3002;</p>
+<p><img src="http://i.imgur.com/DUrWYF2.jpg" alt=""></p>
+<p>&#x53EF;&#x4EE5;&#x770B;&#x51FA;<code>Proxy</code>&#x5168;&#x662F;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x56E0;&#x6B64;&#x5982;&#x679C;&#x4EE3;&#x7406;&#x7C7B;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x4EFB;&#x4F55;&#x63A5;&#x53E3;&#xFF0C;&#x90A3;&#x4E48;&#x4ED6;&#x5C31;&#x662F;<code>Proxy</code>&#x7C7B;&#x578B;&#xFF0C;&#x6CA1;&#x6709;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5F53;&#x7136;&#x52A0;&#x5165;&#x4F60;&#x8981;&#x662F;&#x975E;&#x8981;&#x4EE3;&#x7406;&#x4E00;&#x4E2A;&#x6CA1;&#x6709;&#x5B9E;&#x73B0;&#x67D0;&#x4E2A;&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#xFF0C;&#x540C;&#x65F6;&#x8BE5;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x4E0E;&#x5176;&#x4ED6;&#x63A5;&#x53E3;&#x5B9A;&#x4E49;&#x7684;&#x65B9;&#x6CD5;&#x76F8;&#x540C;&#xFF0C;&#x5229;&#x7528;<strong>&#x53CD;&#x5C04;</strong>&#x4E5F;&#x662F;&#x53EF;&#x4EE5;&#x8F7B;&#x677E;&#x5B9E;&#x73B0;&#x7684;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">DynamicProxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">InvokeHandler</span> </span>{
+
+    <span class="hljs-comment">//&#x4F60;&#x60F3;&#x4EE3;&#x7406;&#x7684;&#x7C7B;</span>
+    <span class="hljs-keyword">private</span> TargetClass targetClass = <span class="hljs-keyword">null</span>;
+
+    <span class="hljs-comment">//&#x521D;&#x59CB;&#x5316;&#x8BE5;&#x7C7B;</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">DynamicProxy</span><span class="hljs-params">(TargetClass targetClass)</span> </span>{
+        <span class="hljs-keyword">this</span>.targetClass = targetClass;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">invoke</span><span class="hljs-params">(Object proxy, Method method, Object[] args)</span> </span>{
+        <span class="hljs-comment">//&#x5229;&#x7528;&#x53CD;&#x5C04;&#x83B7;&#x53D6;&#x4F60;&#x60F3;&#x4EE3;&#x7406;&#x7684;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;</span>
+        Method myMethod = targetClass.getClass().getDeclaredMethod(method.getName(), method.getParameterTypes());
+        myMethod.setAccessible(<span class="hljs-keyword">true</span>);
+        <span class="hljs-keyword">return</span> myMethod.invoke(targetClass, args);
+    }
+}
+</code></pre>
+<h2 id="jdk&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;jdk7&#xFF09;">JDK&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x6E90;&#x7801;&#x5206;&#x6790;&#xFF08;JDK7&#xFF09;</h2>
+<p>&#x770B;&#x4E86;&#x4E0A;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#xFF0C;&#x6211;&#x4EEC;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x4F1A;&#x7528;&#x52A8;&#x6001;&#x4EE3;&#x7406;&#x3002;&#x4F46;&#x662F;&#x5BF9;&#x4E8E;&#x4EE3;&#x7406;&#x7C7B;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#xFF0C;&#x662F;&#x8C01;&#x8C03;&#x7528;Invoke&#x65B9;&#x6CD5;&#x7B49;&#x8FD8;&#x4E91;&#x91CC;&#x96FE;&#x91CC;&#x3002;&#x4E0B;&#x9762;&#x901A;&#x8FC7;&#x5206;&#x6790;</p>
+<h3 id="&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#xFF1F;">&#x4EE3;&#x7406;&#x5BF9;&#x8C61;&#x662F;&#x5982;&#x4F55;&#x521B;&#x5EFA;&#x51FA;&#x6765;&#x7684;&#xFF1F;</h3>
+<p>&#x9996;&#x5148;&#x770B; <code>Proxy.newInstance</code> &#x65B9;&#x6CD5;&#x7684;&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> Object <span class="hljs-title">newProxyInstance</span><span class="hljs-params">(ClassLoader loader, Class&lt;?&gt;[] interfaces, InvocationHandler h)</span> <span class="hljs-keyword">throws</span> IllegalArgumentException </span>{
+
+    <span class="hljs-comment">//&#x83B7;&#x53D6;&#x63A5;&#x53E3;&#x4FE1;&#x606F;</span>
+    <span class="hljs-keyword">final</span> Class&lt;?&gt;[] intfs = interfaces.clone();
+    <span class="hljs-keyword">final</span> SecurityManager sm = System.getSecurityManager();
+    <span class="hljs-keyword">if</span> (sm != <span class="hljs-keyword">null</span>) {
+        checkProxyAccess(Reflection.getCallerClass(), loader, intfs);
+    }
+
+    <span class="hljs-comment">//&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;</span>
+    Class&lt;?&gt; cl = getProxyClass0(loader, intfs);
+    <span class="hljs-comment">// ...OK&#x6211;&#x4EEC;&#x5148;&#x770B;&#x524D;&#x534A;&#x622A;</span>
+}
+</code></pre>
+<p>&#x4ECE;&#x6E90;&#x7801;&#x770B;&#x51FA;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x751F;&#x6210;&#x662F;&#x4F9D;&#x9760;<code>getProxyClass0</code>&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#xFF0C;&#x63A5;&#x4E0B;&#x6765;&#x770B;<code>getProxyClass0</code>&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Class&lt;?&gt; getProxyClass0(ClassLoader loader, Class&lt;?&gt;... interfaces) {
+
+    <span class="hljs-comment">//&#x63A5;&#x53E3;&#x5217;&#x8868;&#x6570;&#x76EE;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;0xFFFF</span>
+    <span class="hljs-keyword">if</span> (interfaces.length &gt; <span class="hljs-number">65535</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;interface limit exceeded&quot;</span>);
+    }
+
+    <span class="hljs-comment">//&#x6CE8;&#x610F;&#x8FD9;&#x91CC;, &#x4E0B;&#x9762;&#x8BE6;&#x7EC6;&#x89E3;&#x91CA;  </span>
+    <span class="hljs-keyword">return</span> proxyClassCache.get(loader, interfaces);
+}
+</code></pre>
+<p>&#x5BF9; <code>proxyClassCache.get</code> &#x7684;&#x89E3;&#x91CA;&#x662F;&#xFF1A; <strong>&#x5982;&#x679C;&#x5B9E;&#x73B0;&#x63A5;&#x53E3;&#x5217;&#x8868;&#x7684;&#x4EE3;&#x7406;&#x7C7B;&#x5DF2;&#x7ECF;&#x5B58;&#x5728;&#xFF0C;&#x90A3;&#x4E48;&#x76F4;&#x63A5;&#x4ECE;cache&#x4E2D;&#x62FF;&#x3002;&#x5982;&#x679C;&#x4E0D;&#x5B58;&#x5728;&#xFF0C;&#x5219;&#x901A;&#x8FC7;ProxyClassFactory&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x3002;</strong></p>
+<p>&#x5728;&#x770B; <code>proxyClassCache.get</code> &#x6E90;&#x7801;&#x4E4B;&#x524D;&#xFF0C;&#x5148;&#x7B80;&#x5355;&#x4E86;&#x89E3;&#x4E00;&#x4E0B; <code>proxyClassCache</code>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">final</span> WeakCache&lt;ClassLoader, Class&lt;?&gt;[], Class&lt;?&gt;&gt;
+        proxyClassCache = <span class="hljs-keyword">new</span> WeakCache&lt;&gt;(<span class="hljs-keyword">new</span> KeyFactory(), <span class="hljs-keyword">new</span> ProxyClassFactory());
+</code></pre>
+<p><code>proxyClassCache</code>&#x662F;&#x4E00;&#x4E2A;<code>WeakCache</code>&#x7C7B;&#x578B;&#x7684;&#x7F13;&#x5B58;&#xFF0C;&#x5B83;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x6709;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5176;&#x4E2D;&#x4E00;&#x4E2A;&#x5C31;&#x662F;&#x7528;&#x4E8E;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x7684;<code>ProxyClassFactory</code>&#xFF0C;&#x4E0B;&#x9762;&#x662F;<code>proxyClassCache.get</code>&#x7684;&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">WeakCache</span>&lt;<span class="hljs-title">K</span>, <span class="hljs-title">P</span>, <span class="hljs-title">V</span>&gt; </span>{
+    ...
+    <span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">get</span><span class="hljs-params">(K key, P parameter)</span> </span>{}
+}
+</code></pre>
+<p><strong>&#x8FD9;&#x91CC;K&#x8868;&#x793A;key&#xFF0C;P&#x8868;&#x793A;parameters, V&#x8868;&#x793A;value</strong></p>
+<pre><code class="lang-java"><span class="hljs-function"><span class="hljs-keyword">public</span> V <span class="hljs-title">get</span><span class="hljs-params">(K key, P parameter)</span> </span>{
+
+    <span class="hljs-comment">// java7 NullObject&#x5224;&#x65AD;&#x65B9;&#x6CD5;&#xFF0C;&#x5982;&#x679C;parameter&#x4E3A;&#x7A7A;&#x5219;&#x629B;&#x51FA;&#x5E26;&#x6709;&#x6307;&#x5B9A;&#x6D88;&#x606F;&#x7684;&#x5F02;&#x5E38;&#x3002; &#x5982;&#x679C;&#x4E0D;&#x4E3A;&#x7A7A;&#x5219;&#x8FD4;&#x56DE;&#x3002;</span>
+    Objects.requireNonNull(parameter);
+
+    <span class="hljs-comment">// &#x6E05;&#x7406;&#x6301;&#x6709;&#x5F31;&#x5F15;&#x7528;&#x7684;WeakHashMap&#x8FD9;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x4E00;&#x822C;&#x7528;&#x4E8E;&#x7F13;&#x5B58;</span>
+    expungeStaleEntries();
+
+    <span class="hljs-comment">// &#x4ECE;&#x961F;&#x5217;&#x4E2D;&#x83B7;&#x53D6;cacheKey</span>
+    Object cacheKey = CacheKey.valueOf(key, refQueue);
+
+    <span class="hljs-comment">//&#x5229;&#x7528;&#x61D2;&#x52A0;&#x8F7D;&#x7684;&#x65B9;&#x5F0F;&#x586B;&#x5145;Supplier&#xFF0C;Concurrent&#x662F;&#x4E00;&#x79CD;&#x7EBF;&#x7A0B;&#x5B89;&#x5168;&#x7684;map</span>
+    ConcurrentMap&lt;Object, Supplier&lt;V&gt;&gt; valuesMap = map.get(cacheKey);
+    <span class="hljs-keyword">if</span> (valuesMap == <span class="hljs-keyword">null</span>) {
+        ConcurrentMap&lt;Object, Supplier&lt;V&gt;&gt; oldValuesMap = map.putIfAbsent(cacheKey, valuesMap = <span class="hljs-keyword">new</span> ConcurrentHashMap&lt;&gt;());
+        <span class="hljs-keyword">if</span> (oldValuesMap != <span class="hljs-keyword">null</span>) {
+            valuesMap = oldValuesMap;
+        }
+    }
+
+    <span class="hljs-comment">// create subKey and retrieve the possible Supplier&lt;V&gt; stored by that</span>
+    <span class="hljs-comment">// subKey from valuesMap</span>
+    Object subKey = Objects.requireNonNull(subKeyFactory.apply(key, parameter));
+    Supplier&lt;V&gt; supplier = valuesMap.get(subKey);
+    Factory factory = <span class="hljs-keyword">null</span>;
+    <span class="hljs-keyword">while</span> (<span class="hljs-keyword">true</span>) {
+        <span class="hljs-keyword">if</span> (supplier != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">// &#x4ECE;supplier&#x4E2D;&#x83B7;&#x53D6;Value&#xFF0C;&#x8FD9;&#x4E2A;Value&#x53EF;&#x80FD;&#x662F;&#x4E00;&#x4E2A;&#x5DE5;&#x5382;&#x6216;&#x8005;Cache&#x7684;&#x5B9E;</span>
+            <span class="hljs-comment">//&#x4E0B;&#x9762;&#x8FD9;&#x4E09;&#x53E5;&#x4EE3;&#x7801;&#x662F;&#x6838;&#x5FC3;&#x4EE3;&#x7801;&#xFF0C;&#x8FD4;&#x56DE;&#x5B9E;&#x73B0;InvokeHandler&#x7684;&#x7C7B;&#x5E76;&#x5305;&#x542B;&#x4E86;&#x6240;&#x9700;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x3002;</span>
+            V value = supplier.get();
+            <span class="hljs-keyword">if</span> (value != <span class="hljs-keyword">null</span>) {
+                <span class="hljs-keyword">return</span> value;
+            }
+        }
+
+        <span class="hljs-comment">// else no supplier in cache</span>
+        <span class="hljs-comment">// or a supplier that returned null (could be a cleared CacheValue</span>
+        <span class="hljs-comment">// or a Factory that wasn&apos;t successful in installing the CacheValue)</span>
+        <span class="hljs-comment">//&#x4E0B;&#x9762;&#x8FD9;&#x4E2A;&#x8FC7;&#x7A0B;&#x5C31;&#x662F;&#x586B;&#x5145;supplier&#x7684;&#x8FC7;&#x7A0B;</span>
+        <span class="hljs-keyword">if</span>(factory == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">//&#x521B;&#x5EFA;&#x4E00;&#x4E2A;factory</span>
+        }
+        <span class="hljs-keyword">if</span>(supplier == <span class="hljs-keyword">null</span>) {
+            <span class="hljs-comment">//&#x586B;&#x5145;supplier</span>
+        }<span class="hljs-keyword">else</span> {
+            <span class="hljs-comment">//&#x586B;&#x5145;supplier</span>
+        }
+    }
+}
+</code></pre>
+<p><strong>while&#x5FAA;&#x73AF;</strong>&#x7684;&#x4F5C;&#x7528;&#x5C31;&#x662F;&#x4E0D;&#x505C;&#x7684;&#x83B7;&#x53D6;&#x5B9E;&#x73B0;<code>InvokeHandler</code>&#x7684;&#x7C7B;&#xFF0C;&#x8FD9;&#x4E2A;&#x7C7B;&#x53EF;&#x4EE5;&#x662F;&#x4ECE;&#x7F13;&#x5B58;&#x4E2D;&#x62FF;&#x5230;&#xFF0C;&#x4E5F;&#x53EF;&#x662F;&#x662F;&#x4ECE;<code>proxyFactoryClass</code>&#x751F;&#x6210;&#x7684;&#x3002; 
+<code>Factory</code>&#x662F;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;&#x4E86;<code>Supplier&lt;V&gt;</code>&#x63A5;&#x53E3;&#x7684;&#x5185;&#x90E8;&#x7C7B;&#x3002;&#x8FD9;&#x4E2A;&#x7C7B;&#x8986;&#x76D6;&#x4E86;<code>get</code>&#x65B9;&#x6CD5;&#xFF0C;&#x5728;<code>get</code>&#x65B9;&#x6CD5;&#x4E2D;&#x8C03;&#x7528;&#x4E86;&#x7C7B;&#x578B;&#x4E3A;<code>proxyFactoryClass</code>&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;<code>apply</code>&#x3002;&#x8FD9;&#x4E2A;&#x65B9;&#x6CD5;&#x624D;&#x662F;&#x771F;&#x6B63;&#x521B;&#x5EFA;<strong>&#x4EE3;&#x7406;&#x7C7B;</strong>&#x7684;&#x65B9;&#x6CD5;&#x3002;&#x4E0B;&#x9762;&#x770B;<code>ProxyFactoryClass.apply</code>&#x65B9;&#x6CD5;&#x7684;&#x6E90;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> Class&lt;?&gt; apply(ClassLoader loader, Class&lt;?&gt;[] interfaces) {
+    Map&lt;Class&lt;?&gt;, Boolean&gt; interfaceSet = <span class="hljs-keyword">new</span> IdentityHashMap&lt;&gt;(interfaces.length);
+    <span class="hljs-keyword">for</span> (Class&lt;?&gt; intf : interfaces) {
+        <span class="hljs-comment">/*  Verify that the class loader resolves the name of this interface to the same Class object.*/</span>
+        Class&lt;?&gt; interfaceClass = <span class="hljs-keyword">null</span>;
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-comment">//&#x52A0;&#x8F7D;&#x6BCF;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x4FE1;&#x606F;</span>
+            interfaceClass = Class.forName(intf.getName(), <span class="hljs-keyword">false</span>, loader);
+        } <span class="hljs-keyword">catch</span> (ClassNotFoundException e) {
+        }
+
+        <span class="hljs-comment">//&#x5982;&#x679C;&#x4F7F;&#x7528;&#x4F60;&#x81EA;&#x5DF1;&#x7684;classload&#x52A0;&#x8F7D;&#x7684;class&#x4E0E;&#x4F60;&#x4F20;&#x5165;&#x7684;class&#x4E0D;&#x76F8;&#x7B49;&#xFF0C;&#x629B;&#x51FA;&#x5F02;&#x5E38;</span>
+        <span class="hljs-keyword">if</span> (interfaceClass != intf) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(
+            intf + <span class="hljs-string">&quot; is not visible from class loader&quot;</span>);
+        }
+
+        <span class="hljs-comment">//&#x5982;&#x679C;&#x4F20;&#x5165;&#x4E0D;&#x662F;&#x4E00;&#x4E2A;&#x63A5;&#x53E3;&#x7C7B;&#x578B;</span>
+        <span class="hljs-keyword">if</span> (!interfaceClass.isInterface()) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(
+                interfaceClass.getName() + <span class="hljs-string">&quot; is not an interface&quot;</span>);
+        }
+
+         <span class="hljs-comment">//&#x9A8C;&#x8BC1;&#x63A5;&#x53E3;&#x662F;&#x5426;&#x91CD;&#x590D;</span>
+        <span class="hljs-keyword">if</span> (interfaceSet.put(interfaceClass, Boolean.TRUE) != <span class="hljs-keyword">null</span>) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;repeated interface: &quot;</span> + interfaceClass.getName());
+        }
+    }
+
+    String proxyPkg = <span class="hljs-keyword">null</span>;     <span class="hljs-comment">// package to define proxy class in</span>
+    <span class="hljs-comment">/*  Record the package of a non-public proxy interface so that the proxy class will be defined in the same package.  
+    * Verify that all non-public proxy interfaces are in the same package.
+    */</span>
+    <span class="hljs-comment">//&#x8FD9;&#x4E00;&#x6BB5;&#x662F;&#x770B;&#x4F60;&#x4F20;&#x5165;&#x7684;&#x63A5;&#x53E3;&#x4E2D;&#x6709;&#x6CA1;&#x6709;&#x4E0D;&#x662F;public&#x7684;&#x63A5;&#x53E3;&#xFF0C;&#x5982;&#x679C;&#x6709;&#xFF0C;&#x8FD9;&#x4E9B;&#x63A5;&#x53E3;&#x5FC5;&#x987B;&#x5168;&#x90E8;&#x5728;&#x4E00;&#x4E2A;&#x5305;&#x91CC;&#x5B9A;&#x4E49;&#x7684;&#xFF0C;&#x5426;&#x5219;&#x629B;&#x5F02;&#x5E38; </span>
+    <span class="hljs-keyword">for</span> (Class&lt;?&gt; intf : interfaces) {
+        <span class="hljs-keyword">int</span> flags = intf.getModifiers();
+        <span class="hljs-keyword">if</span> (!Modifier.isPublic(flags)) {
+            String name = intf.getName();
+            <span class="hljs-keyword">int</span> n = name.lastIndexOf(<span class="hljs-string">&apos;.&apos;</span>);
+            String pkg = ((n == -<span class="hljs-number">1</span>) ? <span class="hljs-string">&quot;&quot;</span> : name.substring(<span class="hljs-number">0</span>, n + <span class="hljs-number">1</span>));
+            <span class="hljs-keyword">if</span> (proxyPkg == <span class="hljs-keyword">null</span>) {
+                proxyPkg = pkg;
+            } <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (!pkg.equals(proxyPkg)) {
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(
+                    <span class="hljs-string">&quot;non-public interfaces from different packages&quot;</span>);
+            }
+        }
+    }
+    <span class="hljs-keyword">if</span> (proxyPkg == <span class="hljs-keyword">null</span>) {
+        <span class="hljs-comment">// if no non-public proxy interfaces, use com.sun.proxy package</span>
+        proxyPkg = ReflectUtil.PROXY_PACKAGE + <span class="hljs-string">&quot;.&quot;</span>;
+    }
+    <span class="hljs-comment">/*
+    * Choose a name for the proxy class to generate.
+    */</span>
+    <span class="hljs-keyword">long</span> num = nextUniqueNumber.getAndIncrement();
+    <span class="hljs-comment">//&#x751F;&#x6210;&#x968F;&#x673A;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x7C7B;&#x540D;&#xFF0C;$Proxy + num</span>
+    String proxyName = proxyPkg + proxyClassNamePrefix + num;
+    <span class="hljs-comment">/*
+    * &#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x7684;class&#x6587;&#x4EF6;&#xFF0C;&#x8FD4;&#x56DE;&#x5B57;&#x8282;&#x6D41;
+    */</span>
+    <span class="hljs-keyword">byte</span>[] proxyClassFile = ProxyGenerator.generateProxyClass(proxyName, interfaces);
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-keyword">return</span> defineClass0(loader, proxyName, proxyClassFile, <span class="hljs-number">0</span>, proxyClassFile.length);
+    } <span class="hljs-keyword">catch</span> (ClassFormatError e) {
+                <span class="hljs-comment">//&#x7ED3;&#x675F;</span>
+                <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(e.toString());
+            }
+        }
+    }
+}
+</code></pre>
+<p>&#x524D;&#x6587;&#x63D0;&#x5230;<code>ProxyFactoryClass.apply</code>&#x662F;&#x771F;&#x6B63;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x5176;&#x5B9E;&#x662F;&#x4E0D;&#x51C6;&#x786E;&#x7684;&#x3002;&#x6E90;&#x4EE3;&#x7801;&#x8BFB;&#x5230;&#x8FD9;&#x91CC;&#xFF0C;&#x6211;&#x4EEC;&#x4F1A;&#x53D1;&#x73B0;<code>ProxyGenerator.generateProxyClass</code>&#x624D;&#x662F;&#x771F;&#x6B63;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x3002;
+&#x6839;&#x636E;Java class&#x5B57;&#x8282;&#x7801;&#x7EC4;&#x6210;&#x6765;&#x751F;&#x6210;&#x76F8;&#x5E94;&#x7684;Clss&#x6587;&#x4EF6;&#x3002;&#x5177;&#x4F53;<code>ProxyGenerator.generateProxyClass</code>&#x6E90;&#x7801;&#x5982;&#x4E0B;:</p>
+<pre><code class="lang-java"><span class="hljs-keyword">private</span> <span class="hljs-keyword">byte</span>[] generateClassFile() {
+    <span class="hljs-comment">/*
+    * Step 1: Assemble ProxyMethod objects for all methods to
+    * generate proxy dispatching code for.
+    */</span>
+    <span class="hljs-comment">//addProxyMethod&#x65B9;&#x6CD5;&#xFF0C;&#x5C31;&#x662F;&#x5C06;&#x65B9;&#x6CD5;&#x90FD;&#x52A0;&#x5165;&#x5230;&#x4E00;&#x4E2A;&#x5217;&#x8868;&#x4E2D;&#xFF0C;&#x5E76;&#x4E0E;&#x5BF9;&#x5E94;&#x7684;class&#x5BF9;&#x5E94;&#x8D77;&#x6765;  </span>
+    <span class="hljs-comment">//&#x8FD9;&#x91CC;&#x7ED9;Object&#x5BF9;&#x5E94;&#x4E86;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;hashCode&#xFF0C;toString&#x548C;equals  </span>
+    addProxyMethod(hashCodeMethod, Object.class);
+    addProxyMethod(equalsMethod, Object.class);
+    addProxyMethod(toStringMethod, Object.class);
+    <span class="hljs-comment">//&#x5C06;&#x63A5;&#x53E3;&#x5217;&#x8868;&#x4E2D;&#x7684;&#x63A5;&#x53E3;&#x4E0E;&#x63A5;&#x53E3;&#x4E0B;&#x7684;&#x65B9;&#x6CD5;&#x5BF9;&#x5E94;&#x8D77;&#x6765;</span>
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; interfaces.length; i++) {
+        Method[] methods = interfaces[i].getMethods();
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; methods.length; j++) {
+            addProxyMethod(methods[j], interfaces[i]);
+        }
+    }
+    <span class="hljs-comment">/*
+     * For each set of proxy methods with the same signature,
+     * verify that the methods&apos; return types are compatible.
+     */</span>
+    <span class="hljs-keyword">for</span> (List&lt;ProxyMethod&gt; sigmethods : proxyMethods.values()) {
+        checkReturnTypes(sigmethods);
+    }
+    <span class="hljs-comment">/*
+     * Step 2: Assemble FieldInfo and MethodInfo structs for all of
+     * fields and methods in the class we are generating.
+     */</span>
+     <span class="hljs-comment">//&#x65B9;&#x6CD5;&#x4E2D;&#x52A0;&#x5165;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD9;&#x4E2A;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x53EA;&#x6709;&#x4E00;&#x4E2A;&#xFF0C;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x5E26;&#x6709;InvocationHandler&#x63A5;&#x53E3;&#x7684;&#x6784;&#x9020;&#x65B9;&#x6CD5; </span>
+     <span class="hljs-comment">//&#x8FD9;&#x4E2A;&#x624D;&#x662F;&#x771F;&#x6B63;&#x7ED9;class&#x6587;&#x4EF6;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x4EE3;&#x7406;&#x7C7B;&#x52A0;&#x5165;&#x65B9;&#x6CD5;&#x4E86;&#xFF0C;&#x4E0D;&#x8FC7;&#x8FD8;&#x6CA1;&#x771F;&#x6B63;&#x5904;&#x7406;&#xFF0C;&#x53EA;&#x662F;&#x5148;&#x52A0;&#x8FDB;&#x6765;&#x7B49;&#x5F85;&#x5FAA;&#x73AF;&#xFF0C;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#x5728;class&#x6587;&#x4EF6;&#x4E2D;&#x7684;&#x540D;&#x79F0;&#x63CF;&#x8FF0;&#x662F;&lt;init&gt;  </span>
+    <span class="hljs-keyword">try</span> {
+        methods.add(generateConstructor());
+        <span class="hljs-keyword">for</span> (List&lt;ProxyMethod&gt; sigmethods : proxyMethods.values()) {
+            <span class="hljs-keyword">for</span> (ProxyMethod pm : sigmethods) {
+                <span class="hljs-comment">//&#x7ED9;&#x6BCF;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#x52A0;&#x4E00;&#x4E2A;Method&#x7C7B;&#x578B;&#x7684;&#x5C5E;&#x6027;&#xFF0C;&#x6570;&#x5B57;10&#x662F;class&#x6587;&#x4EF6;&#x7684;&#x6807;&#x8BC6;&#x7B26;&#xFF0C;&#x4EE3;&#x8868;&#x8FD9;&#x4E9B;&#x5C5E;&#x6027;&#x90FD;&#x662F;private static&#x7684;  </span>
+                fields.add(<span class="hljs-keyword">new</span> FieldInfo(pm.methodFieldName,
+                <span class="hljs-string">&quot;Ljava/lang/reflect/Method;&quot;</span>,
+                ACC_PRIVATE | ACC_STATIC));
+                <span class="hljs-comment">//&#x5C06;&#x6BCF;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x65B9;&#x6CD5;&#x90FD;&#x52A0;&#x5230;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#x4E2D; </span>
+                methods.add(pm.generateMethod());
+            }
+        }
+        <span class="hljs-comment">//&#x52A0;&#x5165;&#x4E00;&#x4E2A;&#x9759;&#x6001;&#x521D;&#x59CB;&#x5316;&#x5757;&#xFF0C;&#x5C06;&#x6BCF;&#x4E00;&#x4E2A;&#x5C5E;&#x6027;&#x90FD;&#x521D;&#x59CB;&#x5316;&#xFF0C;&#x8FD9;&#x91CC;&#x9759;&#x6001;&#x4EE3;&#x7801;&#x5757;&#x4E5F;&#x53EB;&#x7C7B;&#x6784;&#x9020;&#x65B9;&#x6CD5;&#xFF0C;&#x5176;&#x5B9E;&#x5C31;&#x662F;&#x540D;&#x79F0;&#x4E3A;&lt;clinit&gt;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x6240;&#x4EE5;&#x52A0;&#x5230;&#x65B9;&#x6CD5;&#x5217;&#x8868;  </span>
+        methods.add(generateStaticInitializer());
+    } <span class="hljs-keyword">catch</span> (IOException e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InternalError(<span class="hljs-string">&quot;unexpected I/O Exception&quot;</span>);
+    }
+    <span class="hljs-comment">//&#x65B9;&#x6CD5;&#x548C;&#x5C5E;&#x6027;&#x4E2A;&#x6570;&#x90FD;&#x4E0D;&#x80FD;&#x8D85;&#x8FC7;65535&#xFF0C;&#x5305;&#x62EC;&#x4E4B;&#x524D;&#x7684;&#x63A5;&#x53E3;&#x4E2A;&#x6570;&#x4E5F;&#x662F;&#x8FD9;&#x6837;&#xFF0C;</span>
+    <span class="hljs-comment">//&#x8FD9;&#x662F;&#x56E0;&#x4E3A;&#x5728;class&#x6587;&#x4EF6;&#x4E2D;&#xFF0C;&#x8FD9;&#x4E9B;&#x4E2A;&#x6570;&#x90FD;&#x662F;&#x7528;4&#x4F4D;16&#x8FDB;&#x5236;&#x8868;&#x793A;&#x7684;&#xFF0C;&#x6240;&#x4EE5;&#x6700;&#x5927;&#x503C;&#x662F;2&#x7684;16&#x6B21;&#x65B9;-1  </span>
+    <span class="hljs-keyword">if</span> (methods.size() &gt; <span class="hljs-number">65535</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;method limit exceeded&quot;</span>);
+    }
+    <span class="hljs-keyword">if</span> (fields.size() &gt; <span class="hljs-number">65535</span>) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> IllegalArgumentException(<span class="hljs-string">&quot;field limit exceeded&quot;</span>);
+    }
+    <span class="hljs-comment">//&#x63A5;&#x4E0B;&#x6765;&#x5C31;&#x662F;&#x5199;class&#x6587;&#x4EF6;&#x7684;&#x8FC7;&#x7A0B;&#xFF0C;&#x5305;&#x62EC;&#x9B54;&#x6570;&#xFF0C;&#x7C7B;&#x540D;&#xFF0C;&#x5E38;&#x91CF;&#x6C60;&#x7B49;&#x4E00;&#x7CFB;&#x5217;&#x5B57;&#x8282;&#x7801;&#x7684;&#x7EC4;&#x6210;&#xFF0C;&#x5C31;&#x4E0D;&#x4E00;&#x4E00;&#x7EC6;&#x8BF4;&#x4E86;&#x3002;&#x9700;&#x8981;&#x7684;&#x53EF;&#x4EE5;&#x53C2;&#x8003;JVM&#x865A;&#x62DF;&#x673A;&#x5B57;&#x8282;&#x7801;&#x7684;&#x76F8;&#x5173;&#x77E5;&#x8BC6;&#x3002;</span>
+    cp.getClass(dotToSlash(className));
+    cp.getClass(superclassName);
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; interfaces.length; i++) {
+        cp.getClass(dotToSlash(interfaces[i].getName()));
+    }
+    cp.setReadOnly();
+    ByteArrayOutputStream bout = <span class="hljs-keyword">new</span> ByteArrayOutputStream();
+    DataOutputStream dout = <span class="hljs-keyword">new</span> DataOutputStream(bout);
+    <span class="hljs-keyword">try</span> {
+        <span class="hljs-comment">// u4 magic;</span>
+        dout.writeInt(<span class="hljs-number">0xCAFEBABE</span>);
+        <span class="hljs-comment">// u2 minor_version;</span>
+        dout.writeShort(CLASSFILE_MINOR_VERSION);
+        <span class="hljs-comment">// u2 major_version;</span>
+        dout.writeShort(CLASSFILE_MAJOR_VERSION);
+        cp.write(dout);             <span class="hljs-comment">// (write constant pool)</span>
+        <span class="hljs-comment">// u2 access_flags;</span>
+        dout.writeShort(ACC_PUBLIC | ACC_FINAL | ACC_SUPER);
+        <span class="hljs-comment">// u2 this_class;</span>
+        dout.writeShort(cp.getClass(dotToSlash(className)));
+        <span class="hljs-comment">// u2 super_class;</span>
+        dout.writeShort(cp.getClass(superclassName));
+        <span class="hljs-comment">// u2 interfaces_count;</span>
+        dout.writeShort(interfaces.length);
+
+        <span class="hljs-comment">// u2 interfaces[interfaces_count];</span>
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; interfaces.length; i++) {
+            dout.writeShort(cp.getClass(
+            dotToSlash(interfaces[i].getName())));
+        }
+
+        <span class="hljs-comment">// u2 fields_count;</span>
+        dout.writeShort(fields.size());
+        <span class="hljs-comment">// field_info fields[fields_count];</span>
+        <span class="hljs-keyword">for</span> (FieldInfo f : fields) {
+            f.write(dout);
+        }
+
+        <span class="hljs-comment">// u2 methods_count;</span>
+        dout.writeShort(methods.size());
+        <span class="hljs-comment">// method_info methods[methods_count];</span>
+        <span class="hljs-keyword">for</span> (MethodInfo m : methods) {
+            m.write(dout);
+        }
+        <span class="hljs-comment">// u2 attributes_count;</span>
+        dout.writeShort(<span class="hljs-number">0</span>); <span class="hljs-comment">// (no ClassFile attributes for proxy classes)</span>
+    } <span class="hljs-keyword">catch</span> (IOException e) {
+        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> InternalError(<span class="hljs-string">&quot;unexpected I/O Exception&quot;</span>);
+    }
+    <span class="hljs-keyword">return</span> bout.toByteArray();
+}
+</code></pre>
+<p>&#x7ECF;&#x8FC7;&#x5C42;&#x5C42;&#x8C03;&#x7528;&#xFF0C;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;&#x7EC8;&#x4E8E;&#x751F;&#x6210;&#x4E86;&#x3002;</p>
+<h3 id="&#x662F;&#x8C01;&#x8C03;&#x7528;&#x4E86;invoke">&#x662F;&#x8C01;&#x8C03;&#x7528;&#x4E86;Invoke?</h3>
+<p>&#x6211;&#x4EEC;&#x6A21;&#x62DF;JDK&#x81EA;&#x5DF1;&#x751F;&#x6210;&#x4E00;&#x4E2A;&#x4EE3;&#x7406;&#x7C7B;, &#x7C7B;&#x540D;&#x4E3A;<strong>TestProxyGen</strong>&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestGeneratorProxy</span> </span>{
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> IOException </span>{
+        <span class="hljs-keyword">byte</span>[] classFile = ProxyGenerator.generateProxyClass(<span class="hljs-string">&quot;TestProxyGen&quot;</span>,
+                Subject.class.getInterfaces());
+        File file = <span class="hljs-keyword">new</span> File(<span class="hljs-string">&quot;/Users/yadoao/Desktop/TestProxyGen.class&quot;</span>);
+        FileOutputStream fos = <span class="hljs-keyword">new</span> FileOutputStream(file);  
+        fos.write(classFile);  
+        fos.flush();  
+        fos.close();  
+    }
+}
+</code></pre>
+<p>&#x7528;JD-GUI&#x53CD;&#x7F16;&#x8BD1;&#x8BE5;class&#x6587;&#x4EF6;&#xFF0C;&#x7ED3;&#x679C;&#x5982;&#x4E0B;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">import</span> java.lang.reflect.InvocationHandler;
+<span class="hljs-keyword">import</span> java.lang.reflect.Method;
+<span class="hljs-keyword">import</span> java.lang.reflect.Proxy;
+<span class="hljs-keyword">import</span> java.lang.reflect.UndeclaredThrowableException;
+
+<span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">TestProxyGen</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Proxy</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">ISubject</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Method m3;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Method m1;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Method m0;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Method m4;
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Method m2;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">TestProxyGen</span><span class="hljs-params">(InvocationHandler paramInvocationHandler)</span> <span class="hljs-keyword">throws</span> </span>{
+        <span class="hljs-keyword">super</span>(paramInvocationHandler);
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayHello</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">this</span>.h.invoke(<span class="hljs-keyword">this</span>, m3, <span class="hljs-keyword">null</span>);
+            <span class="hljs-keyword">return</span>;
+        } <span class="hljs-keyword">catch</span> (Error|RuntimeException localError) {
+            <span class="hljs-keyword">throw</span> localError;
+        } <span class="hljs-keyword">catch</span> (Throwable localThrowable) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UndeclaredThrowableException(localThrowable);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">boolean</span> <span class="hljs-title">equals</span><span class="hljs-params">(Object paramObject)</span> <span class="hljs-keyword">throws</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> ((Boolean)<span class="hljs-keyword">this</span>.h.invoke(<span class="hljs-keyword">this</span>, m1, <span class="hljs-keyword">new</span> Object[] { paramObject })).booleanValue();
+        } <span class="hljs-keyword">catch</span> (Error|RuntimeException localError) {
+            <span class="hljs-keyword">throw</span> localError;
+        } <span class="hljs-keyword">catch</span> (Throwable localThrowable) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UndeclaredThrowableException(localThrowable);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">int</span> <span class="hljs-title">hashCode</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> ((Integer)<span class="hljs-keyword">this</span>.h.invoke(<span class="hljs-keyword">this</span>, m0, <span class="hljs-keyword">null</span>)).intValue();
+        } <span class="hljs-keyword">catch</span> (Error|RuntimeException localError) {
+            <span class="hljs-keyword">throw</span> localError;
+        } <span class="hljs-keyword">catch</span> (Throwable localThrowable) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UndeclaredThrowableException(localThrowable);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> <span class="hljs-keyword">void</span> <span class="hljs-title">sayGoodBye</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">this</span>.h.invoke(<span class="hljs-keyword">this</span>, m4, <span class="hljs-keyword">null</span>);
+            <span class="hljs-keyword">return</span>;
+        } <span class="hljs-keyword">catch</span> (Error|RuntimeException localError) {
+            <span class="hljs-keyword">throw</span> localError;
+        } <span class="hljs-keyword">catch</span> (Throwable localThrowable) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UndeclaredThrowableException(localThrowable);
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">final</span> String <span class="hljs-title">toString</span><span class="hljs-params">()</span> <span class="hljs-keyword">throws</span> </span>{
+        <span class="hljs-keyword">try</span> {
+            <span class="hljs-keyword">return</span> (String)<span class="hljs-keyword">this</span>.h.invoke(<span class="hljs-keyword">this</span>, m2, <span class="hljs-keyword">null</span>);
+        } <span class="hljs-keyword">catch</span> (Error|RuntimeException localError) {
+            <span class="hljs-keyword">throw</span> localError;
+        } <span class="hljs-keyword">catch</span> (Throwable localThrowable) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> UndeclaredThrowableException(localThrowable);
+        }
+    }
+
+    <span class="hljs-keyword">static</span> {
+        <span class="hljs-keyword">try</span> {
+            m3 = Class.forName(<span class="hljs-string">&quot;com.su.dynamicProxy.ISubject&quot;</span>).getMethod(<span class="hljs-string">&quot;sayHello&quot;</span>, <span class="hljs-keyword">new</span> Class[<span class="hljs-number">0</span>]);
+            m1 = Class.forName(<span class="hljs-string">&quot;java.lang.Object&quot;</span>).getMethod(<span class="hljs-string">&quot;equals&quot;</span>, <span class="hljs-keyword">new</span> Class[] { Class.forName(<span class="hljs-string">&quot;java.lang.Object&quot;</span>) });
+            m0 = Class.forName(<span class="hljs-string">&quot;java.lang.Object&quot;</span>).getMethod(<span class="hljs-string">&quot;hashCode&quot;</span>, <span class="hljs-keyword">new</span> Class[<span class="hljs-number">0</span>]);
+            m4 = Class.forName(<span class="hljs-string">&quot;com.su.dynamicProxy.ISubject&quot;</span>).getMethod(<span class="hljs-string">&quot;sayGoodBye&quot;</span>, <span class="hljs-keyword">new</span> Class[<span class="hljs-number">0</span>]);
+            m2 = Class.forName(<span class="hljs-string">&quot;java.lang.Object&quot;</span>).getMethod(<span class="hljs-string">&quot;toString&quot;</span>, <span class="hljs-keyword">new</span> Class[<span class="hljs-number">0</span>]);
+            <span class="hljs-keyword">return</span>;
+        } <span class="hljs-keyword">catch</span> (NoSuchMethodException localNoSuchMethodException) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NoSuchMethodError(localNoSuchMethodException.getMessage());
+        } <span class="hljs-keyword">catch</span> (ClassNotFoundException localClassNotFoundException) {
+            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> NoClassDefFoundError(localClassNotFoundException.getMessage());
+        }
+    }
+}
+</code></pre>
+<ul>
+<li>&#x9996;&#x5148;&#x6CE8;&#x610F;&#x5230;&#x751F;&#x6210;&#x4EE3;&#x7406;&#x7C7B;&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x5B83;&#x4F20;&#x5165;&#x4E00;&#x4E2A;&#x5B9E;&#x73B0;InvokeHandler&#x63A5;&#x53E3;&#x7684;&#x7C7B;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x5E76;&#x8C03;&#x7528;&#x7236;&#x7C7B;Proxy&#x7684;&#x6784;&#x9020;&#x5668;&#xFF0C;&#x5373;&#x5C06;Proxy&#x4E2D;&#x7684;&#x6210;&#x5458;&#x53D8;&#x91CF;protected InvokeHander h&#x8FDB;&#x884C;&#x4E86;&#x521D;&#x59CB;&#x5316;&#x3002;</li>
+<li>&#x518D;&#x6B21;&#x6CE8;&#x610F;&#x5230;&#x51E0;&#x4E2A;&#x9759;&#x6001;&#x7684;&#x521D;&#x59CB;&#x5316;&#x5757;&#xFF0C;&#x8FD9;&#x91CC;&#x7684;&#x9759;&#x6001;&#x521D;&#x59CB;&#x5316;&#x5757;&#x5C31;&#x662F;&#x5BF9;&#x4EE3;&#x7406;&#x7684;&#x63A5;&#x53E3;&#x5217;&#x8868;&#x4EE5;&#x53CA;hashcode,toString, equals&#x65B9;&#x6CD5;&#x8FDB;&#x884C;&#x521D;&#x59CB;&#x5316;&#x3002;</li>
+<li>&#x6700;&#x540E;&#x5C31;&#x662F;&#x8FD9;&#x51E0;&#x4E2A;&#x65B9;&#x6CD5;&#x7684;&#x8C03;&#x7528;&#x8FC7;&#x7A0B;&#xFF0C;&#x5168;&#x90FD;&#x662F;&#x56DE;&#x8C03;Invoke&#x65B9;&#x6CD5;&#x3002;</li>
+</ul>
+<p>&#x5C31;&#x6B64;&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5206;&#x6790;&#x5230;&#x6B64;&#x7ED3;&#x675F;&#x3002;</p>
+<h1 id="&#x53C2;&#x8003;&#x6587;&#x732E;">&#x53C2;&#x8003;&#x6587;&#x732E;</h1>
+<ul>
+<li><a href="https://www.ibm.com/developerworks/cn/java/j-lo-proxy-pattern/" target="_blank">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x539F;&#x7406;&#x53CA;&#x5B9E;&#x4F8B;&#x8BB2;&#x89E3;</a> </li>
+<li><a href="http://blog.csdn.net/zuoxiaolong8810/article/details/9026775" target="_blank">&#x4EE3;&#x7406;&#x6A21;&#x5F0F;&#x5B66;&#x4E60;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="singleton.html" class="navigation navigation-prev " aria-label="Previous page: 如何正确地写出单例模式">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="strategy.html" class="navigation navigation-next " aria-label="Next page: 什么是策略模式">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"代理模式剖析","level":"1.3.2","depth":2,"next":{"title":"什么是策略模式","level":"1.3.3","depth":2,"path":"designpatterns/strategy.md","ref":"designpatterns/strategy.md","articles":[]},"previous":{"title":"如何正确地写出单例模式","level":"1.3.1","depth":2,"path":"designpatterns/singleton.md","ref":"designpatterns/singleton.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"designpatterns/proxy.md","mtime":"2017-09-01T15:31:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-01T16:57:38.335Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

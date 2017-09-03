@@ -1,0 +1,1448 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>设计一个IOC · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="4.principle.html" />
+    
+    
+    <link rel="prev" href="2.spring.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../开源组件实现.html">
+            
+                <a href="../开源组件实现.html">
+            
+                    
+                    开源组件实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../mvc/MVC框架实现篇.html">
+            
+                <a href="../mvc/MVC框架实现篇.html">
+            
+                    
+                    MVC框架实现篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../mvc/">
+            
+                <a href="../mvc/">
+            
+                    
+                    MVC框架实现篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../mvc/1.plan.html">
+            
+                <a href="../mvc/1.plan.html">
+            
+                    
+                    项目规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../mvc/2.route.html">
+            
+                <a href="../mvc/2.route.html">
+            
+                    
+                    路由设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../mvc/3.controller.html">
+            
+                <a href="../mvc/3.controller.html">
+            
+                    
+                    控制器设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../mvc/4.config.html">
+            
+                <a href="../mvc/4.config.html">
+            
+                    
+                    配置设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../mvc/5.view.html">
+            
+                <a href="../mvc/5.view.html">
+            
+                    
+                    视图设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../mvc/6.dbutil.html">
+            
+                <a href="../mvc/6.dbutil.html">
+            
+                    
+                    数据库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../mvc/7.crud.html">
+            
+                <a href="../mvc/7.crud.html">
+            
+                    
+                    增删改查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="IOC容器实现篇.html">
+            
+                <a href="IOC容器实现篇.html">
+            
+                    
+                    IOC容器实现篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="1.concept.html">
+            
+                <a href="1.concept.html">
+            
+                    
+                    IOC的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="2.spring.html">
+            
+                <a href="2.spring.html">
+            
+                    
+                    Spring中怎么用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.2.2.3" data-path="3.myioc.html">
+            
+                <a href="3.myioc.html">
+            
+                    
+                    设计一个IOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="4.principle.html">
+            
+                <a href="4.principle.html">
+            
+                    
+                    原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../设计模式系列.html">
+            
+                <a href="../设计模式系列.html">
+            
+                    
+                    设计模式系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../designpatterns/singleton.html">
+            
+                <a href="../designpatterns/singleton.html">
+            
+                    
+                    如何正确地写出单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../designpatterns/proxy.html">
+            
+                <a href="../designpatterns/proxy.html">
+            
+                    
+                    代理模式剖析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../designpatterns/strategy.html">
+            
+                <a href="../designpatterns/strategy.html">
+            
+                    
+                    什么是策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Java8系列.html">
+            
+                <a href="../Java8系列.html">
+            
+                    
+                    Java8系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../java8/java8-guide.html">
+            
+                <a href="../java8/java8-guide.html">
+            
+                    
+                    Java8简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../java8/foreach.html">
+            
+                <a href="../java8/foreach.html">
+            
+                    
+                    Java8 Foreach
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Hexo搭建博客.html">
+            
+                <a href="../Hexo搭建博客.html">
+            
+                    
+                    Hexo搭建博客
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../hexo/hello.html">
+            
+                <a href="../hexo/hello.html">
+            
+                    
+                    分分钟部署一个Hexo环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../hexo/config.html">
+            
+                <a href="../hexo/config.html">
+            
+                    
+                    各种配置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../hexo/writing.html">
+            
+                <a href="../hexo/writing.html">
+            
+                    
+                    开始写作吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../开发者指南.html">
+            
+                <a href="../开发者指南.html">
+            
+                    
+                    开发者指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../git/guide.html">
+            
+                <a href="../git/guide.html">
+            
+                    
+                    git - 简明指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <a target="_blank" href="https://waylau.gitbooks.io/jersey-2-user-guide/content/index.html">
+            
+                    
+                    Jersey-2.x用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <a target="_blank" href="https://waylau.gitbooks.io/rest-in-action/content/">
+            
+                    
+                    REST 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <a target="_blank" href="https://github.com/waylau/servlet-3.1-specification">
+            
+                    
+                    Java Servlet 3.1 规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <a target="_blank" href="http://mybatis.github.io/mybatis-3/zh/index.html">
+            
+                    
+                    MyBatis中文指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <a target="_blank" href="https://github.com/waylau/apache-shiro-1.2.x-reference">
+            
+                    
+                    Apache Shiro 用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <a target="_blank" href="https://github.com/qibaoguang/Spring-Boot-Reference-Guide/blob/master/SUMMARY.md">
+            
+                    
+                    Spring Boot参考指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <a target="_blank" href="https://github.com/waylau/netty-4-user-guide/blob/master/SUMMARY.md">
+            
+                    
+                    Netty4 用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../user_guide/google-java8-guide.html">
+            
+                <a href="../user_guide/google-java8-guide.html">
+            
+                    
+                    Google Java编程风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../运维相关.html">
+            
+                <a href="../运维相关.html">
+            
+                    
+                    运维相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../web/test_tool.html">
+            
+                <a href="../web/test_tool.html">
+            
+                    
+                    Web性能测试工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <a target="_blank" href="https://github.com/judasn/Linux-Tutorial">
+            
+                    
+                    Java 程序员眼中的 Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../learn_server/">
+            
+                <a href="../learn_server/">
+            
+                    
+                    写给java开发的运维笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../经典文章.html">
+            
+                <a href="../经典文章.html">
+            
+                    
+                    经典文章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../articles/request_message.html">
+            
+                <a href="../articles/request_message.html">
+            
+                    
+                    HTTP请求报文解剖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../articles/software_architecture_patterns.html">
+            
+                <a href="../articles/software_architecture_patterns.html">
+            
+                    
+                    软件架构模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="../articles/electrical-business-architecture.html">
+            
+                <a href="../articles/electrical-business-architecture.html">
+            
+                    
+                    电商网站架构案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../服务器相关.html">
+            
+                <a href="../服务器相关.html">
+            
+                    
+                    服务器/域名/SSL证书
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <a target="_blank" href="https://domainr.com">
+            
+                    
+                    可用域名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <a target="_blank" href="http://hk.hostsir.com/Affiliates/i/d/976">
+            
+                    
+                    优惠域名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" >
+            
+                <a target="_blank" href="http://www.vultr.com/?ref=6886447">
+            
+                    
+                    vultr VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" >
+            
+                <a target="_blank" href="https://sshdropbear.net/">
+            
+                    
+                    免费VPN/SSH服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" >
+            
+                <a target="_blank" href="http://get.ishadow.website/">
+            
+                    
+                    免费SS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" >
+            
+                <span>
+            
+                    
+                    1小时免费VPN
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" >
+            
+                <a target="_blank" href="https://saki.ssl.do/aff.php?aff=11">
+            
+                    
+                    SSL.DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" >
+            
+                <a target="_blank" href="http://api.hostinger.com.hk/redir/22018310">
+            
+                    
+                    免费虚拟主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../实用工具.html">
+            
+                <a href="../实用工具.html">
+            
+                    
+                    实用工具/API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" >
+            
+                <a target="_blank" href="https://tinypng.com/">
+            
+                    
+                    PNG图片无损压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/image-watermark/">
+            
+                    
+                    在线给图片加水印
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/password/">
+            
+                    
+                    随机密码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" >
+            
+                <a target="_blank" href="https://randomuser.me/">
+            
+                    
+                    随机头像生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/tcleaner/">
+            
+                    
+                    微博一键清理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" >
+            
+                <a target="_blank" href="http://csscompressor.com/">
+            
+                    
+                    CSS压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" >
+            
+                <a target="_blank" href="http://www.atool.org/">
+            
+                    
+                    在线工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >设计一个IOC</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;ioc">&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;IOC</h1>
+<p>&#x6211;&#x4EEC;&#x8981;&#x81EA;&#x5DF1;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;IOC&#xFF0C;&#x90A3;&#x4E48;&#x76EE;&#x6807;&#x662F;&#x4EC0;&#x4E48;&#x5462;&#xFF1F;
+&#x6211;&#x4EEC;&#x7684;IOC&#x5BB9;&#x5668;&#x8981;&#x53EF;&#x4EE5;&#x5B58;&#x50A8;&#x5BF9;&#x8C61;&#xFF0C;&#x8FD8;&#x8981;&#x6709;&#x6CE8;&#x89E3;&#x6CE8;&#x5165;&#x7684;&#x529F;&#x80FD;&#x5373;&#x53EF;&#x3002;</p>
+<p>Java&#x8BED;&#x8A00;&#x5141;&#x8BB8;&#x901A;&#x8FC7;&#x7A0B;&#x5E8F;&#x5316;&#x7684;&#x65B9;&#x5F0F;&#x95F4;&#x63A5;&#x5BF9;Class&#x8FDB;&#x884C;&#x64CD;&#x4F5C;&#xFF0C;Class&#x6587;&#x4EF6;&#x7531;&#x7C7B;&#x88C5;&#x8F7D;&#x5668;&#x88C5;&#x8F7D;&#x540E;&#xFF0C;&#x5728;JVM&#x4E2D;&#x5C06;&#x5F62;&#x6210;&#x4E00;&#x4EFD;&#x63CF;&#x8FF0;Class&#x7ED3;&#x6784;&#x7684;&#x5143;&#x4FE1;&#x606F;&#x5BF9;&#x8C61;&#xFF0C;&#x901A;&#x8FC7;&#x8BE5;&#x5143;&#x4FE1;&#x606F;&#x5BF9;&#x8C61;&#x53EF;&#x4EE5;&#x83B7;&#x77E5;Class&#x7684;&#x7ED3;&#x6784;&#x4FE1;&#x606F;&#xFF1A;&#x5982;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#x7B49;&#x3002;Java&#x5141;&#x8BB8;&#x7528;&#x6237;&#x501F;&#x7531;&#x8FD9;&#x4E2A;Class&#x76F8;&#x5173;&#x7684;&#x5143;&#x4FE1;&#x606F;&#x5BF9;&#x8C61;&#x95F4;&#x63A5;&#x8C03;&#x7528;Class&#x5BF9;&#x8C61;&#x7684;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x5C31;&#x4E3A;&#x4F7F;&#x7528;&#x7A0B;&#x5E8F;&#x5316;&#x65B9;&#x5F0F;&#x64CD;&#x4F5C;Class&#x5BF9;&#x8C61;&#x5F00;&#x8F9F;&#x4E86;&#x9014;&#x5F84;&#x3002; </p>
+<p>&#x6211;&#x4EEC;&#x5C06;&#x4ECE;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x4F8B;&#x5B50;&#x5F00;&#x59CB;&#x63A2;&#x8BBF;Java&#x53CD;&#x5C04;&#x673A;&#x5236;&#x7684;&#x5F81;&#x7A0B;&#xFF0C;&#x4E0B;&#x9762;&#x7684;Hero&#x7C7B;&#x62E5;&#x6709;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3001;&#x4E94;&#x4E2A;&#x65B9;&#x6CD5;&#x4EE5;&#x53CA;&#x4E24;&#x4E2A;&#x5C5E;&#x6027;&#xFF0C;&#x5982;&#x4EE3;&#x7801;&#x6E05;&#x5355;&#x6240;&#x793A;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * LOL&#x82F1;&#x96C4;
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Hero</span> </span>{
+
+    <span class="hljs-comment">// &#x82F1;&#x96C4;&#x540D;&#x79F0;</span>
+    <span class="hljs-keyword">private</span> String name;
+    <span class="hljs-comment">// &#x88C5;&#x5907;&#x540D;&#x79F0;</span>
+    <span class="hljs-keyword">private</span> String outfit;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">Hero</span><span class="hljs-params">()</span> </span>{
+
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getName</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> name;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setName</span><span class="hljs-params">(String name)</span> </span>{
+        <span class="hljs-keyword">this</span>.name = name;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> String <span class="hljs-title">getOutfit</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> outfit;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">setOutfit</span><span class="hljs-params">(String outfit)</span> </span>{
+        <span class="hljs-keyword">this</span>.outfit = outfit;
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">say</span><span class="hljs-params">()</span></span>{
+        System.out.println(name + <span class="hljs-string">&quot;&#x8D2D;&#x4E70;&#x4E86;&quot;</span> + outfit);
+    }
+}
+</code></pre>
+<p>&#x6D4B;&#x8BD5;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Test</span> </span>{
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> <span class="hljs-keyword">throws</span> Exception </span>{
+        <span class="hljs-comment">//1. &#x901A;&#x8FC7;&#x7C7B;&#x88C5;&#x8F7D;&#x5668;&#x83B7;&#x53D6;Hero&#x7C7B;&#x5BF9;&#x8C61;  </span>
+        ClassLoader loader = Thread.currentThread().getContextClassLoader();   
+        Class&lt;?&gt; clazz = loader.loadClass(<span class="hljs-string">&quot;com.biezhi.ioc.Hero&quot;</span>);   
+
+        <span class="hljs-comment">//2. &#x83B7;&#x53D6;&#x7C7B;&#x7684;&#x9ED8;&#x8BA4;&#x6784;&#x9020;&#x5668;&#x5BF9;&#x8C61;&#x5E76;&#x901A;&#x8FC7;&#x5B83;&#x5B9E;&#x4F8B;&#x5316;Hero  </span>
+        Constructor&lt;?&gt; cons = clazz.getDeclaredConstructor((Class[])<span class="hljs-keyword">null</span>);   
+        Hero hero = (Hero)cons.newInstance();  
+
+        <span class="hljs-comment">//3. &#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x65B9;&#x6CD5;&#x8BBE;&#x7F6E;&#x5C5E;&#x6027;  </span>
+        Method setBrand = clazz.getMethod(<span class="hljs-string">&quot;setName&quot;</span>, String.class);
+        setBrand.invoke(hero, <span class="hljs-string">&quot;&#x5C0F;&#x9C7C;&#x4EBA;&quot;</span>);
+        Method setColor = clazz.getMethod(<span class="hljs-string">&quot;setOutfit&quot;</span>, String.class);
+        setColor.invoke(hero, <span class="hljs-string">&quot;&#x7206;&#x88C2;&#x9B54;&#x6756;&quot;</span>);
+
+        <span class="hljs-comment">// 4. &#x8FD0;&#x884C;&#x65B9;&#x6CD5;</span>
+        hero.say();
+    }
+}
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x4E86;&#xFF1A; <code>&#x5C0F;&#x9C7C;&#x4EBA;&#x8D2D;&#x4E70;&#x4E86;&#x7206;&#x88C2;&#x9B54;&#x6756;</code></p>
+<p>&#x8FD9;&#x8BF4;&#x660E;&#x6211;&#x4EEC;&#x5B8C;&#x5168;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;&#x7F16;&#x7A0B;&#x65B9;&#x5F0F;&#x8C03;&#x7528;Class&#x7684;&#x5404;&#x9879;&#x529F;&#x80FD;&#xFF0C;&#x8FD9;&#x548C;&#x76F4;&#x63A5;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x548C;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x7C7B;&#x529F;&#x80FD;&#x7684;&#x6548;&#x679C;&#x662F;&#x4E00;&#x81F4;&#x7684;&#xFF0C;&#x53EA;&#x4E0D;&#x8FC7;&#x524D;&#x8005;&#x662F;&#x95F4;&#x63A5;&#x8C03;&#x7528;&#xFF0C;&#x540E;&#x8005;&#x662F;&#x76F4;&#x63A5;&#x8C03;&#x7528;&#x7F62;&#x4E86;&#x3002; </p>
+<p>&#x5728;Test&#x4E2D;&#xFF0C;&#x4F7F;&#x7528;&#x4E86;&#x51E0;&#x4E2A;&#x91CD;&#x8981;&#x7684;&#x53CD;&#x5C04;&#x7C7B;&#xFF0C;&#x5206;&#x522B;&#x662F;ClassLoader&#x3001;Class&#x3001;Constructor&#x548C;Method&#xFF0C;&#x901A;&#x8FC7;&#x8FD9;&#x4E9B;&#x53CD;&#x5C04;&#x7C7B;&#x5C31;&#x53EF;&#x4EE5;&#x95F4;&#x63A5;&#x8C03;&#x7528;&#x76EE;&#x6807;Class&#x7684;&#x5404;&#x9879;&#x529F;&#x80FD;&#x4E86;&#x3002;&#x5728;&#x2460;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x83B7;&#x53D6;&#x5F53;&#x524D;&#x7EBF;&#x7A0B;&#x7684;ClassLoader&#xFF0C;&#x7136;&#x540E;&#x901A;&#x8FC7;&#x6307;&#x5B9A;&#x7684;&#x5168;&#x9650;&#x5B9A;&#x7C7B;<code>&quot;com.biezhi.ioc.Hero&quot;</code>&#x88C5;&#x8F7D;Hero&#x7C7B;&#x5BF9;&#x5E94;&#x7684;&#x53CD;&#x5C04;&#x5B9E;&#x4F8B;&#x3002;&#x5728;&#x2461;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x901A;&#x8FC7;Hero&#x7684;&#x53CD;&#x5C04;&#x7C7B;&#x5BF9;&#x8C61;&#x83B7;&#x53D6;Hero&#x7684;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5BF9;&#x8C61;cons&#xFF0C;&#x901A;&#x8FC7;&#x6784;&#x9020;&#x51FD;&#x6570;&#x5BF9;&#x8C61;&#x7684;newInstrance()&#x65B9;&#x6CD5;&#x5B9E;&#x4F8B;&#x5316;Hero&#x5BF9;&#x8C61;&#xFF0C;&#x5176;&#x6548;&#x679C;&#x7B49;&#x540C;&#x4E8E;new Hero()&#x3002;&#x5728;&#x2462;&#x5904;&#xFF0C;&#x6211;&#x4EEC;&#x53C8;&#x901A;&#x8FC7;Hero&#x7684;&#x53CD;&#x5C04;&#x7C7B;&#x5BF9;&#x8C61;&#x7684;getMethod&#xFF08;String methodName,Class paramClass&#xFF09;&#x83B7;&#x53D6;&#x5C5E;&#x6027;&#x7684;Setter&#x65B9;&#x6CD5;&#x5BF9;&#x8C61;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x76EE;&#x6807;Class&#x7684;&#x65B9;&#x6CD5;&#x540D;&#xFF1B;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x65B9;&#x6CD5;&#x5165;&#x53C2;&#x7684;&#x5BF9;&#x8C61;&#x7C7B;&#x578B;&#x3002;&#x83B7;&#x53D6;&#x65B9;&#x6CD5;&#x53CD;&#x5C04;&#x5BF9;&#x8C61;&#x540E;&#xFF0C;&#x5373;&#x53EF;&#x901A;&#x8FC7;invoke&#xFF08;Object obj,Object param&#xFF09;&#x65B9;&#x6CD5;&#x8C03;&#x7528;&#x76EE;&#x6807;&#x7C7B;&#x7684;&#x65B9;&#x6CD5;&#xFF0C;&#x8BE5;&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x64CD;&#x4F5C;&#x7684;&#x76EE;&#x6807;&#x7C7B;&#x5BF9;&#x8C61;&#x5B9E;&#x4F8B;&#xFF1B;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x76EE;&#x6807;&#x65B9;&#x6CD5;&#x7684;&#x5165;&#x53C2;&#x3002; </p>
+<p>&#x7B2C;&#x4E09;&#x6B65;&#x662F;&#x901A;&#x8FC7;&#x53CD;&#x5C04;&#x65B9;&#x6CD5;&#x64CD;&#x63A7;&#x76EE;&#x6807;&#x7C7B;&#x7684;&#x5143;&#x4FE1;&#x606F;&#xFF0C;&#x5982;&#x679C;&#x6211;&#x4EEC;&#x5C06;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x4EE5;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x6587;&#x4EF6;&#x7684;&#x65B9;&#x5F0F;&#x63D0;&#x4F9B;&#xFF0C;&#x5C31;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;Java&#x8BED;&#x8A00;&#x7684;&#x53CD;&#x5C04;&#x529F;&#x80FD;&#x7F16;&#x5199;&#x4E00;&#x6BB5;&#x901A;&#x7528;&#x7684;&#x4EE3;&#x7801;&#x5BF9;&#x7C7B;&#x4F3C;&#x4E8E;Hero&#x7684;&#x7C7B;&#x8FDB;&#x884C;&#x5B9E;&#x4F8B;&#x5316;&#x53CA;&#x529F;&#x80FD;&#x8C03;&#x7528;&#x64CD;&#x4F5C;&#x4E86;&#x3002; </p>
+<p>&#x7B80;&#x5355;&#x7684;&#x4F8B;&#x5B50;&#x8BF4;&#x5B8C;&#x4E86;&#xFF0C;&#x6211;&#x4EEC;&#x5F00;&#x59CB;&#x8BBE;&#x8BA1;&#x4E00;&#x4E2A;&#x81EA;&#x5DF1;&#x7684;IOC&#x5BB9;&#x5668;&#xFF0C;&#x505A;&#x51FA;&#x8FD9;&#x4E2A;&#x4E1C;&#x4E1C;&#x540E;&#x518D;&#x6765;&#x770B;&#x90A3;&#x4E9B;&#x590D;&#x6742;&#x7684;&#x539F;&#x7406;&#x3002;</p>
+<p>&#x9996;&#x5148;&#x8BBE;&#x8BA1;&#x63A5;&#x53E3;&#xFF0C;&#x4E00;&#x4E2A;IOC&#x5BB9;&#x5668;&#x4E2D;&#x6700;&#x6838;&#x5FC3;&#x7684;&#x5F53;&#x5C5E;&#x5BB9;&#x5668;&#x63A5;&#x53E3;&#xFF0C;&#x6765;&#x4E00;&#x4E2A;Container&#x3002;</p>
+<p>&#x90A3;&#x4E48;&#x5BB9;&#x5668;&#x91CC;&#x5E94;&#x8BE5;&#x6709;&#x4EC0;&#x4E48;&#x5462;&#xFF0C;&#x6211;&#x60F3;&#x5B83;&#x81F3;&#x5C11;&#x8981;&#x6709;&#x5B58;&#x50A8;&#x548C;&#x79FB;&#x9664;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x7684;&#x80FD;&#x529B;&#xFF0C;&#x5176;&#x6B21;&#x53EF;&#x4EE5;&#x542B;&#x62EC;&#x66F4;&#x591A;&#x7684;&#x83B7;&#x53D6;&#x548C;&#x6CE8;&#x518C;&#x5BF9;&#x8C61;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * IOC&#x5BB9;&#x5668;
+ * <span class="hljs-doctag">@author</span> biezhi
+ *
+ */</span>
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">interface</span> <span class="hljs-title">Container</span> </span>{
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;Class&#x83B7;&#x53D6;Bean
+     * <span class="hljs-doctag">@param</span> clazz
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">getBean</span><span class="hljs-params">(Class&lt;T&gt; clazz)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x540D;&#x79F0;&#x83B7;&#x53D6;Bean
+     * <span class="hljs-doctag">@param</span> name
+     * <span class="hljs-doctag">@return</span>
+     */</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">getBeanByName</span><span class="hljs-params">(String name)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x6CE8;&#x518C;&#x4E00;&#x4E2A;Bean&#x5230;&#x5BB9;&#x5668;&#x4E2D;
+     * <span class="hljs-doctag">@param</span> object
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">registerBean</span><span class="hljs-params">(Object bean)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x6CE8;&#x518C;&#x4E00;&#x4E2A;Class&#x5230;&#x5BB9;&#x5668;&#x4E2D;
+     * <span class="hljs-doctag">@param</span> clazz
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">registerBean</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x6CE8;&#x518C;&#x4E00;&#x4E2A;&#x5E26;&#x540D;&#x79F0;&#x7684;Bean&#x5230;&#x5BB9;&#x5668;&#x4E2D;
+     * <span class="hljs-doctag">@param</span> name
+     * <span class="hljs-doctag">@param</span> bean
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">registerBean</span><span class="hljs-params">(String name, Object bean)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x5220;&#x9664;&#x4E00;&#x4E2A;bean
+     * <span class="hljs-doctag">@param</span> clazz
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x6839;&#x636E;&#x540D;&#x79F0;&#x5220;&#x9664;&#x4E00;&#x4E2A;bean
+     * <span class="hljs-doctag">@param</span> name
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeByName</span><span class="hljs-params">(String name)</span></span>;
+
+    <span class="hljs-comment">/**
+     * <span class="hljs-doctag">@return</span>    &#x8FD4;&#x56DE;&#x6240;&#x6709;bean&#x5BF9;&#x8C61;&#x540D;&#x79F0;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Set&lt;String&gt; <span class="hljs-title">getBeanNames</span><span class="hljs-params">()</span></span>;
+
+    <span class="hljs-comment">/**
+     * &#x521D;&#x59CB;&#x5316;&#x88C5;&#x914D;
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initWired</span><span class="hljs-params">()</span></span>;
+}
+</code></pre>
+<p>&#x90A3;&#x4E48;&#x6211;&#x5199;&#x4E00;&#x4E2A;&#x7B80;&#x5355;&#x7684;&#x5B9E;&#x73B0;&#x4EE3;&#x7801;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-comment">/**
+ * &#x5BB9;&#x5668;&#x7B80;&#x5355;&#x5B9E;&#x73B0;
+ * <span class="hljs-doctag">@author</span> biezhi
+ */</span>
+<span class="hljs-meta">@SuppressWarnings</span>(<span class="hljs-string">&quot;unchecked&quot;</span>)
+<span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">SampleContainer</span> <span class="hljs-keyword">implements</span> <span class="hljs-title">Container</span> </span>{
+
+    <span class="hljs-comment">/**
+     * &#x4FDD;&#x5B58;&#x6240;&#x6709;bean&#x5BF9;&#x8C61;&#xFF0C;&#x683C;&#x5F0F;&#x4E3A; com.xxx.Person : @52x2xa
+     */</span>
+    <span class="hljs-keyword">private</span> Map&lt;String, Object&gt; beans;
+
+    <span class="hljs-comment">/**
+     * &#x5B58;&#x50A8;bean&#x548C;name&#x7684;&#x5173;&#x7CFB;
+     */</span>
+    <span class="hljs-keyword">private</span> Map&lt;String, String&gt; beanKeys;
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-title">SampleContainer</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">this</span>.beans = <span class="hljs-keyword">new</span> ConcurrentHashMap&lt;String, Object&gt;();
+        <span class="hljs-keyword">this</span>.beanKeys = <span class="hljs-keyword">new</span> ConcurrentHashMap&lt;String, String&gt;();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">getBean</span><span class="hljs-params">(Class&lt;T&gt; clazz)</span> </span>{
+        String name = clazz.getName();
+        Object object = beans.get(name);
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != object){
+            <span class="hljs-keyword">return</span> (T) object;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-keyword">public</span> &lt;T&gt; <span class="hljs-function">T <span class="hljs-title">getBeanByName</span><span class="hljs-params">(String name)</span> </span>{
+        String className = beankeys.get(name);
+        Object obj = beans.get(className);
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != object){
+            <span class="hljs-keyword">return</span> (T) object;
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">registerBean</span><span class="hljs-params">(Object bean)</span> </span>{
+        String name = bean.getClass().getName();
+        beanKeys.put(name, name);
+        beans.put(name, bean);
+        <span class="hljs-keyword">return</span> bean;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">registerBean</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span> </span>{
+        String name = clazz.getName();
+        beanKeys.put(name, name);
+        Object bean = ReflectUtil.newInstance(clazz);
+        beans.put(name, bean);
+        <span class="hljs-keyword">return</span> bean;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Object <span class="hljs-title">registerBean</span><span class="hljs-params">(String name, Object bean)</span> </span>{
+        String className = bean.getClass().getName();
+        beanKeys.put(name, className);
+        beans.put(className, bean);
+        <span class="hljs-keyword">return</span> bean;
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> Set&lt;String&gt; <span class="hljs-title">getBeanNames</span><span class="hljs-params">()</span> </span>{
+        <span class="hljs-keyword">return</span> beanKeys.keySet();
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">remove</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span> </span>{
+        String className = clazz.getName();
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != className &amp;&amp; !className.equals(<span class="hljs-string">&quot;&quot;</span>)){
+            beanKeys.remove(className);
+            beans.remove(className);
+        }
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">removeByName</span><span class="hljs-params">(String name)</span> </span>{
+        String className = beanKeys.get(name);
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != className &amp;&amp; !className.equals(<span class="hljs-string">&quot;&quot;</span>)){
+            beanKeys.remove(name);
+            beans.remove(className);
+        }
+    }
+
+    <span class="hljs-meta">@Override</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">initWired</span><span class="hljs-params">()</span> </span>{
+        Iterator&lt;Entry&lt;String, Object&gt;&gt; it = beans.entrySet().iterator();
+        <span class="hljs-keyword">while</span> (it.hasNext()) {
+            Map.Entry&lt;String, Object&gt; entry = (Map.Entry&lt;String, Object&gt;) it.next();
+            Object object = entry.getValue();
+            injection(object);
+        }
+    }
+
+    <span class="hljs-comment">/**
+     * &#x6CE8;&#x5165;&#x5BF9;&#x8C61;
+     * <span class="hljs-doctag">@param</span> object
+     */</span>
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">void</span> <span class="hljs-title">injection</span><span class="hljs-params">(Object object)</span> </span>{
+        <span class="hljs-comment">// &#x6240;&#x6709;&#x5B57;&#x6BB5;</span>
+        <span class="hljs-keyword">try</span> {
+            Field[] fields = object.getClass().getDeclaredFields();
+            <span class="hljs-keyword">for</span> (Field field : fields) {
+                <span class="hljs-comment">// &#x9700;&#x8981;&#x6CE8;&#x5165;&#x7684;&#x5B57;&#x6BB5;</span>
+                AutoWired autoWired = field.getAnnotation(autoWired.class);
+                <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> != autoWired) {
+
+                    <span class="hljs-comment">// &#x8981;&#x6CE8;&#x5165;&#x7684;&#x5B57;&#x6BB5;</span>
+                    Object autoWiredField = <span class="hljs-keyword">null</span>;
+
+                    String name = autoWired.name();
+                    <span class="hljs-keyword">if</span>(!name.equals(<span class="hljs-string">&quot;&quot;</span>)){
+                        String className = beanKeys.get(name);
+                        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != className &amp;&amp; !className.equals(<span class="hljs-string">&quot;&quot;</span>)){
+                            autoWiredField = beans.get(className);
+                        }
+                        <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> == autoWiredField) {
+                            <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Unable to load &quot;</span> + name);
+                        }
+                    } <span class="hljs-keyword">else</span> {
+                        <span class="hljs-keyword">if</span>(autoWired.value() == Class.class){
+                            autoWiredField = recursiveAssembly(field.getType());
+                        } <span class="hljs-keyword">else</span> {
+                            <span class="hljs-comment">// &#x6307;&#x5B9A;&#x88C5;&#x914D;&#x7684;&#x7C7B;</span>
+                            autoWiredField = <span class="hljs-keyword">this</span>.getBean(autoWired.value());
+                            <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> == autoWiredField) {
+                                autoWiredField = recursiveAssembly(autoWired.value());
+                            }
+                        }
+                    }
+
+                    <span class="hljs-keyword">if</span> (<span class="hljs-keyword">null</span> == autoWiredField) {
+                        <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> RuntimeException(<span class="hljs-string">&quot;Unable to load &quot;</span> + field.getType().getCanonicalName());
+                    }
+
+                    <span class="hljs-keyword">boolean</span> accessible = field.isAccessible();
+                    field.setAccessible(<span class="hljs-keyword">true</span>);
+                    field.set(object, autoWiredField);
+                    field.setAccessible(accessible);
+                }
+            }
+        } <span class="hljs-keyword">catch</span> (SecurityException e) {
+            e.printStackTrace();
+        } <span class="hljs-keyword">catch</span> (IllegalArgumentException e) {
+            e.printStackTrace();
+        } <span class="hljs-keyword">catch</span> (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">private</span> Object <span class="hljs-title">recursiveAssembly</span><span class="hljs-params">(Class&lt;?&gt; clazz)</span></span>{
+        <span class="hljs-keyword">if</span>(<span class="hljs-keyword">null</span> != clazz){
+            <span class="hljs-keyword">return</span> <span class="hljs-keyword">this</span>.registerBean(clazz);
+        }
+        <span class="hljs-keyword">return</span> <span class="hljs-keyword">null</span>;
+    }
+
+}
+</code></pre>
+<p>&#x8FD9;&#x91CC;&#x5C06;&#x6240;&#x6709;Bean&#x7684;&#x540D;&#x79F0;&#x5B58;&#x50A8;&#x5728; <code>beanKeys</code> &#x8FD9;&#x4E2A;map&#x4E2D;&#xFF0C;&#x5C06;&#x6240;&#x6709;&#x7684;&#x5BF9;&#x8C61;&#x5B58;&#x50A8;&#x5728; <code>beans</code> &#x4E2D;&#xFF0C;&#x7528; <code>beanKeys</code> &#x7EF4;&#x62A4;&#x540D;&#x79F0;&#x548C;&#x5BF9;&#x8C61;&#x7684;&#x5173;&#x7CFB;&#x3002;</p>
+<p>&#x5728;&#x88C5;&#x914D;&#x7684;&#x65F6;&#x5019;&#x6B65;&#x9AA4;&#x5982;&#x4E0B;&#xFF1A;</p>
+<ol>
+<li>&#x5224;&#x65AD;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E86;&#x81EA;&#x5B9A;&#x4E49;&#x547D;&#x540D;&#x7684;&#x5BF9;&#x8C61;&#xFF08;&#x662F;&#xFF1A;&#x6839;&#x636E;name&#x67E5;&#x627E;bean&#xFF09;</li>
+<li>&#x5224;&#x65AD;&#x662F;&#x5426;&#x4F7F;&#x7528;&#x4E86;Class&#x7C7B;&#x578B;Bean&#xFF08;&#x662F;&#xFF1A;&#x6839;&#x636E;Class&#x67E5;&#x627E;Bean&#xFF0C;&#x5982;&#x679C;&#x67E5;&#x627E;&#x4E0D;&#x5230;&#x5219;&#x521B;&#x5EFA;&#x4E00;&#x4E2A;&#x65E0;&#x53C2;&#x6784;&#x9020;&#x51FD;&#x6570;&#x7684;Bean&#xFF09;</li>
+</ol>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x6D4B;&#x8BD5;&#xFF1A;</p>
+<pre><code class="lang-java"><span class="hljs-keyword">public</span> <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">IocTest</span> </span>{
+
+    <span class="hljs-keyword">private</span> <span class="hljs-keyword">static</span> Container container = <span class="hljs-keyword">new</span> SampleContainer();
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">baseTest</span><span class="hljs-params">()</span></span>{
+        container.registerBean(Lol.class);
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x6CE8;&#x5165;</span>
+        container.initWired();
+
+        Lol lol = container.getBean(Lol.class);
+        lol.work();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">iocClassTest</span><span class="hljs-params">()</span></span>{
+        container.registerBean(Lol2.class);
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x6CE8;&#x5165;</span>
+        container.initWired();
+
+        Lol2 lol = container.getBean(Lol2.class);
+        lol.work();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">iocNameTest</span><span class="hljs-params">()</span></span>{
+        container.registerBean(<span class="hljs-string">&quot;face&quot;</span>, <span class="hljs-keyword">new</span> FaceService2());
+        container.registerBean(Lol3.class);
+        <span class="hljs-comment">// &#x521D;&#x59CB;&#x5316;&#x6CE8;&#x5165;</span>
+        container.initWired();
+
+        Lol3 lol = container.getBean(Lol3.class);
+        lol.work();
+    }
+
+    <span class="hljs-function"><span class="hljs-keyword">public</span> <span class="hljs-keyword">static</span> <span class="hljs-keyword">void</span> <span class="hljs-title">main</span><span class="hljs-params">(String[] args)</span> </span>{
+        baseTest();
+        <span class="hljs-comment">//iocClassTest();</span>
+        <span class="hljs-comment">//iocNameTest();</span>
+    }
+
+}
+</code></pre>
+<p>&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF1A;</p>
+<pre><code class="lang-sh">&#x5251;&#x5723;&#x4E70;&#x4E86;5&#x6BDB;&#x94B1;&#x7279;&#x6548;&#xFF0C;&#x88C5;&#x903C;&#x6210;&#x529F;!
+</code></pre>
+<p><a href="https://github.com/junicorn/easy-ioc/tree/master/src/test/java/com/junicorn/ioc/test" target="_blank">&#x4EE3;&#x7801;&#x51FA;&#x5904;</a></p>
+<h2 id="links">links</h2>
+<ul>
+<li><a href="index.md">&#x76EE;&#x5F55;</a></li>
+<li>&#x4E0A;&#x4E00;&#x8282;: <a href="2.spring.html">Spring&#x4E2D;&#x600E;&#x4E48;&#x7528;</a></li>
+<li>&#x4E0B;&#x4E00;&#x8282;&#xFF1A;<a href="4.principle.html">&#x539F;&#x7406;&#x5206;&#x6790;</a></li>
+</ul>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="2.spring.html" class="navigation navigation-prev " aria-label="Previous page: Spring中怎么用">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="4.principle.html" class="navigation navigation-next " aria-label="Next page: 原理分析">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"设计一个IOC","level":"1.2.2.3","depth":3,"next":{"title":"原理分析","level":"1.2.2.4","depth":3,"path":"ioc/4.principle.md","ref":"ioc/4.principle.md","articles":[]},"previous":{"title":"Spring中怎么用","level":"1.2.2.2","depth":3,"path":"ioc/2.spring.md","ref":"ioc/2.spring.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"ioc/3.myioc.md","mtime":"2017-09-01T15:31:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-01T16:57:38.335Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

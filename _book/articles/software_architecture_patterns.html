@@ -1,0 +1,1151 @@
+
+<!DOCTYPE HTML>
+<html lang="" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>软件架构模式 · GitBook</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        
+        
+        
+    
+    <link rel="stylesheet" href="../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+        
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="electrical-business-architecture.html" />
+    
+    
+    <link rel="prev" href="request_message.html" />
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="Type to search" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../">
+            
+                <a href="../">
+            
+                    
+                    介绍
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../开源组件实现.html">
+            
+                <a href="../开源组件实现.html">
+            
+                    
+                    开源组件实现
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../mvc/MVC框架实现篇.html">
+            
+                <a href="../mvc/MVC框架实现篇.html">
+            
+                    
+                    MVC框架实现篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1.1" data-path="../mvc/">
+            
+                <a href="../mvc/">
+            
+                    
+                    MVC框架实现篇
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.2" data-path="../mvc/1.plan.html">
+            
+                <a href="../mvc/1.plan.html">
+            
+                    
+                    项目规划
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.3" data-path="../mvc/2.route.html">
+            
+                <a href="../mvc/2.route.html">
+            
+                    
+                    路由设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.4" data-path="../mvc/3.controller.html">
+            
+                <a href="../mvc/3.controller.html">
+            
+                    
+                    控制器设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.5" data-path="../mvc/4.config.html">
+            
+                <a href="../mvc/4.config.html">
+            
+                    
+                    配置设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.6" data-path="../mvc/5.view.html">
+            
+                <a href="../mvc/5.view.html">
+            
+                    
+                    视图设计
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.7" data-path="../mvc/6.dbutil.html">
+            
+                <a href="../mvc/6.dbutil.html">
+            
+                    
+                    数据库操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.1.8" data-path="../mvc/7.crud.html">
+            
+                <a href="../mvc/7.crud.html">
+            
+                    
+                    增删改查
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../ioc/IOC容器实现篇.html">
+            
+                <a href="../ioc/IOC容器实现篇.html">
+            
+                    
+                    IOC容器实现篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.2.1" data-path="../ioc/1.concept.html">
+            
+                <a href="../ioc/1.concept.html">
+            
+                    
+                    IOC的概念
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.2" data-path="../ioc/2.spring.html">
+            
+                <a href="../ioc/2.spring.html">
+            
+                    
+                    Spring中怎么用
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.3" data-path="../ioc/3.myioc.html">
+            
+                <a href="../ioc/3.myioc.html">
+            
+                    
+                    设计一个IOC
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2.4" data-path="../ioc/4.principle.html">
+            
+                <a href="../ioc/4.principle.html">
+            
+                    
+                    原理分析
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../设计模式系列.html">
+            
+                <a href="../设计模式系列.html">
+            
+                    
+                    设计模式系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../designpatterns/singleton.html">
+            
+                <a href="../designpatterns/singleton.html">
+            
+                    
+                    如何正确地写出单例模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../designpatterns/proxy.html">
+            
+                <a href="../designpatterns/proxy.html">
+            
+                    
+                    代理模式剖析
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../designpatterns/strategy.html">
+            
+                <a href="../designpatterns/strategy.html">
+            
+                    
+                    什么是策略模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../Java8系列.html">
+            
+                <a href="../Java8系列.html">
+            
+                    
+                    Java8系列
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../java8/java8-guide.html">
+            
+                <a href="../java8/java8-guide.html">
+            
+                    
+                    Java8简明教程
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../java8/foreach.html">
+            
+                <a href="../java8/foreach.html">
+            
+                    
+                    Java8 Foreach
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../Hexo搭建博客.html">
+            
+                <a href="../Hexo搭建博客.html">
+            
+                    
+                    Hexo搭建博客
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../hexo/hello.html">
+            
+                <a href="../hexo/hello.html">
+            
+                    
+                    分分钟部署一个Hexo环境
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../hexo/config.html">
+            
+                <a href="../hexo/config.html">
+            
+                    
+                    各种配置详解
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../hexo/writing.html">
+            
+                <a href="../hexo/writing.html">
+            
+                    
+                    开始写作吧
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../开发者指南.html">
+            
+                <a href="../开发者指南.html">
+            
+                    
+                    开发者指南
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../git/guide.html">
+            
+                <a href="../git/guide.html">
+            
+                    
+                    git - 简明指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" >
+            
+                <a target="_blank" href="https://waylau.gitbooks.io/jersey-2-user-guide/content/index.html">
+            
+                    
+                    Jersey-2.x用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" >
+            
+                <a target="_blank" href="https://waylau.gitbooks.io/rest-in-action/content/">
+            
+                    
+                    REST 实战
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" >
+            
+                <a target="_blank" href="https://github.com/waylau/servlet-3.1-specification">
+            
+                    
+                    Java Servlet 3.1 规范
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" >
+            
+                <a target="_blank" href="http://mybatis.github.io/mybatis-3/zh/index.html">
+            
+                    
+                    MyBatis中文指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" >
+            
+                <a target="_blank" href="https://github.com/waylau/apache-shiro-1.2.x-reference">
+            
+                    
+                    Apache Shiro 用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" >
+            
+                <a target="_blank" href="https://github.com/qibaoguang/Spring-Boot-Reference-Guide/blob/master/SUMMARY.md">
+            
+                    
+                    Spring Boot参考指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" >
+            
+                <a target="_blank" href="https://github.com/waylau/netty-4-user-guide/blob/master/SUMMARY.md">
+            
+                    
+                    Netty4 用户指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../user_guide/google-java8-guide.html">
+            
+                <a href="../user_guide/google-java8-guide.html">
+            
+                    
+                    Google Java编程风格指南
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../运维相关.html">
+            
+                <a href="../运维相关.html">
+            
+                    
+                    运维相关
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../web/test_tool.html">
+            
+                <a href="../web/test_tool.html">
+            
+                    
+                    Web性能测试工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" >
+            
+                <a target="_blank" href="https://github.com/judasn/Linux-Tutorial">
+            
+                    
+                    Java 程序员眼中的 Linux
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../learn_server/">
+            
+                <a href="../learn_server/">
+            
+                    
+                    写给java开发的运维笔记
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../经典文章.html">
+            
+                <a href="../经典文章.html">
+            
+                    
+                    经典文章
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="request_message.html">
+            
+                <a href="request_message.html">
+            
+                    
+                    HTTP请求报文解剖
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.8.2" data-path="software_architecture_patterns.html">
+            
+                <a href="software_architecture_patterns.html">
+            
+                    
+                    软件架构模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.3" data-path="electrical-business-architecture.html">
+            
+                <a href="electrical-business-architecture.html">
+            
+                    
+                    电商网站架构案例
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../服务器相关.html">
+            
+                <a href="../服务器相关.html">
+            
+                    
+                    服务器/域名/SSL证书
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" >
+            
+                <a target="_blank" href="https://domainr.com">
+            
+                    
+                    可用域名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" >
+            
+                <a target="_blank" href="http://hk.hostsir.com/Affiliates/i/d/976">
+            
+                    
+                    优惠域名
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" >
+            
+                <a target="_blank" href="http://www.vultr.com/?ref=6886447">
+            
+                    
+                    vultr VPS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" >
+            
+                <a target="_blank" href="https://sshdropbear.net/">
+            
+                    
+                    免费VPN/SSH服务
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" >
+            
+                <a target="_blank" href="http://get.ishadow.website/">
+            
+                    
+                    免费SS
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" >
+            
+                <span>
+            
+                    
+                    1小时免费VPN
+            
+                </span>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" >
+            
+                <a target="_blank" href="https://saki.ssl.do/aff.php?aff=11">
+            
+                    
+                    SSL.DO
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" >
+            
+                <a target="_blank" href="http://api.hostinger.com.hk/redir/22018310">
+            
+                    
+                    免费虚拟主机
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../实用工具.html">
+            
+                <a href="../实用工具.html">
+            
+                    
+                    实用工具/API
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" >
+            
+                <a target="_blank" href="https://tinypng.com/">
+            
+                    
+                    PNG图片无损压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/image-watermark/">
+            
+                    
+                    在线给图片加水印
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/password/">
+            
+                    
+                    随机密码生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" >
+            
+                <a target="_blank" href="https://randomuser.me/">
+            
+                    
+                    随机头像生成
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" >
+            
+                <a target="_blank" href="http://tool.c7sky.com/tcleaner/">
+            
+                    
+                    微博一键清理工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" >
+            
+                <a target="_blank" href="http://csscompressor.com/">
+            
+                    
+                    CSS压缩
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" >
+            
+                <a target="_blank" href="http://www.atool.org/">
+            
+                    
+                    在线工具
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            Published with GitBook
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href=".." >软件架构模式</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <h1 id="&#x8F6F;&#x4EF6;&#x67B6;&#x6784;&#x6A21;&#x5F0F;">&#x8F6F;&#x4EF6;&#x67B6;&#x6784;&#x6A21;&#x5F0F;</h1>
+<p><img src="http://i.imgur.com/3GFrpZ5.jpg" alt=""></p>
+<h2 id="&#x76EE;&#x5F55;">&#x76EE;&#x5F55;</h2>
+<h2 id="&#x7B80;&#x4ECB;">&#x7B80;&#x4ECB;</h2>
+<p>&#x5BF9;&#x7A0B;&#x5E8F;&#x5458;&#x6765;&#x8BF4;&#x5F88;&#x5E38;&#x89C1;&#x4E00;&#x79CD;&#x60C5;&#x51B5;&#x662F;&#x5728;&#x6CA1;&#x6709;&#x5408;&#x7406;&#x7684;&#x7A0B;&#x5E8F;&#x67B6;&#x6784;&#x65F6;&#x5C31;&#x5F00;&#x59CB;&#x7F16;&#x7A0B;&#xFF0C;&#x6CA1;&#x6709;&#x4E00;&#x4E2A;&#x6E05;&#x6670;&#x7684;&#x548C;&#x5B9A;&#x4E49;&#x597D;&#x7684;&#x67B6;&#x6784;&#x7684;&#x65F6;&#x5019;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x5F00;&#x53D1;&#x8005;&#x548C;&#x67B6;&#x6784;&#x5E08;&#x901A;&#x5E38;&#x4F1A;&#x4F7F;&#x7528;&#x6807;&#x51C6;&#x5F0F;&#x7684;&#x4F20;&#x7EDF;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#xFF08;&#x4E5F;&#x88AB;&#x79F0;&#x4E3A;&#x591A;&#x5C42;&#x67B6;&#x6784;&#xFF09;&#x2014;&#x901A;&#x8FC7;&#x5C06;&#x6E90;&#x7801;&#x6A21;&#x5757;&#x5206;&#x5272;&#x4E3A;&#x51E0;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x5C42;&#x5230;&#x4E0D;&#x540C;&#x7684;&#x5305;&#x4E2D;&#x3002;&#x4E0D;&#x5E78;&#x7684;&#x662F;&#xFF0C;&#x8FD9;&#x79CD;&#x7F16;&#x7801;&#x65B9;&#x5F0F;&#x4F1A;&#x5BFC;&#x81F4;&#x4E00;&#x7CFB;&#x5217;&#x6CA1;&#x6709;&#x7EC4;&#x7EC7;&#x6027;&#x7684;&#x4EE3;&#x7801;&#x6A21;&#x5757;&#xFF0C;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x7F3A;&#x4E4F;&#x660E;&#x786E;&#x7684;&#x89C4;&#x5219;&#x3001;&#x804C;&#x8D23;&#x548C;&#x540C;&#x5176;&#x4ED6;&#x6A21;&#x5757;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x8054;&#x3002;&#x8FD9;&#x901A;&#x5E38;&#x88AB;&#x79F0;&#x4E3A;&#x67B6;&#x6784;&#x5927;&#x6CE5;&#x7403;&#x3002;</p>
+<p>&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7F3A;&#x4E4F;&#x5408;&#x7406;&#x7684;&#x67B6;&#x6784;&#x4E00;&#x822C;&#x4F1A;&#x5BFC;&#x81F4;&#x7A0B;&#x5E8F;&#x8FC7;&#x5EA6;&#x8026;&#x5408;&#x3001;&#x5BB9;&#x6613;&#x88AB;&#x7834;&#x574F;&#x3001;&#x96BE;&#x4EE5;&#x5E94;&#x5BF9;&#x53D8;&#x5316;&#xFF0C;&#x540C;&#x65F6;&#x5F88;&#x96BE;&#x6709;&#x4E2A;&#x6E05;&#x6670;&#x7684;&#x7248;&#x672C;&#x6216;&#x8005;&#x65B9;&#x5411;&#x6027;&#x3002;&#x8FD9;&#x6837;&#x7684;&#x7ED3;&#x679C;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x4F60;&#x6CA1;&#x6709;&#x5145;&#x5206;&#x7406;&#x89E3;&#x7A0B;&#x5E8F;&#x7CFB;&#x7EDF;&#x91CC;&#x6BCF;&#x4E2A;&#x7EC4;&#x4EF6;&#x548C;&#x6A21;&#x5757;&#xFF0C;&#x5C31;&#x5F88;&#x96BE;&#x5B9A;&#x4E49;&#x8FD9;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x7ED3;&#x6784;&#x7279;&#x5F81;&#x3002;&#x6709;&#x5173;&#x4E8E;&#x7A0B;&#x5E8F;&#x7684;&#x90E8;&#x7F72;&#x548C;&#x7EF4;&#x62A4;&#x7684;&#x57FA;&#x672C;&#x95EE;&#x9898;&#x90FD;&#x96BE;&#x4EE5;&#x56DE;&#x7B54;&#xFF0C;&#x6BD4;&#x5982;&#xFF1A;&#x7A0B;&#x5E8F;&#x67B6;&#x6784;&#x662F;&#x4EC0;&#x4E48;&#x89C4;&#x6A21;?&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6709;&#x4EC0;&#x4E48;&#x6027;&#x80FD;&#x7279;&#x70B9;?&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x6709;&#x591A;&#x5BB9;&#x6613;&#x5E94;&#x5BF9;&#x53D8;&#x5316;?&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x90E8;&#x7F72;&#x7279;&#x70B9;&#x662F;&#x4EC0;&#x4E48;?&#x67B6;&#x6784;&#x662F;&#x5982;&#x4F55;&#x53CD;&#x5E94;&#x7684;?</p>
+<p>&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x5E2E;&#x52A9;&#x4F60;&#x5B9A;&#x4E49;&#x5E94;&#x7528;&#x7A0B;&#x5E8F;&#x7684;&#x57FA;&#x672C;&#x7279;&#x5F81;&#x548C;&#x884C;&#x4E3A;&#x3002;&#x4F8B;&#x5982;&#xFF0C;&#x4E9B;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x4F1A;&#x8BA9;&#x7A0B;&#x5E8F;&#x81EA;&#x5DF1;&#x81EA;&#x7136;&#x2F7D;&#x800C;&#x7136;&#x5730;&#x671D;&#x7740;&#x5177;&#x6709;&#x826F; &#x597D;&#x4F38;&#x7F29;&#x6027;&#x7684;&#x65B9;&#x5411;&#x53D1;&#x5C55;&#xFF0C;&#x2F7D;&#x800C;&#x5176;&#x4ED6;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x4F1A;&#x8BA9;&#x7A0B;&#x5E8F;&#x671D;&#x7740;&#x9AD8;&#x5EA6;&#x7075;&#x6D3B;&#x7684;&#x65B9;&#x5411;&#x53D1;&#x5C55;&#x3002;&#x77E5;&#x9053;&#x4E86;&#x8FD9;&#x4E9B;&#x7279;&#x70B9;&#xFF0C;&#x4E86;&#x89E3;&#x67B6;&#x6784;&#x6A21;&#x5F0F; &#x7684;&#x4F18;&#x70B9;&#x548C;&#x7F3A;&#x70B9;&#x662F;&#x975E;&#x5E38;&#x5FC5;&#x8981;&#x7684;&#xFF0C;&#x5B83;&#x5E2E;&#x52A9;&#x6211;&#x4EEC;&#x9009;&#x62E9;&#x4E2A;&#x9002;&#x5408;&#x81EA;&#x5DF1;&#x7279;&#x5B9A;&#x7684;&#x4E1A;&#x52A1;&#x9700;&#x6C42;&#x548C;&#x76EE;&#x6807;&#x7684;&#x7684;&#x7A0B;&#x5E8F;&#x3002;</p>
+<p>&#x4F5C;&#x4E3A;&#x4E2A;&#x67B6;&#x6784;&#x5E08;,&#x4F60;&#x5FC5;&#x987B;&#x8BC1;&#x660E;&#x4F60;&#x7684;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x7684;&#x51B3;&#x7B56;&#x662F;&#x6B63;&#x786E;&#x7684;,&#x7279;&#x522B;&#x662F;&#x5F53;&#x9700;&#x8981;&#x9009;&#x62E9;&#x4E00;&#x4E2A;&#x7279;&#x5B9A;&#x7684;&#x4F53;&#x7CFB;&#x7ED3;&#x6784;&#x6A21;&#x5F0F;&#x6216;&#x65B9;&#x6CD5; &#x7684;&#x65F6;&#x5019;&#x3002;&#x8FD9;&#x672C;&#x8FF7;&#x4F60;&#x4E66;&#x7684;&#x76EE;&#x7684;&#x5C31;&#x662F;&#x7ED9;&#x4F60;&#x2F9C;&#x8DB3;&#x591F;&#x7684;&#x4FE1;&#x606F;&#x8BA9;&#x4F60;&#x53BB;&#x505A;&#x51FA;&#x6B63;&#x786E;&#x7684;&#x67B6;&#x6784;&#x51B3;&#x7B56;&#x3002;</p>
+<h2 id="&#x7B2C;&#x4E00;&#x7AE0;-&#x5206;&#x5C42;&#x67B6;&#x6784;">&#x7B2C;&#x4E00;&#x7AE0; &#x5206;&#x5C42;&#x67B6;&#x6784;</h2>
+<p>&#x5206;&#x5C42;&#x67B6;&#x6784;&#x662F;&#x4E00;&#x79CD;&#x5F88;&#x5E38;&#x2EC5;&#x89C1;&#x7684;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#xFF0C;&#x5B83;&#x4E5F;&#x53EB;N&#x5C42;&#x67B6;&#x6784;&#x3002;&#x8FD9;&#x79CD;&#x67B6;&#x6784;&#x662F;&#x5927;&#x591A;&#x6570;Jave EE&#x5E94;&#x7528;&#x7684;&#x5B9E;&#x9645;&#x6807;&#x51C6;&#xFF0C;&#x56E0;&#x6B64;&#x5F88;&#x591A; &#x7684;&#x67B6;&#x6784;&#x5E08;&#xFF0C;&#x8BBE;&#x8BA1;&#x5E08;&#xFF0C;&#x8FD8;&#x6709;&#x7A0B;&#x5E8F;&#x5458;&#x90FD;&#x77E5;&#x9053;&#x5B83;&#x3002;&#x8BB8;&#x591A;&#x4F20;&#x7EDF;IT&#x516C;&#x53F8;&#x7684;&#x7EC4;&#x7EC7;&#x67B6;&#x6784;&#x548C;&#x5206;&#x5C42;&#x6A21;&#x5F0F;&#x5341;&#x5206;&#x7684;&#x76F8;&#x4F3C;&#x3002;&#x6240;&#x4EE5;&#x5B83;&#x5F88;&#x81EA; &#x7136;&#x7684;&#x6210;&#x4E3A;&#x5927;&#x591A;&#x6570;&#x5E94;&#x7528;&#x7684;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x3002;</p>
+<h3 id="&#x6A21;&#x5F0F;&#x5206;&#x6790;">&#x6A21;&#x5F0F;&#x5206;&#x6790;</h3>
+<p>&#x5206;&#x5C42;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x91CC;&#x7684;&#x7EC4;&#x4EF6;&#x88AB;&#x5206;&#x6210;&#x51E0;&#x4E2A;&#x5E73;&#x884C;&#x7684;&#x5C42;&#x6B21;&#xFF0C;&#x6BCF;&#x4E00;&#x5C42;&#x90FD;&#x4EE3;&#x8868;&#x4E86;&#x5E94;&#x7528;&#x7684;&#x4E00;&#x4E2A;&#x529F;&#x80FD;(&#x5C55;&#x793A;&#x903B;&#x8F91;&#x6216;&#x8005;&#x4E1A;&#x52A1;&#x903B;&#x8F91;)&#x3002; &#x5C3D;&#x7BA1;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x6CA1;&#x6709;&#x89C4;&#x5B9A;&#x81EA;&#x2F9D;&#x8EAB;&#x8981;&#x5206;&#x6210;&#x51E0;&#x5C42;&#x51E0;&#x79CD;&#xFF0C;&#x5927;&#x591A;&#x6570;&#x7684;&#x7ED3;&#x6784;&#x90FD;&#x5206;&#x6210;&#x56DB;&#x4E2A;&#x5C42;&#x6B21;:&#x5C55;&#x793A;&#x5C42;&#xFF0C;&#x4E1A;&#x52A1;&#x5C42;&#xFF0C;&#x6301;&#x4E45;&#x5C42;&#xFF0C;&#x548C;&#x6570; &#x636E;&#x5E93;&#x5C42;&#x3002;&#x5982;&#x8868;1-1&#xFF0C;&#x6709;&#x65F6;&#x5019;&#xFF0C;&#x4E1A;&#x52A1;&#x5C42;&#x548C;&#x6301;&#x4E45;&#x5C42;&#x4F1A;&#x5408;&#x5E76;&#x6210;&#x5355;&#x72EC;&#x7684;&#x4E00;&#x4E2A;&#x4E1A;&#x52A1;&#x5C42;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x6301;&#x4E45;&#x5C42;&#x7684;&#x903B;&#x8F91;&#x7ED1;&#x5B9A;&#x5728;&#x4E1A;&#x52A1;&#x5C42; &#x7684;&#x7EC4;&#x4EF6;&#x5F53;&#x4E2D;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x6709;&#x4E00;&#x4E9B;&#x5C0F;&#x7684;&#x5E94;&#x7528;&#x53EF;&#x80FD;&#x53EA;&#x6709;3&#x5C42;&#xFF0C;&#x4E00;&#x4E9B;&#x6709;&#x7740;&#x66F4;&#x590D;&#x6742;&#x7684;&#x4E1A;&#x52A1;&#x7684;&#x5927;&#x5E94;&#x7528;&#x53EF;&#x80FD;&#x6709;5&#x5C42;&#x6216;&#x8005;&#x66F4;&#x591A;&#x7684;&#x5206; &#x5C42;&#x3002;</p>
+<p>&#x5206;&#x5C42;&#x67B6;&#x6784;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x5C42;&#x90FD;&#x7740;&#x7279;&#x5B9A;&#x7684;&#x89D2;&#x8272;&#x548C;&#x804C;&#x80FD;&#x3002;&#x4E3E;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5C55;&#x793A;&#x5C42;&#x8D1F;&#x8D23;&#x5904;&#x7406;&#x6240;&#x6709;&#x7684;&#x754C;&#x9762;&#x5C55;&#x793A;&#x4EE5;&#x53CA;&#x4EA4;&#x4E92;&#x903B;&#x8F91;&#xFF0C;&#x4E1A; &#x52A1;&#x5C42;&#x8D1F;&#x8D23;&#x5904;&#x7406;&#x8BF7;&#x6C42;&#x5BF9;&#x5E94;&#x7684;&#x4E1A;&#x52A1;&#x3002;&#x67B6;&#x6784;&#x91CC;&#x7684;&#x5C42;&#x6B21;&#x662F;&#x5177;&#x4F53;&#x5DE5;&#x4F5C;&#x7684;&#x9AD8;&#x5EA6;&#x62BD;&#x8C61;&#xFF0C;&#x5B83;&#x4EEC;&#x90FD;&#x662F;&#x4E3A;&#x4E86;&#x5B9E;&#x73B0;&#x67D0;&#x79CD;&#x7279;&#x5B9A;&#x7684;&#x4E1A;&#x52A1;&#x8BF7; &#x6C42;&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#x5C55;&#x793A;&#x5C42;&#x5E76;&#x4E0D;&#x9700;&#x8981;&#x5173;&#x2F3C;&#x5FC3;&#x600E;&#x6837;&#x5F97;&#x5230;&#x7528;&#x6237;&#x6570;&#x636E;&#xFF0C;&#x5B83;&#x53EA;&#x9700;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x4EE5;&#x7279;&#x5B9A;&#x7684;&#x683C;&#x5F0F;&#x5C55;&#x793A;&#x4FE1;&#x606F;&#x3002;&#x4E1A;&#x52A1;&#x5C42;&#x5E76;&#x4E0D;&#x5173;
+&#x2F3C;&#x5FC3;&#x8981;&#x5C55;&#x793A;&#x5728;&#x5C4F;&#x5E55;&#x4E0A;&#x7684;&#x7528;&#x6237;&#x6570;&#x636E;&#x683C;&#x5F0F;&#xFF0C;&#x4E5F;&#x4E0D;&#x5173;&#x2F3C;&#x5FC3;&#x8FD9;&#x4E9B;&#x7528;&#x6237;&#x6570;&#x636E;&#x4ECE;&#x54EA;&#x91CC;&#x6765;&#x3002;&#x5B83;&#x53EA;&#x9700;&#x8981;&#x4ECE;&#x6301;&#x4E45;&#x5C42;&#x5F97;&#x5230;&#x6570;&#x636E;&#xFF0C;&#x6267;&#x884C;&#x4E0E; &#x6570;&#x636E;&#x6709;&#x5173;&#x7684;&#x76F8;&#x5E94;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#xFF0C;&#x7136;&#x540E;&#x628A;&#x8FD9;&#x4E9B;&#x4FE1;&#x606F;&#x4F20;&#x9012;&#x7ED9;&#x5C55;&#x793A;&#x5C42;&#x3002;</p>
+<p><img src="http://i.imgur.com/SxUxjRZ.png" alt=""></p>
+<p>&#x5206;&#x5C42;&#x67B6;&#x6784;&#x7684;&#x4E00;&#x4E2A;&#x7A81;&#x51FA;&#x7279;&#x6027;&#x662F;&#x7EC4;&#x4EF6;&#x95F4;&#x5173;&#x6CE8;&#x70B9;&#x5206;&#x79BB; (separation of concerns)&#x3002;&#x4E00;&#x4E2A;&#x5C42;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x53EA;&#x4F1A;&#x5904;&#x7406;&#x672C;&#x5C42;&#x7684;&#x903B; &#x8F91;&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#xFF0C;&#x5C55;&#x793A;&#x5C42;&#x7684;&#x7EC4;&#x4EF6;&#x53EA;&#x4F1A;&#x5904;&#x7406;&#x5C55;&#x793A;&#x903B;&#x8F91;&#xFF0C;&#x4E1A;&#x52A1;&#x5C42;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x53EA;&#x4F1A;&#x53BB;&#x5904;&#x7406;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x3002;&#x591A;&#x4E8F;&#x4E86;&#x7EC4;&#x4EF6;&#x5206;&#x79BB;&#xFF0C;&#x8BA9; &#x6211;&#x4EEC;&#x66F4;&#x5BB9;&#x6613;&#x6784;&#x9020;&#x6709;&#x6548;&#x7684;&#x89D2;&#x8272;&#x548C;&#x5F3A;&#x2F12;&#x529B;&#x7684;&#x6A21;&#x578B;&#x3002;&#x8FD9;&#x6837;&#x5E94;&#x7528;&#x53D8;&#x7684;&#x66F4;&#x597D;&#x5F00;&#x53D1;&#xFF0C;&#x6D4B;&#x8BD5;&#xFF0C;&#x7BA1;&#x7406;&#x548C;&#x7EF4;&#x62A4;&#x3002;</p>
+<h3 id="&#x5173;&#x952E;&#x6982;&#x5FF5;">&#x5173;&#x952E;&#x6982;&#x5FF5;</h3>
+<p>&#x6CE8;&#x610F;&#x8868;1-2&#x4E2D;&#x6BCF;&#x4E00;&#x5C42;&#x90FD;&#x662F;&#x5C01;&#x95ED;&#x7684;&#x3002;&#x8FD9;&#x662F;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x4E2D;&#x975E;&#x5E38;&#x91CD;&#x8981;&#x7684;&#x7279;&#x70B9;&#x3002;&#x8FD9;&#x610F;&#x5473;request&#x5FC5;&#x987B;&#x4E00;&#x5C42;&#x4E00;&#x5C42;&#x7684;&#x4F20;&#x9012;&#x3002;&#x4E3E; &#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x4ECE;&#x5C55;&#x793A;&#x5C42;&#x4F20;&#x9012;&#x6765;&#x7684;&#x8BF7;&#x6C42;&#x2FB8;&#x9996;&#x5148;&#x4F1A;&#x4F20;&#x9012;&#x5230;&#x4E1A;&#x52A1;&#x5C42;&#xFF0C;&#x7136;&#x540E;&#x4F20;&#x9012;&#x5230;&#x6301;&#x4E45;&#x5C42;&#xFF0C;&#x6700;&#x540E;&#x624D;&#x4F20;&#x9012;&#x5230;&#x6570;&#x636E;&#x5C42;&#x3002;</p>
+<p><img src="http://i.imgur.com/D7sRDmv.png" alt=""></p>
+<p>&#x90A3;&#x4E48;&#x4E3A;&#x4EC0;&#x4E48;&#x4E0D;&#x5141;&#x8BB8;&#x5C55;&#x793A;&#x5C42;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5C42;&#x5462;&#x3002;&#x5982;&#x679C;&#x53EA;&#x662F;&#x83B7;&#x5F97;&#x4EE5;&#x53CA;&#x8BFB;&#x53D6;&#x6570;&#x636E;&#xFF0C;&#x5C55;&#x793A;&#x5C42;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x5C42;&#xFF0C;&#x6BD4;&#x7A7F;&#x8FC7;&#x4E00;&#x5C42;&#x4E00;&#x5C42;&#x6765;&#x5F97;&#x5230;&#x6570;&#x636E;&#x6765;&#x7684;&#x5FEB;&#x591A;&#x4E86;&#x3002;&#x8FD9;&#x6D89;&#x53CA;&#x5230;&#x4E00;&#x4E2A;&#x6982;&#x5FF5;:&#x5C42;&#x9694;&#x79BB;&#x3002;</p>
+<p>&#x5C42;&#x9694;&#x79BB;&#x5C31;&#x662F;&#x8BF4;&#x67B6;&#x6784;&#x4E2D;&#x7684;&#x67D0;&#x4E00;&#x5C42;&#x7684;&#x6539;&#x53D8;&#x4E0D;&#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x5176;&#x4ED6;&#x5C42;:&#x8FD9;&#x4E9B;&#x53D8;&#x5316;&#x7684;&#x5F71;&#x54CD;&#x8303;&#x56F4;&#x9650;&#x4E8E;&#x5F53;&#x524D;&#x5C42;&#x6B21;&#x3002;&#x5982;&#x679C;&#x5C55;&#x793A;&#x5C42;&#x80FD;&#x591F; &#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x6301;&#x4E45;&#x5C42;&#x4E86;&#xFF0C;&#x5047;&#x5982;&#x6301;&#x4E45;&#x5C42;&#x4E2D;&#x7684;SQL&#x53D8;&#x5316;&#x4E86;&#xFF0C;&#x8FD9;&#x5BF9;&#x4E1A;&#x52A1;&#x5C42;&#x548C;&#x5C55;&#x793A;&#x5C42;&#x90FD;&#x6709;&#x4E00;&#x5B9A;&#x7684;&#x5F71;&#x54CD;&#x3002;&#x8FD9;&#x53EA;&#x4F1A;&#x8BA9;&#x5E94;&#x7528;&#x53D8;&#x5F97; &#x7D27;&#x8026;&#x5408;&#xFF0C;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x4E92;&#x76F8;&#x4F9D;&#x8D56;&#x3002;&#x8FD9;&#x79CD;&#x67B6;&#x6784;&#x4F1A;&#x975E;&#x5E38;&#x7684;&#x96BE;&#x4EE5;&#x7EF4;&#x62A4;&#x3002;</p>
+<p>&#x4ECE;&#x53E6;&#x5916;&#x4E00;&#x4E2A;&#x65B9;&#x9762;&#x6765;&#x8BF4;&#xFF0C;&#x5206;&#x5C42;&#x9694;&#x79BB;&#x4F7F;&#x5F97;&#x5C42;&#x4E0E;&#x5C42;&#x4E4B;&#x95F4;&#x90FD;&#x662F;&#x76F8;&#x4E92;&#x72EC;&#x7ACB;&#x7684;&#xFF0C;&#x67B6;&#x6784;&#x4E2D;&#x7684;&#x6BCF;&#x4E00;&#x5C42;&#x7684;&#x4E92;&#x76F8;&#x4E86;&#x89E3;&#x90FD;&#x5F88;&#x5C11;&#x3002;&#x4E3A;&#x4E86; &#x8BF4;&#x660E;&#x8FD9;&#x4E2A;&#x6982;&#x5FF5;&#x7684;&#x2F5C;&#x725B;&#x903C;&#x4E4B;&#x5904;&#xFF0C;&#x60F3;&#x8C61;&#x4E00;&#x4E2A;&#x8D85;&#x7EA7;&#x91CD;&#x6784;&#xFF0C;&#x628A;&#x5C55;&#x793A;&#x5C42;&#x4ECE;JSP&#x6362;&#x6210;JSF&#x3002;&#x5047;&#x8BBE;&#x5C55;&#x793A;&#x5C42;&#x548C;&#x4E1A;&#x52A1;&#x5C42;&#x7684;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB; &#x4FDD;&#x6301;&#x4E00;&#x81F4;&#xFF0C;&#x4E1A;&#x52A1;&#x5C42;&#x4E0D;&#x4F1A;&#x53D7;&#x5230;&#x91CD;&#x6784;&#x7684;&#x5F71;&#x54CD;&#xFF0C;&#x5B83;&#x548C;&#x5C55;&#x793A;&#x5C42;&#x6240;&#x4F7F;&#x7528;&#x7684;&#x754C;&#x9762;&#x67B6;&#x6784;&#x5B8C;&#x5168;&#x72EC;&#x7ACB;&#x3002;</p>
+<p>&#x7136;&#x2F7D;&#x800C;&#x5C01;&#x95ED;&#x7684;&#x67B6;&#x6784;&#x5C42;&#x6B21;&#x4E5F;&#x6709;&#x4E0D;&#x4FBF;&#x4E4B;&#x5904;&#xFF0C;&#x6709;&#x65F6;&#x5019;&#x4E5F;&#x5E94;&#x8BE5;&#x5F00;&#x653E;&#x67D0;&#x4E00;&#x5C42;&#x3002;&#x5982;&#x679C;&#x60F3;&#x5F80;&#x5305;&#x542B;&#x4E86;&#x4E00;&#x4E9B;&#x7531;&#x4E1A;&#x52A1;&#x5C42;&#x7684;&#x7EC4;&#x4EF6;&#x8C03;&#x7528;&#x7684; &#x666E;&#x901A;&#x670D;&#x52A1;&#x7EC4;&#x4EF6;&#x7684;&#x67B6;&#x6784;&#x4E2D;&#x6DFB;&#x52A0;&#x4E2A;&#x5206;&#x4EAB;&#x670D;&#x52A1;&#x5C42;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x91CC;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x670D;&#x52A1;&#x5C42;&#x901A;&#x5E38;&#x662F;&#x4E2A;&#x597D;&#x4E3B;&#x610F;&#xFF0C;&#x56E0;&#x4E3A;&#x4ECE;&#x67B6;&#x6784;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x5B83;&#x9650;&#x5236;&#x4E86;&#x5206;&#x4EAB;&#x670D;&#x52A1;&#x8BBF;&#x95EE;&#x4E1A;&#x52A1;&#x5C42;(&#x4E5F;&#x4E0D;&#x5141;&#x8BB8;&#x8BBF;&#x95EE;&#x5C55;&#x793A;&#x5C42;)&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9694;&#x79BB;&#x5C42;&#xFF0C;&#x5C31;&#x6CA1;&#x6709;&#x4EFB;&#x4F55;&#x67B6;&#x6784;&#x6765;&#x9650;&#x5236;&#x5C55;&#x793A;&#x5C42;&#x8BBF;&#x95EE;&#x666E;&#x901A;&#x670D;&#x52A1;&#xFF0C;&#x96BE;&#x4EE5;&#x8FDB;&#x884C;&#x6743;&#x9650;&#x7BA1;&#x7406;&#x3002;</p>
+<p>&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x65B0;&#x7684;&#x670D;&#x52A1;&#x5C42;&#x662F;&#x5904;&#x4E8E;&#x4E1A;&#x52A1;&#x5C42;&#x4E4B;&#x4E0B;&#x7684;&#xFF0C;&#x5C55;&#x793A;&#x5C42;&#x4E0D;&#x80FD;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x8FD9;&#x4E2A;&#x670D;&#x52A1;&#x5C42;&#x4E2D;&#x7684;&#x7EC4;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#x73B0;&#x5728;&#x4E1A;&#x52A1; &#x5C42;&#x8FD8;&#x8981;&#x901A;&#x8FC7;&#x670D;&#x52A1;&#x5C42;&#x624D;&#x80FD;&#x8BBF;&#x95EE;&#x5230;&#x6301;&#x4E45;&#x5C42;&#xFF0C;&#x8FD9;&#x4E00;&#x70B9;&#x4E5F;&#x4E0D;&#x5408;&#x7406;&#x3002;&#x8FD9;&#x662F;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x4E2D;&#x7684;&#x8001;&#x95EE;&#x9898;&#x4E86;&#xFF0C;&#x89E3;&#x51B3;&#x7684;&#x529E;&#x6CD5;&#x662F;&#x5F00;&#x653E;&#x67D0; &#x4E9B;&#x5C42;&#x3002;&#x5982;&#x8868;1-3&#x6240;&#x793A;&#xFF0C;&#x670D;&#x52A1;&#x5C42;&#x73B0;&#x5728;&#x662F;&#x5F00;&#x653E;&#x7684;&#x4E86;&#x3002;&#x8BF7;&#x6C42;&#x53EF;&#x4EE5;&#x7ED5;&#x8FC7;&#x8FD9;&#x4E00;&#x5C42;&#xFF0C;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x8FD9;&#x5C42;&#x4E0B;&#x9762;&#x7684;&#x5C42;&#x3002;&#x65E2;&#x7136;&#x670D;&#x52A1;&#x5C42; &#x662F;&#x5F00;&#x653E;&#x7684;&#xFF0C;&#x4E1A;&#x52A1;&#x5C42;&#x53EF;&#x4EE5;&#x7ED5;&#x8FC7;&#x670D;&#x52A1;&#x5C42;&#xFF0C;&#x76F4;&#x63A5;&#x8BBF;&#x95EE;&#x6570;&#x636E;&#x6301;&#x4E45;&#x5C42;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x975E;&#x5E38;&#x5408;&#x7406;&#x3002;</p>
+<p><img src="http://i.imgur.com/NEnLu8b.png" alt=""></p>
+<p>&#x5F00;&#x653E;&#x548C;&#x5C01;&#x95ED;&#x5C42;&#x7684;&#x6982;&#x5FF5;&#x786E;&#x5B9A;&#x4E86;&#x67B6;&#x6784;&#x5C42;&#x548C;&#x8BF7;&#x6C42;&#x6D41;&#x4E4B;&#x95F4;&#x7684;&#x5173;&#x7CFB;&#xFF0C;&#x5E76;&#x4E14;&#x7ED9;&#x8BBE;&#x8BA1;&#x5E08;&#x548C;&#x5F00;&#x53D1;&#x4EBA;&#x5458;&#x63D0;&#x4F9B;&#x4E86;&#x5FC5;&#x8981;&#x7684;&#x4FE1;&#x606F;&#x7406;&#x89E3;&#x67B6; &#x6784;&#x91CC;&#x5404;&#x79CD;&#x5C42;&#x4E4B;&#x95F4;&#x7684;&#x8BBF;&#x95EE;&#x9650;&#x5236;&#x3002;&#x5982;&#x679C;&#x968F;&#x610F;&#x7684;&#x5F00;&#x653E;&#x6216;&#x8005;&#x5C01;&#x95ED;&#x67B6;&#x6784;&#x91CC;&#x7684;&#x5C42;&#xFF0C;&#x6574;&#x4E2A;&#x9879;&#x76EE;&#x53EF;&#x80FD;&#x90FD;&#x662F;&#x7D27;&#x8026;&#x5408;&#xFF0C;&#x4E00;&#x56E2;&#x7CDF;&#x7684;&#x3002;&#x4EE5;&#x540E;&#x4E5F;&#x96BE;&#x4EE5;&#x6D4B;&#x8BD5;&#xFF0C;&#x7EF4;&#x62A4;&#x548C;&#x90E8;&#x7F72;&#x3002;</p>
+<h3 id="&#x793A;&#x4F8B;">&#x793A;&#x4F8B;</h3>
+<p>&#x4E3A;&#x4E86;&#x6F14;&#x793A;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x662F;&#x5982;&#x4F55;&#x5DE5;&#x4F5C;&#x7684;&#xFF0C;&#x60F3;&#x8C61;&#x4E00;&#x4E2A;&#x573A;&#x666F;&#xFF0C;&#x5982;&#x8868;1-4&#xFF0C;&#x7528;&#x6237;&#x53D1;&#x51FA;&#x4E86;&#x4E2A;&#x8BF7;&#x6C42;&#x8981;&#x83B7;&#x5F97;&#x5BA2;&#x6237;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x9ED1;&#x8272;&#x7684;&#x7BAD;&#x5934;&#x662F;&#x4ECE;&#x6570;&#x636E;&#x5E93;&#x4E2D;&#x83B7;&#x5F97;&#x7528;&#x6237;&#x6570;&#x636E;&#x7684;&#x8BF7;&#x6C42;&#x6D41;&#xFF0C;&#x7EA2;&#x8272;&#x7BAD;&#x5934;&#x663E;&#x793A;&#x7528;&#x6237;&#x6570;&#x636E;&#x7684;&#x8FD4;&#x56DE;&#x6D41;&#x7684;&#x65B9;&#x5411;&#x3002;&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x4E2D;&#xFF0C;&#x7528;&#x6237;&#x4FE1; &#x606F;&#x7531;&#x5BA2;&#x6237;&#x6570;&#x636E;&#x548C;&#x8BA2;&#x5355;&#x6570;&#x7EC4;&#x7EC4;&#x6210;(&#x5BA2;&#x6237;&#x4E0B;&#x7684;&#x8BA2;&#x5355;)&#x3002;</p>
+<p>&#x7528;&#x6237;&#x754C;&#x9762;&#x53EA;&#x7BA1;&#x63A5;&#x53D7;&#x8BF7;&#x6C42;&#x4EE5;&#x53CA;&#x663E;&#x793A;&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#x3002;&#x5B83;&#x4E0D;&#x7BA1;&#x600E;&#x4E48;&#x5F97;&#x5230;&#x6570;&#x636E;&#x7684;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x5F97;&#x5230;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x8981;&#x7528;&#x5230;&#x54EA;&#x4E9B;&#x6570;&#x636E; &#x8868;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x754C;&#x9762;&#x63A5;&#x5230;&#x4E86;&#x4E00;&#x4E2A;&#x67E5;&#x8BE2;&#x5BA2;&#x6237;&#x4FE1;&#x606F;&#x7684;&#x8BF7;&#x6C42;&#xFF0C;&#x5B83;&#x5C31;&#x4F1A;&#x8F6C;&#x53D1;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x7ED9;&#x7528;&#x6237;&#x59D4;&#x6258;(Customer Delegate)&#x6A21; &#x5757;&#x3002;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x80FD;&#x627E;&#x5230;&#x4E1A;&#x52A1;&#x5C42;&#x91CC;&#x5BF9;&#x5E94;&#x7684;&#x6A21;&#x5757;&#x5904;&#x7406;&#x5BF9;&#x5E94;&#x6570;&#x636E;(&#x7EA6;&#x675F;&#x5173;&#x7CFB;)&#x3002;&#x4E1A;&#x52A1;&#x5C42;&#x91CC;&#x7684;customer object&#x805A;&#x5408;&#x4E86;&#x4E1A;&#x52A1; &#x8BF7;&#x6C42;&#x9700;&#x8981;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;(&#x5728;&#x8FD9;&#x4E2A;&#x4F8B;&#x5B50;&#x91CC;&#x83B7;&#x53D6;&#x5BA2;&#x6237;&#x4FE1;&#x606F;)&#x3002;&#x8FD9;&#x4E2A;&#x6A21;&#x5757;&#x8C03;&#x7528;&#x6301;&#x4E45;&#x5C42;&#x4E2D;&#x7684; customer dao &#x6765;&#x5F97;&#x5230;&#x5BA2;&#x6237;&#x4FE1; &#x606F;&#xFF0C;&#x8C03;&#x7528;order dao&#x6765;&#x5F97;&#x5230;&#x8BA2;&#x5355;&#x4FE1;&#x606F;&#x3002;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x4F1A;&#x6267;&#x884C;SQL&#x8BED;&#x53E5;&#xFF0C;&#x7136;&#x540E;&#x8FD4;&#x56DE;&#x76F8;&#x5E94;&#x7684;&#x6570;&#x636E;&#x7ED9;&#x4E1A;&#x52A1;&#x5C42;&#x3002;&#x5F53; customer object&#x6536;&#x5230;&#x6570;&#x636E;&#x4EE5;&#x540E;&#xFF0C;&#x5B83;&#x5C31;&#x4F1A;&#x805A;&#x5408;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x7136;&#x540E;&#x4F20;&#x9012;&#x7ED9; customer delegate,&#x7136;&#x540E;&#x4F20;&#x9012;&#x8FD9;&#x4E9B;&#x6570;&#x636E;&#x5230; customer screen &#x5C55;&#x793A;&#x5728;&#x7528;&#x6237;&#x9762;&#x524D;&#x3002;</p>
+<p><img src="http://i.imgur.com/kKlpuwM.png" alt=""></p>
+<p>&#x4ECE;&#x6280;&#x672F;&#x7684;&#x89D2;&#x5EA6;&#x6765;&#x8BF4;&#xFF0C;&#x6709;&#x5F88;&#x591A;&#x7684;&#x65B9;&#x5F0F;&#x80FD;&#x591F;&#x5B9E;&#x73B0;&#x8FD9;&#x4E9B;&#x6A21;&#x5757;&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#x5728;Java&#x5E73;&#x53F0;&#x4E2D;&#xFF0C;customer screen &#x5BF9;&#x5E94;&#x7684;&#x662F; (JSF) Java Server Faces ,&#x7528; bean &#x7EC4;&#x4EF6;&#x6765;&#x5B9E;&#x73B0; customer delegate&#x3002;&#x7528;&#x672C;&#x5730;&#x7684;Spring bean&#x6216;&#x8005;&#x8FDC;&#x7A0B;&#x7684;EJB3 bean &#x6765;&#x5B9E;&#x73B0;&#x4E1A;&#x52A1;&#x5C42;&#x4E2D;&#x7684;customer object&#x3002;&#x4E0A;&#x4F8B;&#x4E2D;&#x7684;&#x6570;&#x636E;&#x8BBF;&#x95EE;&#x53EF;&#x4EE5;&#x7528;&#x7B80;&#x5355;&#x7684;POJP&apos;s(Plain Old Java Objects)&#xFF0C;&#x6216;&#x8005;&#x53EF;&#x4EE5;&#x7528;MyBatis&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x7528;JDBC&#x6216;&#x8005;Hibernate&#x67E5;&#x8BE2;&#x3002;Microsoft&#x5E73;&#x53F0;&#x4E0A;&#xFF0C;customer    screen&#x80FD;
+&#x7528; .NET &#x5E93;&#x7684;ASP&#x6A21;&#x5757;&#x6765;&#x8BBF;&#x95EE;&#x4E1A;&#x52A1;&#x5C42;&#x4E2D;&#x7684;C#&#x6A21;&#x5757;&#xFF0C;&#x7528;ADO&#x6765;&#x5B9E;&#x73B0;&#x7528;&#x6237;&#x548C;&#x8BA2;&#x5355;&#x6570;&#x636E;&#x7684;&#x8BBF;&#x95EE;&#x6A21;&#x5757;&#x3002;</p>
+<p>&#x6211;&#x4EEC;&#x770B;&#x4E00;&#x4E0B;&#x6DD8;&#x5B9D;&#x524D;&#x51E0;&#x5E74;&#x7684;&#x67B6;&#x6784;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<p><img src="http://i.imgur.com/R5pzfpW.png" alt=""></p>
+<p>&#x8FD9;&#x662F;&#x4E00;&#x4E2A;&#x6807;&#x51C6;&#x7684;&#x5206;&#x5C42;&#x7684;&#x67B6;&#x6784;&#x3002;&#x6BCF;&#x4E00;&#x5C42;&#x4E2D;&#x53C8;&#x53EF;&#x4EE5;&#x8BE6;&#x7EC6;&#x7684;&#x5206;&#x6210;&#x66F4;&#x7EC6;&#x7684;&#x5C42;&#xFF0C;&#x6BD4;&#x5982;&#x670D;&#x52A1;&#x5C42;&#x3002;</p>
+<p><img src="http://i.imgur.com/M10wcT6.png" alt=""></p>
+<p>&#x56F4;&#x7740;&#x7740;&#x8FD9;&#x4E2A;&#x4E3B;&#x67B6;&#x6784;&#x8FD8;&#x6709;&#x4E00;&#x4E9B;&#x5916;&#x56F4;&#x7684;&#x4EA7;&#x54C1;&#x3002;&#x6BD4;&#x5982;&#x76D1;&#x63A7;&#x548C;&#x5BA1;&#x8BA1;&#x3002;</p>
+<h3 id="&#x6CE8;&#x610F;&#x4E8B;&#x9879;">&#x6CE8;&#x610F;&#x4E8B;&#x9879;</h3>
+<p>&#x5206;&#x5C42;&#x67B6;&#x6784;&#x662F;&#x4E00;&#x4E2A;&#x5F88;&#x53EF;&#x9760;&#x7684;&#x67B6;&#x6784;&#x6A21;&#x5F0F;&#x3002;&#x5B83;&#x9002;&#x5408;&#x5927;&#x591A;&#x6570;&#x7684;&#x5E94;&#x7528;&#x3002;&#x5982;&#x679C;&#x4F60;&#x4E0D;&#x786E;&#x5B9A;&#x5728;&#x9879;&#x76EE;&#x4E2D;&#x4F7F;&#x7528;&#x4EC0;&#x4E48;&#x67B6;&#x6784;&#xFF0C;&#x5206;&#x5C42;&#x67B6;&#x6784; &#x662F;&#x518D;&#x597D;&#x4E0D;&#x8FC7;&#x7684;&#x4E86;&#x3002;&#x7136;&#x540E;&#xFF0C;&#x4ECE;&#x67B6;&#x6784;&#x7684;&#x89D2;&#x5EA6;&#x4E0A;&#x6765;&#x8BF4;&#xFF0C;&#x9009;&#x62E9;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x8FD8;&#x8981;&#x8003;&#x8651;&#x5F88;&#x591A;&#x7684;&#x4E1C;&#x2EC4;&#x897F;&#x3002;</p>
+<p>&#x7B2C;&#x4E00;&#x4E2A;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x5C31;&#x662F; &#x6C61;&#x6C34;&#x6C60;&#x53CD;&#x6A21;&#x5F0F;(architecture sinkhole anti-pattern)&#x3002; &#x5728;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x4E2D;&#xFF0C;&#x8BF7;&#x6C42;&#x6D41;&#x53EA;&#x662F;&#x7B80;&#x5355;&#x7684; &#x7A7F;&#x8FC7;&#x5C42;&#x6B21;&#xFF0C;&#x4E0D;&#x7559;&#x4E00;&#x70B9;&#x4E91;&#x5F69;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x53EA;&#x7559;&#x4E0B;&#x4E00;&#x9635;&#x2ED8;&#x9752;&#x70DF;&#x3002;&#x6BD4;&#x5982;&#x8BF4;&#x754C;&#x9762;&#x5C42;&#x54CD;&#x5E94;&#x4E86;&#x4E00;&#x4E2A;&#x83B7;&#x5F97;&#x6570;&#x636E;&#x7684;&#x8BF7;&#x6C42;&#x3002;&#x54CD;&#x5E94;&#x5C42;&#x628A;&#x8FD9; &#x4E2A;&#x8BF7;&#x6C42;&#x4F20;&#x9012;&#x7ED9;&#x4E86;&#x4E1A;&#x52A1;&#x5C42;&#xFF0C;&#x4E1A;&#x52A1;&#x5C42;&#x4E5F;&#x53EA;&#x662F;&#x4F20;&#x9012;&#x4E86;&#x8FD9;&#x4E2A;&#x8BF7;&#x6C42;&#x5230;&#x6301;&#x4E45;&#x5C42;&#xFF0C;&#x6301;&#x4E45;&#x5C42;&#x5BF9;&#x6570;&#x636E;&#x5E93;&#x505A;&#x7B80;&#x5355;&#x7684;SQL&#x67E5;&#x8BE2;&#x83B7;&#x5F97;&#x7528;&#x6237;&#x7684;&#x6570;&#x636E;&#x3002;&#x8FD9;&#x4E2A;&#x6570;&#x636E;&#x6309;&#x7167;&#x539F;&#x7406;&#x8FD4;&#x56DE;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x7684;&#x4E8C;&#x6B21;&#x5904;&#x7406;&#xFF0C;&#x8FD4;&#x56DE;&#x5230;&#x754C;&#x9762;&#x4E0A;&#x3002;</p>
+<p>&#x6BCF;&#x4E2A;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x6216;&#x591A;&#x6216;&#x5C11;&#x90FD;&#x53EF;&#x80FD;&#x9047;&#x5230;&#x8FD9;&#x79CD;&#x573A;&#x666F;&#x3002;&#x5173;&#x952E;&#x5728;&#x4E8E;&#x8FD9;&#x6837;&#x7684;&#x8BF7;&#x6C42;&#x6709;&#x591A;&#x5C11;&#x3002;80-20&#x539F;&#x5219;&#x53EF;&#x4EE5;&#x5E2E;&#x52A9;&#x4F60;&#x786E;&#x5B9A;&#x67B6;&#x6784;&#x662F; &#x5426;&#x5904;&#x4E8E;&#x53CD;&#x6C61;&#x6C34;&#x6A21;&#x5F0F;&#x3002;&#x5927;&#x6982;&#x6709;&#x767E;&#x5206;&#x4E4B;&#x4E8C;&#x5341;&#x7684;&#x8BF7;&#x6C42;&#x4EC5;&#x4EC5;&#x662F;&#x505A;&#x7B80;&#x5355;&#x7684;&#x7A7F;&#x8D8A;&#xFF0C;&#x767E;&#x5206;&#x4E4B;&#x516B;&#x5341;&#x7684;&#x8BF7;&#x6C42;&#x4F1A;&#x505A;&#x4E00;&#x4E9B;&#x4E1A;&#x52A1;&#x903B;&#x8F91;&#x64CD; &#x4F5C;&#x3002;&#x7136;&#x800C;&#xFF0C;&#x5982;&#x679C;&#x8FD9;&#x4E2A;&#x6BD4;&#x4F8B;&#x53CD;&#x8FC7;&#x6765;&#xFF0C;&#x5927;&#x90E8;&#x5206;&#x7684;&#x8BF7;&#x6C42;&#x90FD;&#x662F;&#x4EC5;&#x4EC5;&#x7A7F;&#x8FC7;&#x5C42;&#xFF0C;&#x4E0D;&#x505A;&#x903B;&#x8F91;&#x64CD;&#x4F5C;&#x3002;&#x90A3;&#x4E48;&#x5F00;&#x653E;&#x4E00;&#x4E9B;&#x67B6;&#x6784;&#x5C42;&#x4F1A;&#x6BD4;&#x8F83;&#x597D;&#x3002;&#x4E0D;&#x8FC7;&#x7531;&#x4E8E;&#x7F3A;&#x5C11;&#x4E86;&#x5C42;&#x6B21;&#x9694;&#x79BB;&#xFF0C;&#x9879;&#x76EE;&#x4F1A;&#x53D8;&#x5F97;&#x96BE;&#x4EE5;&#x63A7;&#x5236;&#x3002;</p>
+<h3 id="&#x6A21;&#x5F0F;&#x5206;&#x6790;">&#x6A21;&#x5F0F;&#x5206;&#x6790;</h3>
+<p>&#x4E0B;&#x2FAF;&#x9762;&#x7684;&#x7684;&#x8868;&#x2FA5;&#x91CC;&#x5206;&#x6790;&#x4E86;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x7684;&#x5404;&#x4E2A;&#x2F45;&#x65B9;&#x2FAF;&#x9762;&#x3002;</p>
+<h4 id="&#x6574;&#x4F53;&#x7075;&#x6D3B;&#x6027;">&#x6574;&#x4F53;&#x7075;&#x6D3B;&#x6027;</h4>
+<p>&#x8BC4;&#x7EA7;:&#x4F4E; &#x5206;&#x6790;:&#x603B;&#x4F53;&#x7075;&#x6D3B;&#x6027;&#x662F;&#x54CD;&#x5E94;&#x73AF;&#x5883;&#x53D8;&#x5316;&#x7684;&#x80FD;&#x2F12;&#x529B;&#x3002;&#x5C3D;&#x7BA1;&#x5206;&#x5C42;&#x6A21;&#x5F0F;&#x4E2D;&#x7684;&#x53D8;&#x5316;&#x53EF;&#x4EE5;&#x9694;&#x7EDD;&#x8D77;&#x6765;&#xFF0C;&#x60F3;&#x5728;&#x8FD9;&#x79CD;&#x67B6;&#x6784;&#x4E2D;&#x505A;&#x2F00;&#x4E00;&#x4E9B;&#x4E5F;&#x6539; &#x53D8;&#x4E5F;&#x662F;&#x5E76;&#x4E14;&#x8D39;&#x65F6;&#x8D39;&#x2F12;&#x529B;&#x7684;&#x3002;&#x5206;&#x5C42;&#x6A21;&#x5F0F;&#x7684;&#x7B28;&#x91CD;&#x4EE5;&#x53CA;&#x7ECF;&#x5E38;&#x51FA;&#x73B0;&#x7684;&#x7EC4;&#x4EF6;&#x4E4B;&#x95F4;&#x7684;&#x7D27;&#x8026;&#x5408;&#x662F;&#x5BFC;&#x81F4;&#x7075;&#x6D3B;&#x6027;&#x964D;&#x4F4E;&#x7684;&#x539F;&#x56E0;&#x3002;</p>
+<h4 id="&#x6613;&#x4E8E;&#x90E8;&#x7F72;">&#x6613;&#x4E8E;&#x90E8;&#x7F72;</h4>
+<p>&#x8BC4;&#x7EA7;:&#x4F4E; &#x5206;&#x6790;:&#x8FD9;&#x53D6;&#x51B3;&#x4E8E;&#x4F60;&#x600E;&#x4E48;&#x53D1;&#x5E03;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#xFF0C;&#x53D1;&#x5E03;&#x7A0B;&#x5E8F;&#x53EF;&#x80FD;&#x2F50;&#x6BD4;&#x8F83;&#x2FC7;&#x9EBB;&#x70E6;&#xFF0C;&#x5C24;&#x5176;&#x662F;&#x5F88;&#x2F24;&#x5927;&#x7684;&#x9879;&#x76EE;&#x3002;&#x2F00;&#x4E00;&#x4E2A;&#x7EC4;&#x4EF6;&#x7684;&#x2F29;&#x5C0F;&#x2F29;&#x5C0F;&#x6539;&#x52A8;&#x53EF;&#x80FD; &#x4F1A;&#x5F71;&#x54CD;&#x5230;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x7684;&#x53D1;&#x5E03;(&#x6216;&#x8005;&#x7A0B;&#x5E8F;&#x7684;&#x2F24;&#x5927;&#x90E8;&#x5206;)&#x3002;&#x53D1;&#x5E03;&#x5FC5;&#x987B;&#x662F;&#x6309;&#x7167;&#x8BA1;&#x5212;&#xFF0C;&#x5728;&#x2FAE;&#x975E;&#x2F2F;&#x5DE5;&#x4F5C;&#x65F6;&#x95F4;&#x6216;&#x8005;&#x5468;&#x672B;&#x8FDB;&#x2F8F;&#x884C;&#x53D1;&#x5E03;&#x3002;&#x56E0;&#x6B64;,&#x5206;&#x5C42;&#x6A21;&#x5F0F;&#x5BFC;&#x81F4;&#x5E94;&#x2F64;&#x7528;&#x53D1;&#x5E03;&#x2F00;&#x4E00;&#x70B9;&#x4E5F;&#x4E0D;&#x6D41;&#x7545;&#xFF0C;&#x5728;&#x53D1;&#x5E03;&#x4E0A;&#x964D;&#x4F4E;&#x4E86;&#x7075;&#x6D3B;&#x6027;&#x3002;</p>
+<h4 id="&#x53EF;&#x6D4B;&#x8BD5;&#x6027;">&#x53EF;&#x6D4B;&#x8BD5;&#x6027;</h4>
+<p>&#x8BC4;&#x7EA7;:&#x9AD8; &#x5206;&#x6790;:&#x56E0;&#x4E3A;&#x7EC4;&#x4EF6;&#x90FD;&#x5904;&#x4E8E;&#x5404;&#x2F83;&#x81EA;&#x7684;&#x5C42;&#x6B21;&#x4E2D;&#xFF0C;&#x53EF;&#x4EE5;&#x6A21;&#x62DF;&#x5176;&#x4ED6;&#x7684;&#x5C42;&#xFF0C;&#x6216;&#x8005;&#x8BF4;&#x76F4;&#x63A5;&#x53BB;&#x6389;&#x5C42;&#xFF0C;&#x6240;&#x4EE5;&#x5206;&#x5C42;&#x6A21;&#x5F0F;&#x5F88;&#x5BB9;&#x6613;&#x6D4B;&#x8BD5;&#x3002;&#x5F00;&#x53D1;&#x8005;&#x53EF;&#x4EE5;&#x5355;&#x72EC;&#x6A21;&#x62DF;&#x2F00;&#x4E00;&#x4E2A;&#x5C55;&#x2F70;&#x793A;&#x7EC4;&#x4EF6;&#xFF0C;&#x5BF9;&#x4E1A;&#x52A1;&#x7EC4;&#x4EF6;&#x8FDB;&#x2F8F;&#x884C;&#x9694;&#x7EDD;&#x6D4B;&#x8BD5;&#x3002;&#x8FD8;&#x53EF;&#x4EE5;&#x6A21;&#x62DF;&#x4E1A;&#x52A1;&#x5C42;&#x6765;&#x6D4B;&#x8BD5;&#x67D0;&#x4E2A;&#x5C55;&#x2F70;&#x793A;&#x529F;&#x80FD;&#x3002;</p>
+<h4 id="&#x6027;&#x80FD;">&#x6027;&#x80FD;</h4>
+<p>&#x8BC4;&#x7EA7;:&#x4F4E; &#x5206;&#x6790;:&#x5C3D;&#x7BA1;&#x67D0;&#x4E9B;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x7684;&#x6027;&#x80FD;&#x8868;&#x73B0;&#x7684;&#x786E;&#x4E0D;&#x9519;&#xFF0C;&#x4F46;&#x662F;&#x8FD9;&#x4E2A;&#x6A21;&#x5F0F;&#x7684;&#x7279;&#x70B9;&#x5BFC;&#x81F4;&#x5B83;&#x2F46;&#x65E0;&#x6CD5;&#x5E26;&#x6765;&#x2FBC;&#x9AD8;&#x6027;&#x80FD;&#x3002;&#x56E0;&#x4E3A;&#x2F00;&#x4E00;&#x6B21;&#x4E1A;&#x52A1;&#x8BF7;&#x6C42;&#x8981;&#x7A7F;&#x8D8A;&#x6240;&#x6709;&#x7684;&#x67B6;&#x6784;&#x5C42;&#xFF0C;&#x505A;&#x4E86;&#x5F88;&#x591A;&#x4E0D;&#x5FC5;&#x8981;&#x7684;&#x2F2F;&#x5DE5;&#x4F5C;&#x3002;</p>
+<h4 id="&#x4F38;&#x7F29;&#x6027;">&#x4F38;&#x7F29;&#x6027;</h4>
+<p>&#x8BC4;&#x7EA7;:&#x4F4E; &#x5206;&#x6790;:&#x7531;&#x4E8E;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x4EE5;&#x7D27;&#x5BC6;&#x8026;&#x5408;&#x7684;&#x8D8B;&#x52BF;&#x5728;&#x53D1;&#x5C55;&#xFF0C;&#x89C4;&#x6A21;&#x4E5F;&#x2F50;&#x6BD4;&#x8F83;&#x2F24;&#x5927;&#xFF0C;&#x2F64;&#x7528;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x6784;&#x5EFA;&#x7684;&#x7A0B;&#x5E8F;&#x90FD;&#x2F50;&#x6BD4;&#x8F83;&#x96BE;&#x4EE5;&#x6269;&#x5C55;&#x3002;&#x4F60;&#x53EF; &#x4EE5;&#x628A;&#x5404;&#x4E2A;&#x5C42;&#x5206;&#x6210;&#x5355;&#x72EC;&#x7684;&#x7269;&#x7406;&#x6A21;&#x5757;&#x6216;&#x8005;&#x5E72;&#x8106;&#x628A;&#x6574;&#x4E2A;&#x7A0B;&#x5E8F;&#x5206;&#x6210;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#x6765;&#x6269;&#x5C55;&#x5206;&#x5C42;&#x67B6;&#x6784;&#xFF0C;&#x4F46;&#x662F;&#x603B;&#x4F53;&#x7684;&#x5173;&#x7CFB;&#x8FC7;&#x4E8E;&#x7D27;</p>
+<p>&#x5BC6;&#xFF0C;&#x8FD9;&#x6837;&#x5F88;&#x96BE;&#x6269;&#x5C55;&#x3002;</p>
+<h4 id="&#x6613;&#x5F00;&#x53D1;&#x6027;">&#x6613;&#x5F00;&#x53D1;&#x6027;</h4>
+<p>&#x8BC4;&#x7EA7;:&#x5BB9;&#x6613; &#x5206;&#x6790;:&#x5728;&#x5F00;&#x53D1;&#x96BE;&#x5EA6;&#x4E0A;&#x2FAF;&#x9762;&#xFF0C;&#x5206;&#x5C42;&#x67B6;&#x6784;&#x5F97;&#x5230;&#x4E86;&#x2F50;&#x6BD4;&#x8F83;&#x2FBC;&#x9AD8;&#x7684;&#x5206;&#x6570;&#x3002;&#x56E0;&#x4E3A;&#x8FD9;&#x79CD;&#x67B6;&#x6784;&#x5BF9;&#x2F24;&#x5927;&#x5BB6;&#x6765;&#x8BF4;&#x5F88;&#x719F;&#x6089;&#xFF0C;&#x4E0D;&#x96BE;&#x5B9E;&#x73B0;&#x3002;&#x2F24;&#x5927;&#x90E8;&#x5206; &#x516C;&#x53F8;&#x5728;&#x5F00;&#x53D1;&#x9879;&#x2EAB;&#x2F6C;&#x76EE;&#x7684;&#x90FD;&#x662F;&#x901A;&#x8FC7;&#x5C42;&#x6765;&#x533A;&#x5206;&#x6280;&#x672F;&#x7684;&#xFF0C;&#x8FD9;&#x79CD;&#x6A21;&#x5F0F;&#x5BF9;&#x4E8E;&#x2F24;&#x5927;&#x591A;&#x6570;&#x7684;&#x5546;&#x4E1A;&#x9879;&#x76EE;&#x5F00;&#x53D1;&#x6765;&#x8BF4;&#x90FD;&#x5F88;&#x5408;&#x9002;&#x3002;&#x516C;&#x53F8;&#x7684;&#x7EC4;&#x7EC7;&#x67B6;&#x6784;&#x548C;&#x4ED6;&#x4EEC;&#x8F6F;&#x4EF6;&#x67B6;&#x6784;&#x4E4B;&#x95F4;&#x7684;&#x8054;&#x7CFB;&#x88AB;&#x620F;&#x79F0;&#x4E3A;&quot;Conway&apos;s law&quot;&#x3002;&#x4F60;&#x53EF;&#x4EE5;Google&#x2F00;&#x4E00;&#x4E0B;&#x67E5;&#x67E5;&#x8FD9;&#x4E2A;&#x6709;&#x8DA3;&#x7684;&#x8054;&#x7CFB;&#x3002;</p>
+<blockquote>
+<p>&#x672A;&#x5B8C;&#x5F85;&#x7EED;</p>
+</blockquote>
+
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="request_message.html" class="navigation navigation-prev " aria-label="Previous page: HTTP请求报文解剖">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="electrical-business-architecture.html" class="navigation navigation-next " aria-label="Next page: 电商网站架构案例">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"软件架构模式","level":"1.8.2","depth":2,"next":{"title":"电商网站架构案例","level":"1.8.3","depth":2,"path":"articles/electrical-business-architecture.md","ref":"articles/electrical-business-architecture.md","articles":[]},"previous":{"title":"HTTP请求报文解剖","level":"1.8.1","depth":2,"path":"articles/request_message.md","ref":"articles/request_message.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":["livereload"],"pluginsConfig":{"livereload":{},"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"articles/software_architecture_patterns.md","mtime":"2017-09-01T15:31:07.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2017-09-01T16:57:38.335Z"},"basePath":"..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../gitbook/gitbook.js"></script>
+    <script src="../gitbook/theme.js"></script>
+    
+        
+        <script src="../gitbook/gitbook-plugin-livereload/plugin.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-sharing/buttons.js"></script>
+        
+    
+        
+        <script src="../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
