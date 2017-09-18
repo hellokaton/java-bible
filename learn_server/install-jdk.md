@@ -9,29 +9,15 @@
 上面的连接是stackoverflow有开发者写的不使用cookie下载jdk和jre的命令。
 
 ```bash
-[root@localhost ~]#  wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz
---2016-09-09 19:57:01--  http://download.oracle.com/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz
-Resolving download.oracle.com... 23.4.240.57, 23.4.240.59
-Connecting to download.oracle.com|23.4.240.57|:80... connected.
-HTTP request sent, awaiting response... 302 Found
-Location: http://120.52.72.24:80/download.oracle.com/c3pr90ntc0td/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz [following]
---2016-09-09 19:57:01--  http://120.52.72.24/download.oracle.com/c3pr90ntc0td/otn-pub/java/jdk/8u102-b14/jdk-8u102-linux-x64.tar.gz
-Connecting to 120.52.72.24:80... connected.
-HTTP request sent, awaiting response... 200 OK
-Length: 181435897 (173M) [application/x-gzip]
-Saving to: “jdk-8u102-linux-x64.tar.gz”
-
-100%[==================================================================================================================================>] 181,435,897 2.07M/s   in 85s     
-
-2016-09-09 19:58:26 (2.04 MB/s) - “jdk-8u102-linux-x64.tar.gz” saved [181435897/181435897]
+[root@localhost ~]# wget -c --header "Cookie: oraclelicense=accept-securebackup-cookie" http://download.oracle.com/otn-pub/java/jdk/8u131-b11/d54c1d3a095b4ff2b6607d096fa80163/jdk-8u131-linux-x64.tar.gz
 ```
 
 ## 解压
 
 ```bash
-[root@localhost ~]# tar -zxvf jdk-8u102-linux-x64.tar.gz
+[root@localhost ~]# tar -zxvf jdk-8u131-linux-x64.tar.gz
 [root@localhost ~]# mkdir /usr/local/java
-[root@localhost ~]# mv jdk1.8.0_102/ /usr/local/java/
+[root@localhost ~]# mv jdk1.8.0_131/ /usr/local/java/
 ```
 
 ## 配置环境变量
@@ -44,8 +30,8 @@ Saving to: “jdk-8u102-linux-x64.tar.gz”
 
 ```bash
 # java
-export JAVA_HOME=/usr/local/java/jdk1.8.0_102
-export JRE_HOME=/usr/local/java/jdk1.8.0_102/jre
+export JAVA_HOME=/usr/local/java/jdk1.8.0_131
+export JRE_HOME=/usr/local/java/jdk1.8.0_131/jre
 export CLASSPATH=.:$JRE_HOME/lib/dt.jar:$JRE_HOME/lib/tools.jar
 export PATH=$JRE_HOME/bin:$JRE_HOME/bin:$PATH
 ```
