@@ -33,7 +33,7 @@
 export JAVA_HOME=/usr/local/java/jdk1.8.0_171
 export JRE_HOME=/usr/local/java/jdk1.8.0_171/jre
 export CLASSPATH=.:$JRE_HOME/lib/dt.jar:$JRE_HOME/lib/tools.jar
-export PATH=$JRE_HOME/bin:$JRE_HOME/bin:$PATH
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$PATH
 ```
 
 ## 生效
