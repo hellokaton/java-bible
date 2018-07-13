@@ -41,9 +41,9 @@ export PATH=$JRE_HOME/bin:$JRE_HOME/bin:$PATH
 ```bash
 [root@localhost ~]# source /etc/profile
 [root@localhost ~]# java -version
-java version "1.8.0_131"
-Java(TM) SE Runtime Environment (build 1.8.0_171-b14)
-Java HotSpot(TM) 64-Bit Server VM (build 25.171-b14, mixed mode)
+java version "1.8.0_171"
+Java(TM) SE Runtime Environment (build 1.8.0_171-b11)
+Java HotSpot(TM) 64-Bit Server VM (build 25.171-b11, mixed mode)
 ```
 这里我安装的是最新版的JDK。
 
