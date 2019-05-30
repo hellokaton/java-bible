@@ -47,6 +47,10 @@
 * [Java8简明教程](java8/java8-guide.md)
 * [Java8 Foreach](java8/foreach.md)
 
+## 架构博文专栏
+
+- [朱晔的互联网架构实践心得](https://juejin.im/user/5ba37b9de51d450e7428affe/posts)
+
 ## Hexo搭建博客
 
 * [分分钟部署一个Hexo环境](hexo/hello.md)
