@@ -33,7 +33,7 @@ cnpmjs.org是一个非常棒的npm国内镜像。由于其使用量越来越大�
 ### 使用说明
 你可以使用淘宝定制的 [cnpm](https://github.com/cnpm/cnpm) (gzip 压缩支持) 命令行工具代替默认的 `npm`:
 ```bash
-$ npm install -g cnpm --registry=https://registry.npm.taobao.org
+$ npm install -g cnpm --registry=https://registry.npmmirror.com
 ```
 我使用的就是这个。
 
@@ -41,21 +41,21 @@ $ npm install -g cnpm --registry=https://registry.npm.taobao.org
 
 或者你直接通过添加 `npm` 参数 `alias` 一个新命令:
 ```bash
-alias cnpm="npm --registry=https://registry.npm.taobao.org \
+alias cnpm="npm --registry=https://registry.npmmirror.com \
 --cache=$HOME/.npm/.cache/cnpm \
---disturl=https://npm.taobao.org/dist \
+--disturl=https://npmmirror.com/dist \
 --userconfig=$HOME/.cnpmrc"
 
 # Or alias it in .bashrc or .zshrc
-$ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npm.taobao.org \
+$ echo '\n#alias for cnpm\nalias cnpm="npm --registry=https://registry.npmmirror.com \
   --cache=$HOME/.npm/.cache/cnpm \
-  --disturl=https://npm.taobao.org/dist \
+  --disturl=https://npmmirror.com/dist \
   --userconfig=$HOME/.cnpmrc"' >> ~/.zshrc && source ~/.zshrc
 ```
 
 ### 安装模块
 
-从 [registry.npm.taobao.org](http://registry.npm.taobao.org/) 安装所有模块. 当安装的时候发现安装的模块还没有同步过来, 淘宝 NPM 会自动在后台进行同步, 并且会让你从官方 NPM [registry.npmjs.org](http://registry.npmjs.org/) 进行安装. 下次你再安装这个模块的时候, 就会直接从 淘宝 NPM 安装了.
+从 [registry.npm.taobao.org](https://registry.npmmirror.com/) 安装所有模块. 当安装的时候发现安装的模块还没有同步过来, 淘宝 NPM 会自动在后台进行同步, 并且会让你从官方 NPM [registry.npmjs.org](http://registry.npmjs.org/) 进行安装. 下次你再安装这个模块的时候, 就会直接从 淘宝 NPM 安装了.
 
 ```bash
 $ cnpm install [name]
@@ -68,7 +68,7 @@ $ cnpm sync connect
 ```
 当然, 你可以直接通过 web 方式来同步: [/sync/connect](http://npm.taobao.org/sync/connect)
 ```bash
-$ open https://npm.taobao.org/sync/connect
+$ open https://npmmirror.com/sync/connect
 ```
 
 ## 3. 安装hexo
